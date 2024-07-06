@@ -9,3 +9,4 @@ D:\Downloads\source\task-management-system\common\Domain\obj\Debug\net8.0\Domain
 D:\Downloads\source\task-management-system\common\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\Downloads\source\task-management-system\common\Domain\obj\Debug\net8.0\Domain.pdb
 D:\Downloads\source\task-management-system\common\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\Downloads\source\task-management-system\common\Domain\obj\Debug\net8.0\Domain.sourcelink.json

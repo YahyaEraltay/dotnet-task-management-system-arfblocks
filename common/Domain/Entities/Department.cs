@@ -1,6 +1,6 @@
 using Domain.Base;
 
-namespace Domain.Entites
+namespace Domain.Entities
 {
     public class Department : BaseEntity
     {

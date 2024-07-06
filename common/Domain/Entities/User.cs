@@ -1,7 +1,9 @@
 
-namespace Domain.Entites
+using Domain.Base;
+
+namespace Domain.Entities
 {
-    public class User 
+    public class User : BaseEntity
     {
         public string Email { get; set; }
 		public string FirstName { get; set; }

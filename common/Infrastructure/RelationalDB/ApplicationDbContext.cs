@@ -1,5 +1,5 @@
 using Domain.Base;
-using Domain.Entites;
+using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.RelationalDB
@@ -13,7 +13,6 @@ namespace Infrastructure.RelationalDB
 
         public ApplicationDbContext(CustomDbContextOptions customDbContextOptions) : base(customDbContextOptions.DbContextOptions)
         {
-            //AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         public static DbContextOptions<ApplicationDbContext> BuildDbContextOptions(RelationalDbConfiguration configuration)

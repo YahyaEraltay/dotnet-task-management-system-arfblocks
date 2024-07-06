@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {}
+    "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
+    "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
+        "projectUniqueName": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
+        "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\eralt\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\obj\\",
+        "outputPath": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eralt\\AppData\\Roaming\\NuGet\\NuGet.Config",

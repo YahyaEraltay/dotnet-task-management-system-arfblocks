@@ -1,44 +1,52 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// For Dotnet-Ef Commands
+var configurations = builder.Configuration.GetSection("ProjectNameConfigurations").Get<ProjectNameConfigurations>();
+var environmentService = new EnvironmentService(configurations.EnvironmentConfiguration);
+var dbContext = new ApplicationDbContext(new CustomDbContextOptions(configurations.RelationalDbConfiguration, environmentService));
+builder.Services.AddSingleton<ApplicationDbContext>(dbContext);
+
+/*var defaultSeeder = new DefaultSeeder(dbContext);
+await defaultSeeder.Seed();
+System.Console.WriteLine("Default DB Seeding Completed.");*/
+
+// ArfBlocks Dependencies 
+// TODO: DependencyProvider eklenmen gerekiyor
+builder.Services.AddArfBlocks(options =>
+{
+	options.ApplicationProjectNamespace = "Application";
+	options.ConfigurationSection = builder.Configuration.GetSection("ProjectNameConfigurations");
+	options.LogLevel = LogLevels.Warning;
+});
+
+string DefaultCorsPolicy = "DefaultCorsPolicy";
+builder.Services.AddCors(options =>
+			{
+				// Development Cors Policy
+				options.AddPolicy(name: DefaultCorsPolicy,
+					builder =>
+					{
+						builder.AllowAnyHeader()
+						.AllowAnyMethod()
+						.AllowAnyOrigin();
+					});
+			});
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseCors(DefaultCorsPolicy);
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
+app.UseArfBlocksRequestHandlers((Action<UseRequestHandlersOptions>)(options =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+	options.AuthorizationType = UseRequestHandlersOptions.AuthorizationTypes.Jwt;
+	options.AuthorizationPolicy = UseRequestHandlersOptions.AuthorizationPolicies.AssumeAllAuthorized;
+	options.JwtAuthorizationOptions = new UseRequestHandlersOptions.JwtAuthorizationOptionsModel()
+	{
+		Audience = JwtService.Audience,
+		Secret = JwtService.Secret,
+	};
+}));
 
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

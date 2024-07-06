@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj": {}
+    "d:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj": {}
   },
   "projects": {
-    "D:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj": {
+    "d:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj",
+        "projectUniqueName": "d:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj",
+        "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\eralt\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\source\\task-management-system\\common\\Application\\obj\\",
+        "outputPath": "d:\\Downloads\\source\\task-management-system\\common\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eralt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj"
+              "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -68,14 +68,14 @@
         }
       }
     },
-    "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
+    "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
+        "projectUniqueName": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
+        "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\eralt\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\obj\\",
+        "outputPath": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eralt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,14 +128,14 @@
         }
       }
     },
-    "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj": {
+    "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\eralt\\.nuget\\packages\\",
-        "outputPath": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\obj\\",
+        "outputPath": "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eralt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -152,8 +152,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj"
+              "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
+                "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj"
               }
             }
           }
