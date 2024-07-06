@@ -1,0 +1,17 @@
+D:\Downloads\source\task-management-system\common\Application\bin\Debug\net8.0\Application.deps.json
+D:\Downloads\source\task-management-system\common\Application\bin\Debug\net8.0\Application.dll
+D:\Downloads\source\task-management-system\common\Application\bin\Debug\net8.0\Application.pdb
+D:\Downloads\source\task-management-system\common\Application\bin\Debug\net8.0\Domain.dll
+D:\Downloads\source\task-management-system\common\Application\bin\Debug\net8.0\Infrastructure.dll
+D:\Downloads\source\task-management-system\common\Application\bin\Debug\net8.0\Infrastructure.pdb
+D:\Downloads\source\task-management-system\common\Application\bin\Debug\net8.0\Domain.pdb
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Application.dll
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\refint\Application.dll
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\Application.pdb
+D:\Downloads\source\task-management-system\common\Application\obj\Debug\net8.0\ref\Application.dll
