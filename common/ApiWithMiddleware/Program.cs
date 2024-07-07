@@ -11,7 +11,6 @@ await defaultSeeder.Seed();
 System.Console.WriteLine("Default DB Seeding Completed.");*/
 
 // ArfBlocks Dependencies 
-// TODO: DependencyProvider eklenmen gerekiyor
 builder.Services.AddArfBlocks(options =>
 {
 	options.ApplicationProjectNamespace = "Application";

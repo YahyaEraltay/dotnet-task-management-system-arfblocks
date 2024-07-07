@@ -11652,11 +11652,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\ApiWithMiddleware.csproj",
+      "projectUniqueName": "D:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\ApiWithMiddleware.csproj",
       "projectName": "ApiWithMiddleware",
-      "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\ApiWithMiddleware.csproj",
+      "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\ApiWithMiddleware.csproj",
       "packagesPath": "C:\\Users\\eralt\\.nuget\\packages\\",
-      "outputPath": "d:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\obj\\",
+      "outputPath": "D:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eralt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11673,8 +11673,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "d:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj": {
-              "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj"
+            "D:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj": {
+              "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Application\\Application.csproj"
             }
           }
         }

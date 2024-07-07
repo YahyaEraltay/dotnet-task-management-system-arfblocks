@@ -1,4 +1,4 @@
-namespace Application.Configuration
+namespace Application.Configurations
 {
 
 	public class ProjectNameConfigurations : IConfigurationClass

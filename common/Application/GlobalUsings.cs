@@ -15,3 +15,7 @@ global using Domain;
 //global using TodoApp.Domain.BusinessRules;
 global using Infrastructure.RelationalDB;
 global using Infrastructure.Services;
+
+//using BusinessModules.Management.Infrastructure.Services;
+global using Microsoft.AspNetCore.Http;
+global using Application.Configurations;

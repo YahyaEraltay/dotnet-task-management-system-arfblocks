@@ -3,6 +3,46 @@
   "WorkspaceRootPath": "D:\\Downloads\\source\\task-management-system\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\services\\environment\\environmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\services\\environment\\environmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\services\\environment\\environmentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\services\\environment\\environmentconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\services\\environment\\customenvironments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\services\\environment\\customenvironments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\relationaldb\\relationaldbconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\relationaldb\\relationaldbconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\relationaldb\\customdbcontextoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\relationaldb\\customdbcontextoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\relationaldb\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\relationaldb\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\services\\auth\\jsonwebtoken\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\services\\auth\\jsonwebtoken\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|d:\\downloads\\source\\task-management-system\\common\\infrastructure\\services\\auth\\jsonwebtoken\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88F9C652-86F1-48BA-BD34-7174CFE9C600}|common\\Infrastructure\\Infrastructure.csproj|solutionrelative:common\\infrastructure\\services\\auth\\jsonwebtoken\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8EA7498-B6E1-4253-A495-3C0795311ECA}|common\\Domain\\Domain.csproj|d:\\downloads\\source\\task-management-system\\common\\domain\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8EA7498-B6E1-4253-A495-3C0795311ECA}|common\\Domain\\Domain.csproj|solutionrelative:common\\domain\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B8EA7498-B6E1-4253-A495-3C0795311ECA}|common\\Domain\\Domain.csproj|d:\\downloads\\source\\task-management-system\\common\\domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B8EA7498-B6E1-4253-A495-3C0795311ECA}|common\\Domain\\Domain.csproj|solutionrelative:common\\domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0FD00904-3290-4284-9A38-027EB3967ACE}|common\\ApiWithMiddleware\\ApiWithMiddleware.csproj|d:\\downloads\\source\\task-management-system\\common\\apiwithmiddleware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FD00904-3290-4284-9A38-027EB3967ACE}|common\\ApiWithMiddleware\\ApiWithMiddleware.csproj|solutionrelative:common\\apiwithmiddleware\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +59,142 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EnvironmentService.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Environment\\EnvironmentService.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\Services\\Environment\\EnvironmentService.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Environment\\EnvironmentService.cs",
+              "RelativeToolTip": "common\\Infrastructure\\Services\\Environment\\EnvironmentService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:21:52.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnvironmentConfiguration.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Environment\\EnvironmentConfiguration.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\Services\\Environment\\EnvironmentConfiguration.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Environment\\EnvironmentConfiguration.cs",
+              "RelativeToolTip": "common\\Infrastructure\\Services\\Environment\\EnvironmentConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:21:51.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomEnvironments.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Environment\\CustomEnvironments.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\Services\\Environment\\CustomEnvironments.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Environment\\CustomEnvironments.cs",
+              "RelativeToolTip": "common\\Infrastructure\\Services\\Environment\\CustomEnvironments.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:21:48.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RelationalDbConfiguration.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\RelationalDB\\RelationalDbConfiguration.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\RelationalDB\\RelationalDbConfiguration.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\RelationalDB\\RelationalDbConfiguration.cs",
+              "RelativeToolTip": "common\\Infrastructure\\RelationalDB\\RelationalDbConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:21:46.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomDbContextOptions.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\RelationalDB\\CustomDbContextOptions.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\RelationalDB\\CustomDbContextOptions.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\RelationalDB\\CustomDbContextOptions.cs",
+              "RelativeToolTip": "common\\Infrastructure\\RelationalDB\\CustomDbContextOptions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:21:37.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\RelationalDB\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\RelationalDB\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\RelationalDB\\ApplicationDbContext.cs",
+              "RelativeToolTip": "common\\Infrastructure\\RelationalDB\\ApplicationDbContext.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:21:01.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Auth\\JsonWebToken\\JwtService.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\Services\\Auth\\JsonWebToken\\JwtService.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Auth\\JsonWebToken\\JwtService.cs",
+              "RelativeToolTip": "common\\Infrastructure\\Services\\Auth\\JsonWebToken\\JwtService.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:20:06.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IJwtService.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Auth\\JsonWebToken\\IJwtService.cs",
+              "RelativeDocumentMoniker": "common\\Infrastructure\\Services\\Auth\\JsonWebToken\\IJwtService.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Services\\Auth\\JsonWebToken\\IJwtService.cs",
+              "RelativeToolTip": "common\\Infrastructure\\Services\\Auth\\JsonWebToken\\IJwtService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:19:59.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Base\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "common\\Domain\\Base\\BaseEntity.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Base\\BaseEntity.cs",
+              "RelativeToolTip": "common\\Domain\\Base\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:19:45.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Department.cs",
+              "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Entities\\Department.cs",
+              "RelativeDocumentMoniker": "common\\Domain\\Entities\\Department.cs",
+              "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Entities\\Department.cs",
+              "RelativeToolTip": "common\\Domain\\Entities\\Department.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-07T13:19:41.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\Program.cs",
               "RelativeDocumentMoniker": "common\\ApiWithMiddleware\\Program.cs",
               "ToolTip": "D:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\Program.cs",
               "RelativeToolTip": "common\\ApiWithMiddleware\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABDAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-06T15:15:19.811Z",
               "EditorCaption": ""

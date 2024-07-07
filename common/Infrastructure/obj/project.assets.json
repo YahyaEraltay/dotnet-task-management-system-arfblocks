@@ -11135,8 +11135,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
-              "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj"
+            "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Domain\\Domain.csproj"
             }
           }
         }

@@ -19,7 +19,6 @@ namespace Infrastructure.RelationalDB
         {
             var dbContextOptionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
             dbContextOptionsBuilder.UseSqlServer(configuration.ConnectionString);
-            // dbContextOptionsBuilder.UseInMemoryDatabase("example-task-db");
 
             return dbContextOptionsBuilder.Options;
         }
