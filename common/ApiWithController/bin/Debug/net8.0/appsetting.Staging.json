@@ -6,9 +6,10 @@
 			"Microsoft.Hosting.Lifetime": "Information"
 		}
 	},
+	"AllowedHosts": "*",
 	"ProjectNameConfigurations": {
 		"EnvironmentConfiguration": {
-			"EnvironmentName": "Development"
+			"EnvironmentName": "Staging"
 		},
 		"RelationalDbConfiguration": {
 			"ConnectionString": "Server=DESKTOP-7V7GQ23; Database=task_management_system_arf; User Id=sa; Password=yahyabey308; TrustServerCertificate=True; MultipleActiveResultSets=True;"
