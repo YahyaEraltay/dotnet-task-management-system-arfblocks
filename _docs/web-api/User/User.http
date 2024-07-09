@@ -1,0 +1,27 @@
+@Api_Url = http://localhost:5077
+
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDU1MTM4OSwiZXhwIjoxNzIwODEwNTg5LCJpYXQiOjE3MjA1NTEzODksImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.YEXYlkrkdE54gjCxsbzLsXE4ycqr73c20jb96MhIVSU
+
+### Login
+POST {{Api_Url}}/Users/Login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email":"serkan_yurt@gmail.com"
+}
+
+### Create 
+POST {{Api_Url}}/Users/Create 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "email": "yahya_eraltay@gmail.com",
+  "firstName": "Yahya",
+  "lastName": "Eraltay",
+  "departmentId": "5db38e2e-a07a-4252-2bb1-08dca00e9e01"
+}
+
+

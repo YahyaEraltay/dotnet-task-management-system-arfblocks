@@ -1,0 +1,9 @@
+@Api_Url = http://localhost:5077
+
+POST {{Api_Url}}/Departments/Create 
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": ""
+}
