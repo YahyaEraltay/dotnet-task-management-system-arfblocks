@@ -17,6 +17,29 @@
           "lib/net6.0/Arfware.ArfBlocks.Core.dll": {}
         }
       },
+      "Arfware.ArfBlocks.Test/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Arfware.ArfBlocks.Core": "1.1.1",
+          "Microsoft.AspNetCore": "2.2.0",
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
+        "compile": {
+          "lib/net6.0/Arfware.ArfBlocks.Test.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Arfware.ArfBlocks.Test.dll": {}
+        }
+      },
+      "Arfware.ArfFipaso/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Arfware.ArfFipaso.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Arfware.ArfFipaso.dll": {}
+        }
+      },
       "Azure.Core/1.35.0": {
         "type": "package",
         "dependencies": {
@@ -57,6 +80,35 @@
         },
         "runtime": {
           "lib/netstandard2.0/Azure.Identity.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "FluentAssertions/6.11.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.4.0"
+        },
+        "compile": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "FluentValidation/11.5.2": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/FluentValidation.dll": {
             "related": ".xml"
           }
         }
@@ -2814,7 +2866,7 @@
           "System.Security.Permissions": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
             "related": ".xml"
           }
         },
@@ -4241,6 +4293,36 @@
         "lib/net6.0/Arfware.ArfBlocks.Core.dll"
       ]
     },
+    "Arfware.ArfBlocks.Test/1.1.1": {
+      "sha512": "G/nu/VHJAVR6v/ZX8NxETffhSTsrqT2gJmnuoFv4arW6JGyYvGUcraee/OpphMBusAmHq/uzJ0mwfwQy5jBMAw==",
+      "type": "package",
+      "path": "arfware.arfblocks.test/1.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "arfware.arfblocks.test.1.1.1.nupkg.sha512",
+        "arfware.arfblocks.test.nuspec",
+        "icon.png",
+        "lib/net6.0/Arfware.ArfBlocks.Test.dll"
+      ]
+    },
+    "Arfware.ArfFipaso/1.1.0": {
+      "sha512": "gzonjZI9jFnOl55zkGMIWFnpfOBSTv+tjN8dZ/hqJIfuAmtQrzidvJqc9niEPGSsg/OACyJmAtkKuCJI6JXsXg==",
+      "type": "package",
+      "path": "arfware.arffipaso/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "arfware.arffipaso.1.1.0.nupkg.sha512",
+        "arfware.arffipaso.nuspec",
+        "icon.png",
+        "lib/net6.0/Arfware.ArfFipaso.dll"
+      ]
+    },
     "Azure.Core/1.35.0": {
       "sha512": "hENcx03Jyuqv05F4RBEPbxz29UrM3Nbhnr6Wl6NQpoU9BCIbL3XLentrxDCTrH54NLS11Exxi/o8MYgT/cnKFA==",
       "type": "package",
@@ -4281,6 +4363,59 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "FluentAssertions/6.11.0": {
+      "sha512": "aBaagwdNtVKkug1F3imGXUlmoBd8ZUZX8oQ5niThaJhF79SpESe1Gzq7OFuZkQdKD5Pa4Mone+jrbas873AT4g==",
+      "type": "package",
+      "path": "fluentassertions/6.11.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "FluentAssertions.png",
+        "fluentassertions.6.11.0.nupkg.sha512",
+        "fluentassertions.nuspec",
+        "lib/net47/FluentAssertions.dll",
+        "lib/net47/FluentAssertions.pdb",
+        "lib/net47/FluentAssertions.xml",
+        "lib/net6.0/FluentAssertions.dll",
+        "lib/net6.0/FluentAssertions.pdb",
+        "lib/net6.0/FluentAssertions.xml",
+        "lib/netcoreapp2.1/FluentAssertions.dll",
+        "lib/netcoreapp2.1/FluentAssertions.pdb",
+        "lib/netcoreapp2.1/FluentAssertions.xml",
+        "lib/netcoreapp3.0/FluentAssertions.dll",
+        "lib/netcoreapp3.0/FluentAssertions.pdb",
+        "lib/netcoreapp3.0/FluentAssertions.xml",
+        "lib/netstandard2.0/FluentAssertions.dll",
+        "lib/netstandard2.0/FluentAssertions.pdb",
+        "lib/netstandard2.0/FluentAssertions.xml",
+        "lib/netstandard2.1/FluentAssertions.dll",
+        "lib/netstandard2.1/FluentAssertions.pdb",
+        "lib/netstandard2.1/FluentAssertions.xml"
+      ]
+    },
+    "FluentValidation/11.5.2": {
+      "sha512": "kj/hW/iusp2zq1Vt1YPLgDj6UG0DhoJXGkLwjLwm3j7vUtRF8DVA5vHJfItG3BxDjLWJUR2pvw8fK7rnuysZNA==",
+      "type": "package",
+      "path": "fluentvalidation/11.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.5.2.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/net7.0/FluentValidation.dll",
+        "lib/net7.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -11123,6 +11258,10 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Arfware.ArfBlocks.Test >= 1.1.1",
+      "Arfware.ArfFipaso >= 1.1.0",
+      "FluentAssertions >= 6.11.0",
+      "FluentValidation >= 11.5.2",
       "Infrastructure >= 1.0.0"
     ]
   },
@@ -11173,6 +11312,24 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "Arfware.ArfBlocks.Test": {
+            "target": "Package",
+            "version": "[1.1.1, )"
+          },
+          "Arfware.ArfFipaso": {
+            "target": "Package",
+            "version": "[1.1.0, )"
+          },
+          "FluentAssertions": {
+            "target": "Package",
+            "version": "[6.11.0, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[11.5.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

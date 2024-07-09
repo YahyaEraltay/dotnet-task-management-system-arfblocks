@@ -1,13 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "lSsRu1KBvO028Ti/T1ICOiAEMeKwCKX6lvKcla4xClB0Osayf9EoOki9tYxU94hkdck7sVpAH9QL/8hVBteQHw==",
+  "dgSpecHash": "TSuOSH6gppmVOxUqs4oRudcN5QcNWmI8V4i49vZwgspcAo/Q/NvXOhOYx5s1mENw/Vt64XSrOnYuhyRuvbJNCA==",
   "success": true,
   "projectFilePath": "D:\\Downloads\\source\\task-management-system\\common\\ApiWithMiddleware\\ApiWithMiddleware.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eralt\\.nuget\\packages\\arfware.arfblocks.core\\1.1.1\\arfware.arfblocks.core.1.1.1.nupkg.sha512",
+    "C:\\Users\\eralt\\.nuget\\packages\\arfware.arfblocks.test\\1.1.1\\arfware.arfblocks.test.1.1.1.nupkg.sha512",
+    "C:\\Users\\eralt\\.nuget\\packages\\arfware.arffipaso\\1.1.0\\arfware.arffipaso.1.1.0.nupkg.sha512",
     "C:\\Users\\eralt\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\eralt\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\eralt\\.nuget\\packages\\dynamicexpressions.net\\1.1.0\\dynamicexpressions.net.1.1.0.nupkg.sha512",
+    "C:\\Users\\eralt\\.nuget\\packages\\fluentassertions\\6.11.0\\fluentassertions.6.11.0.nupkg.sha512",
+    "C:\\Users\\eralt\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",
     "C:\\Users\\eralt\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\eralt\\.nuget\\packages\\microsoft.aspnetcore\\2.2.0\\microsoft.aspnetcore.2.2.0.nupkg.sha512",
     "C:\\Users\\eralt\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

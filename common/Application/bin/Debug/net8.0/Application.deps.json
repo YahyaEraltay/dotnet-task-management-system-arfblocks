@@ -8,6 +8,10 @@
     ".NETCoreApp,Version=v8.0": {
       "Application/1.0.0": {
         "dependencies": {
+          "Arfware.ArfBlocks.Test": "1.1.1",
+          "Arfware.ArfFipaso": "1.1.0",
+          "FluentAssertions": "6.11.0",
+          "FluentValidation": "11.5.2",
           "Infrastructure": "1.0.0"
         },
         "runtime": {
@@ -23,6 +27,27 @@
         },
         "runtime": {
           "lib/net6.0/Arfware.ArfBlocks.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Arfware.ArfBlocks.Test/1.1.1": {
+        "dependencies": {
+          "Arfware.ArfBlocks.Core": "1.1.1",
+          "Microsoft.AspNetCore": "2.2.0",
+          "Microsoft.AspNetCore.Mvc": "2.2.0"
+        },
+        "runtime": {
+          "lib/net6.0/Arfware.ArfBlocks.Test.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Arfware.ArfFipaso/1.1.0": {
+        "runtime": {
+          "lib/net6.0/Arfware.ArfFipaso.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -59,6 +84,25 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "assemblyVersion": "1.10.3.0",
             "fileVersion": "1.1000.323.51804"
+          }
+        }
+      },
+      "FluentAssertions/6.11.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/FluentAssertions.dll": {
+            "assemblyVersion": "6.11.0.0",
+            "fileVersion": "6.11.0.0"
+          }
+        }
+      },
+      "FluentValidation/11.5.2": {
+        "runtime": {
+          "lib/net7.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.5.2.0"
           }
         }
       },
@@ -2655,6 +2699,20 @@
       "path": "arfware.arfblocks.core/1.1.1",
       "hashPath": "arfware.arfblocks.core.1.1.1.nupkg.sha512"
     },
+    "Arfware.ArfBlocks.Test/1.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G/nu/VHJAVR6v/ZX8NxETffhSTsrqT2gJmnuoFv4arW6JGyYvGUcraee/OpphMBusAmHq/uzJ0mwfwQy5jBMAw==",
+      "path": "arfware.arfblocks.test/1.1.1",
+      "hashPath": "arfware.arfblocks.test.1.1.1.nupkg.sha512"
+    },
+    "Arfware.ArfFipaso/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gzonjZI9jFnOl55zkGMIWFnpfOBSTv+tjN8dZ/hqJIfuAmtQrzidvJqc9niEPGSsg/OACyJmAtkKuCJI6JXsXg==",
+      "path": "arfware.arffipaso/1.1.0",
+      "hashPath": "arfware.arffipaso.1.1.0.nupkg.sha512"
+    },
     "Azure.Core/1.35.0": {
       "type": "package",
       "serviceable": true,
@@ -2668,6 +2726,20 @@
       "sha512": "sha512-l1Xm2MWOF2Mzcwuarlw8kWQXLZk3UeB55aQXVyjj23aBfDwOZ3gu5GP2kJ6KlmZeZv2TCzw7x4L3V36iNr3gww==",
       "path": "azure.identity/1.10.3",
       "hashPath": "azure.identity.1.10.3.nupkg.sha512"
+    },
+    "FluentAssertions/6.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aBaagwdNtVKkug1F3imGXUlmoBd8ZUZX8oQ5niThaJhF79SpESe1Gzq7OFuZkQdKD5Pa4Mone+jrbas873AT4g==",
+      "path": "fluentassertions/6.11.0",
+      "hashPath": "fluentassertions.6.11.0.nupkg.sha512"
+    },
+    "FluentValidation/11.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kj/hW/iusp2zq1Vt1YPLgDj6UG0DhoJXGkLwjLwm3j7vUtRF8DVA5vHJfItG3BxDjLWJUR2pvw8fK7rnuysZNA==",
+      "path": "fluentvalidation/11.5.2",
+      "hashPath": "fluentvalidation.11.5.2.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",

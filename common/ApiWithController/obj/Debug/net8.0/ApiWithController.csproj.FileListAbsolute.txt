@@ -154,3 +154,7 @@ D:\Downloads\source\task-management-system\common\ApiWithController\bin\Debug\ne
 D:\Downloads\source\task-management-system\common\ApiWithController\obj\Debug\net8.0\ApiWithController.sourcelink.json
 D:\Downloads\source\task-management-system\common\ApiWithController\bin\Debug\net8.0\appsetting.Staging.json
 D:\Downloads\source\task-management-system\common\ApiWithController\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Downloads\source\task-management-system\common\ApiWithController\bin\Debug\net8.0\Arfware.ArfBlocks.Test.dll
+D:\Downloads\source\task-management-system\common\ApiWithController\bin\Debug\net8.0\Arfware.ArfFipaso.dll
+D:\Downloads\source\task-management-system\common\ApiWithController\bin\Debug\net8.0\FluentAssertions.dll
+D:\Downloads\source\task-management-system\common\ApiWithController\bin\Debug\net8.0\FluentValidation.dll

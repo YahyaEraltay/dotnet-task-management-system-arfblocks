@@ -12,8 +12,9 @@ namespace TodoApp.Application.Configuration
 
 			// Types
 			base.Add<ApplicationDbContext, ApplicationDbContext>();
-			//base.Add<DbValidationService, DbValidationService>();
+			base.Add<DbValidationService, DbValidationService>();
 			base.Add<EnvironmentService, EnvironmentService>();
+			base.Add<CustomDbContextOptions, CustomDbContextOptions>();
 			//base.Add<ClientProvider, ClientProvider>();
 			//base.Add<CurrentClientService, CurrentClientService>();
 			base.Add<IJwtService, JwtService>();

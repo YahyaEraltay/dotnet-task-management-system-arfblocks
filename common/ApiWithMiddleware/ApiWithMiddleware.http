@@ -1,6 +1,14 @@
-@ApiWithMiddleware_HostAddress = http://localhost:5077
+@Api_Url = http://localhost:5077
 
-GET {{ApiWithMiddleware_HostAddress}}/weatherforecast/
+GET {{Api_Url}}/weatherforecast/
 Accept: application/json
 
 ###
+
+POST {{Api_Url}}/Departments/Create 
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "test"
+}
