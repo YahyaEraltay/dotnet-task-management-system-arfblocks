@@ -24,6 +24,16 @@ namespace Infrastructure.Services.Validation
             if (!userExist)
                 throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.UserNotExist));
         }
+        //TODO: Error message ları düzenle
+        public async Task ValidateUserExist(string email)
+		{
+			// Get
+			var userExist = await _dbContext.Users.AnyAsync(d => d.Email == email);
+
+			// Check
+			if (!userExist)
+				throw new ArfBlocksValidationException("USER_NOT_EXIST");
+		}
 
         public async Task ValidateTodoTaskExist(Guid todoId)
         {

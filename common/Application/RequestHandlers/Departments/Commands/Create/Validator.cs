@@ -35,7 +35,8 @@ namespace Application.RequestHandlers.Departments.Commands.Create
         public RequestModel_Validator()
         {
             RuleFor(x => x.Name)
-                    .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.NameNotValid));
+                    .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid))
+                    .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid));
         }
     }
 }
