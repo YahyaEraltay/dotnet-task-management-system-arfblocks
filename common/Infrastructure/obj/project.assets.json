@@ -11114,11 +11114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\eralt\\.nuget\\packages\\",
-      "outputPath": "d:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\obj\\",
+      "outputPath": "D:\\Downloads\\source\\task-management-system\\common\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eralt\\AppData\\Roaming\\NuGet\\NuGet.Config",

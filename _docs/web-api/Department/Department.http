@@ -1,9 +1,51 @@
 @Api_Url = http://localhost:5077
 
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDYxMzA4NSwiZXhwIjoxNzIwODcyMjg1LCJpYXQiOjE3MjA2MTMwODUsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.JkyKxaWWsvFfI6iftj-7qahWk__r5ZRmx1n6YevGrEI
+
+### Create
 POST {{Api_Url}}/Departments/Create 
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
 
 {
-  "name": ""
+  "name": "1test"
+}
+
+### Update
+PUT {{Api_Url}}/Departments/Update
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": "0bf8f4e2-360c-44a2-9936-08dca0db548f",
+  "name": "22sd"
+}
+
+### Delete
+DELETE {{Api_Url}}/Departments/Delete
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": "f3c55142-0a97-49b9-d91a-08dca019d404",
+  "isDeleted": true 
+}
+
+### All
+GET {{Api_Url}}/Departments/All
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+### Detail
+GET {{Api_Url}}/Departments/Detail
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id":"231389a3-6185-4652-bae8-08dca0d9f40a"
 }

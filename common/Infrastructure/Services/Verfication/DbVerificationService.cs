@@ -1,6 +1,6 @@
 namespace Infrastructure.Services;
 //TODO: ErrorCode' ları düzenle domaindeki error kısmında gelmesi lazım
-public class TaskBusinessRules
+public class DbVerificationService
 {
 
 	// Logics
@@ -23,10 +23,10 @@ public class TaskBusinessRules
 
 	public static (bool HasError, string ErrorCode) CheckForComplete(TodoTask task, User currentUser)
 	{
-		if (!TaskBusinessRules.IsTaskStatusPending(task))
+		if (!DbVerificationService.IsTaskStatusPending(task))
 			return (true, "FOR_COMPLETE_TASK_STATUS_MUST_BE_PENDING");
 
-		if (!TaskBusinessRules.IsUserDepartmentEqualsTaskAssignedDepartment(task, currentUser))
+		if (!DbVerificationService.IsUserDepartmentEqualsTaskAssignedDepartment(task, currentUser))
 			return (true, "FOR_COMPLETE_CURRENT_USER_DEPARTMENT_MUST_EQUAL_TO_TASK_ASSIGNED_DEPARTMENT");
 
 		return (false, null);
@@ -34,10 +34,10 @@ public class TaskBusinessRules
 
 	public static (bool HasError, string ErrorCode) CheckForReject(TodoTask task, User currentUser)
 	{
-		if (!TaskBusinessRules.IsTaskStatusPending(task))
+		if (!DbVerificationService.IsTaskStatusPending(task))
 			return (true, "FOR_COMPLETE_TASK_STATUS_MUST_BE_PENDING");
 
-		if (!TaskBusinessRules.IsUserDepartmentEqualsTaskAssignedDepartment(task, currentUser))
+		if (!DbVerificationService.IsUserDepartmentEqualsTaskAssignedDepartment(task, currentUser))
 			return (true, "FOR_COMPLETE_CURRENT_USER_DEPARTMENT_MUST_EQUAL_TO_TASK_ASSIGNED_DEPARTMENT");
 
 		return (false, null);
@@ -45,10 +45,10 @@ public class TaskBusinessRules
 
 	public static (bool HasError, string ErrorCode) CheckForUpdate(TodoTask task, Guid currentUserId)
 	{
-		if (!TaskBusinessRules.IsUserTaskOwner(task, currentUserId))
+		if (!DbVerificationService.IsUserTaskOwner(task, currentUserId))
 			return (true, "FOR_UPDATE_CURRENT_USER_MUST_BE_TASK_CREATOR");
 
-		if (!TaskBusinessRules.IsTaskStatusPending(task))
+		if (!DbVerificationService.IsTaskStatusPending(task))
 			return (true, "FOR_UPDATE_TASK_STATUS_MUST_BE_PENDING");
 
 		return (false, null);
@@ -56,7 +56,7 @@ public class TaskBusinessRules
 
 	public static (bool HasError, string ErrorCode) CheckForDelete(TodoTask task, Guid currentUserId)
 	{
-		if (!TaskBusinessRules.IsUserTaskOwner(task, currentUserId))
+		if (!DbVerificationService.IsUserTaskOwner(task, currentUserId))
 			return (true, "FOR_DELETE_CURRENT_USER_MUST_BE_TASK_CREATOR");
 
 		return (false, null);

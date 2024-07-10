@@ -8,7 +8,7 @@ namespace Domain.Errors
             public static string DepartmentIdNotValid { get; set; } = "";
             public static string UserIdNotValid { get; set; } = "";
             public static string TodoTaskIdNotValid { get; set; } = "";
-
+            public static string IdNotValid { get; set; } = "";
         }
 
         public class DepartmentErrors
