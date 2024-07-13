@@ -14,7 +14,6 @@ namespace Application.RequestHandlers.Departments.Queries.All
         {
             await Task.CompletedTask;
         }
-//TODO: Burayı boş bırak ya da sil
         public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
         {
             

@@ -32,7 +32,7 @@ namespace Infrastructure.Services.Validation
 
 			// Check
 			if (!userExist)
-				throw new ArfBlocksValidationException("USER_NOT_EXIST");
+				throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.UserNotExist));
 		}
 
         public async Task ValidateTodoTaskExist(Guid todoId)

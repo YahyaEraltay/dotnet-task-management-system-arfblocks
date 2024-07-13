@@ -15,9 +15,9 @@ namespace Application.RequestHandlers.Departments.Queries.Detail
             var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			var task = await _dataAccessLayer.GetById(requestPayload.Id);
+			var department = await _dataAccessLayer.GetById(requestPayload.Id);
 
-			var mappedDepartment = mapper.MapToResponse(task);
+			var mappedDepartment = mapper.MapToResponse(department);
 			return ArfBlocksResults.Success(mappedDepartment);
 		}
 	}

@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDYxMzA4NSwiZXhwIjoxNzIwODcyMjg1LCJpYXQiOjE3MjA2MTMwODUsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.JkyKxaWWsvFfI6iftj-7qahWk__r5ZRmx1n6YevGrEI
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDg1MzExOSwiZXhwIjoxNzIxMTEyMzE5LCJpYXQiOjE3MjA4NTMxMTksImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.cMaioC84lvzbFZep2grznlDxjJOYQrFTJRZf8GEgJyI
 
 ### Login
 POST {{Api_Url}}/Users/Login
@@ -22,6 +22,55 @@ Authorization: Bearer {{Jwt_Key}}
   "firstName": "Yahya",
   "lastName": "Eraltay",
   "departmentId": "5db38e2e-a07a-4252-2bb1-08dca00e9e01"
+}
+
+### Update 
+PUT {{Api_Url}}/Users/Update 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": "",
+  "email": "yahya_eraltay@gmail.com",
+  "firstName": "Yahya",
+  "lastName": "Eraltay",
+  "departmentId": "5db38e2e-a07a-4252-2bb1-08dca00e9e01"
+}
+
+### Delete 
+POST {{Api_Url}}/Users/Delete 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+ "id": "f3c55142-0a97-49b9-d91a-08dca019d404",
+  "isDeleted": true 
+}
+
+### All 
+//TODO: Get ile de çalışıyor post ile de
+GET {{Api_Url}}/Users/All 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+### Me 
+//TODO: Get ile de çalışıyor post ile de
+GET {{Api_Url}}/Users/Me 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+### Detail
+GET {{Api_Url}}/Users/Detail
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id":"231389a3-6185-4652-bae8-08dca0d9f40a"
 }
 
 

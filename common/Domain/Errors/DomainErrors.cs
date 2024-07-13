@@ -9,6 +9,7 @@ namespace Domain.Errors
             public static string UserIdNotValid { get; set; } = "";
             public static string TodoTaskIdNotValid { get; set; } = "";
             public static string IdNotValid { get; set; } = "";
+            public static string IsDeletedInvalid { get; set; } = "";
         }
 
         public class DepartmentErrors
@@ -20,6 +21,7 @@ namespace Domain.Errors
         public class UserErrors
         {
             public static string UserNotExist { get; set; } = "";
+            public static string FirstNameNotValid { get; set; } = "";
         }
 
         public class TodoTaskErrors

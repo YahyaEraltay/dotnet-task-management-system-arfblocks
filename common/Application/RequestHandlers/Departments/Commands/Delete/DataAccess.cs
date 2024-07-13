@@ -9,9 +9,9 @@ namespace Application.RequestHandlers.Departments.Commands.Delete
             _dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
         }
 
-        public async Task<Department> GetById(Guid departmentId)
+        public async Task<Department> GetById(Guid id)
         {
-            return await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == departmentId);
+            return await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task Update(Department department)
