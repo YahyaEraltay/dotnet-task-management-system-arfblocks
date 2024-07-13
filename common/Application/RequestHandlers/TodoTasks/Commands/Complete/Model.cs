@@ -9,6 +9,5 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 	public class RequestModel : IRequestModel
 	{
 		public Guid Id { get; set; }
-		public string Message { get; set; }
 	}
 }

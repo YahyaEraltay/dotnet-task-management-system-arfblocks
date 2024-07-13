@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiWithMiddleware")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb7d118f3e618c2712c9009911f138643c9a17c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be2396ff98764ca5b83712dde8b3382eec47867f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiWithMiddleware")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiWithMiddleware")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

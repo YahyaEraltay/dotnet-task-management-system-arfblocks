@@ -16,7 +16,6 @@ namespace Application.RequestHandlers.Users.Commands.Delete
 			await Task.CompletedTask;
 
         }
-        //TODO: Verificate domain
 		public async Task VerificateDomain(IRequestModel payload, CancellationToken cancellationToken)
 		{
 			await Task.CompletedTask;

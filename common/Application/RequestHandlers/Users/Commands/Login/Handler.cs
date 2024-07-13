@@ -19,18 +19,10 @@ namespace Application.RequestHandlers.Users.Commands.Login
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			// Get User from DB
 			var user = await dataAccessLayer.GetUserByEmail(requestPayload.Email);
 
-			// Build JWT Token
 			var jwtToken = _jwtService.GenerateJwt(user);
 
-			// Create Activity Log
-			//var currentUserDisplayName = _clientService.GetCurrentUserDisplayName();
-            //TODO: ActivityLogService oluştur ve ekle
-
-
-			// Map to Response Model
 			var mappedResponseModel = mapper.MapToResponseModel(user, jwtToken);
 			return ArfBlocksResults.Success(mappedResponseModel);
 		}

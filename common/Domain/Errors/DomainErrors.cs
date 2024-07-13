@@ -15,18 +15,21 @@ namespace Domain.Errors
         public class DepartmentErrors
         {
             public static string DepartmentNotExist { get; set; } = "";
-
+            public static string AssignedDepartmentIdNotValid { get; set; } = "";
         }
 
         public class UserErrors
         {
             public static string UserNotExist { get; set; } = "";
             public static string FirstNameNotValid { get; set; } = "";
+            public static string EmailNotValid { get; set;} = "";
         }
 
         public class TodoTaskErrors
         {
             public static string TodoTaskNotExist { get; set; } = "";
+            public static string TitleNotValid { get; set; } = "";
+
         }
     }
 }

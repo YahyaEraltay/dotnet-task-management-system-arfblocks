@@ -1,9 +1,7 @@
 namespace Infrastructure.Services;
-//TODO: ErrorCode' ları düzenle domaindeki error kısmında gelmesi lazım
 public class DbVerificationService
 {
 
-	// Logics
 	public static bool IsTaskStatusPending(TodoTask task)
 	{
 		return task.Status == TodoTaskStatus.Pending;
@@ -18,8 +16,6 @@ public class DbVerificationService
 	{
 		return task.CreatedById == userId;
 	}
-
-	/// RULES ///
 
 	public static (bool HasError, string ErrorCode) CheckForComplete(TodoTask task, User currentUser)
 	{

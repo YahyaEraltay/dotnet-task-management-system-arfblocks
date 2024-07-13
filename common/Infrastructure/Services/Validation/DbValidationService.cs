@@ -24,7 +24,7 @@ namespace Infrastructure.Services.Validation
             if (!userExist)
                 throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.UserNotExist));
         }
-        //TODO: Error message ları düzenle
+
         public async Task ValidateUserExist(string email)
 		{
 			// Get

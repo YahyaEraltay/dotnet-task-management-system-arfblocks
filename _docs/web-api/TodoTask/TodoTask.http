@@ -1,9 +1,85 @@
 @Api_Url = http://localhost:5077
 
+@Jwt_Key =
+
+### Create
 POST {{Api_Url}}/TodoTasks/Create 
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
 
 {
   "name": ""
 }
+
+### Update
+PUT {{Api_Url}}/TodoTasks/Update 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": "",
+  "title": "",
+  "description": "",
+  "assignedDepartmentId": ""
+}
+
+### Delete
+DELETE {{Api_Url}}/TodoTasks/Delete 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": "",
+  "isDeleted":
+}
+
+### Complete
+POST {{Api_Url}}/TodoTasks/Complete 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": ""
+}
+
+### Reject
+POST {{Api_Url}}/TodoTasks/Reject 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": ""
+}
+
+### All
+GET {{Api_Url}}/TodoTasks/All 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+### Detail
+GET {{Api_Url}}/TodoTasks/Detail 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": ""
+}
+
+### MyTasks
+GET {{Api_Url}}/TodoTasks/MyTasks 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+### Pendings
+GET {{Api_Url}}/TodoTasks/Pendings 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}

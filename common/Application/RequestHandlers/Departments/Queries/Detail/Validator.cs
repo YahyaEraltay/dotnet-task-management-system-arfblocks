@@ -31,14 +31,14 @@ namespace Application.RequestHandlers.Departments.Queries.Detail
 			await _dbValidator.ValidateDepartmentExist(requestModel.Id);
 		}
 	}
-//TODO:Error message düzenle
+	
     public class RequestModel_Validator : AbstractValidator<RequestModel>
 	{
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Id)
-				.NotNull().WithMessage("TASK_ID_NOT_VALID")
-				.NotEqual(Guid.Empty).WithMessage("TASK_ID_NOT_VALID");
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid))
+				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid));
 		}
 	}
 }

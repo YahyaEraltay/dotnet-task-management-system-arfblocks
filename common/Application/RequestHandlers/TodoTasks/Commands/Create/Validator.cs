@@ -27,17 +27,17 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 			await _dbValidator.ValidateDepartmentExist(requestModel.AssignedDepartmentId);
 		}
 	}
-//TODO:Erro mesaj
+	
     public class RequestModel_Validator : AbstractValidator<RequestModel>
 	{
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Title)
-				.NotEmpty().WithMessage("COMPANY_NAME_IS_EMPTY");
+				.NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TitleNotValid));
 
 			RuleFor(x => x.AssignedDepartmentId)
-				.NotNull().WithMessage("ASSIGNED_DEPARTMENT_ID_NOT_VALID")
-				.NotEqual(Guid.Empty).WithMessage("ASSIGNED_DEPARTMENT_ID_NOT_VALID");
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.AssignedDepartmentIdNotValid))
+				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.AssignedDepartmentIdNotValid));
 		}
 	}
 }

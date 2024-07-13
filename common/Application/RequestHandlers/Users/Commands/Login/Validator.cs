@@ -32,14 +32,13 @@ namespace Application.RequestHandlers.Users.Commands.Login
 		}
 	}
 
-    //TODO: Error message düzenle
     public class RequestModel_Validator : AbstractValidator<RequestModel>
 	{
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Email)
-				.NotEmpty().WithMessage("EMAIL_NOT_VALID")
-				.EmailAddress().WithMessage("EMAIL_NOT_VALID");
+				.NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.EmailNotValid))
+				.EmailAddress().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.EmailNotValid));
 		}
 	}
 }

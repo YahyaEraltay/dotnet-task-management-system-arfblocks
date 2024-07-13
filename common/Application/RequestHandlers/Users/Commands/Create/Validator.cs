@@ -25,12 +25,12 @@ namespace Application.RequestHandlers.Users.Commands.Create
             if (!validationResult.IsValid)
             {
                 var errors = validationResult.ToString("~");
-                throw new ArfBlocksValidationException(errors); 
+                throw new ArfBlocksValidationException(errors);
             }
         }
 
     }
- //TODO:DepartmentId boş olduğunda hata mesajı vermiyor onu düzelt
+    //TODO:DepartmentId boş olduğunda hata mesajı vermiyor onu düzelt
     public class RequestModel_Validator : AbstractValidator<RequestModel>
     {
         public RequestModel_Validator()
@@ -49,7 +49,7 @@ namespace Application.RequestHandlers.Users.Commands.Create
 
             RuleFor(x => x.DepartmentId)
                     .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid))
-                .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid));
+                    .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid));
 
         }
     }
