@@ -16,9 +16,9 @@ namespace Application.RequestHandlers.Users.Commands.Update
 
         public async Task Update(User user)
         {
-            var updatedUser = await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == user.Id);
+            var updatedUser = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == user.Id);
             
-            _dbContext.Departments.Update(updatedUser);
+            _dbContext.Users.Update(updatedUser);
             await _dbContext.SaveChangesAsync();
         }
     }

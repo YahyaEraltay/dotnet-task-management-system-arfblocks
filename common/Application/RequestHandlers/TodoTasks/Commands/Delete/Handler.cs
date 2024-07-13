@@ -1,4 +1,4 @@
-namespace Application.RequestHandlers.Users.Commands.Delete
+namespace Application.RequestHandlers.TodoTasks.Commands.Delete
 {
     public class Handler : IRequestHandler
     {
