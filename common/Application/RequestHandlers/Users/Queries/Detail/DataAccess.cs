@@ -11,7 +11,9 @@ namespace Application.RequestHandlers.Users.Queries.Detail
 
 		public async Task<User> GetById(Guid Id)
 		{
-			return await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == Id);
+			return await _dbContext.Users
+										.Include(x => x.Department)
+										.FirstOrDefaultAsync(x => x.Id == Id);
 		}
 	}
 }
