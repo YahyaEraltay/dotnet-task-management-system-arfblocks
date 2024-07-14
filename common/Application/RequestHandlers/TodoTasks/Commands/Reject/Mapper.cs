@@ -4,9 +4,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Reject
 	{
         public TodoTask MapToEntity (TodoTask task)
         {
-            task.Status = TodoTaskStatus.Rejected;
             task.StatusChangedAt = DateTime.Now;
-
             return task;
         }
 		public ResponseModel MapToResponse(TodoTask task)

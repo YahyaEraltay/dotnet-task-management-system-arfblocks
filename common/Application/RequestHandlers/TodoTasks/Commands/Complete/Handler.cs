@@ -1,6 +1,5 @@
 namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 {
-	[InternalHandler]
 	public class Handler : IRequestHandler
 	{
 		private readonly DataAccess dataAccessLayer;
@@ -17,6 +16,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 
 			var task = await dataAccessLayer.GetById(requestPayload.Id);
 
+            task.Status = TodoTaskStatus.Completed;
 			await dataAccessLayer.Update(task);
 
 			var mappedResponseModel = mapper.MapToResponse(task);

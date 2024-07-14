@@ -31,10 +31,10 @@ public class DbVerificationService
 	public static (bool HasError, string ErrorCode) CheckForReject(TodoTask task, User currentUser)
 	{
 		if (!DbVerificationService.IsTaskStatusPending(task))
-			return (true, "FOR_COMPLETE_TASK_STATUS_MUST_BE_PENDING");
+			return (true, "FOR_REJECT_TASK_STATUS_MUST_BE_PENDING");
 
 		if (!DbVerificationService.IsUserDepartmentEqualsTaskAssignedDepartment(task, currentUser))
-			return (true, "FOR_COMPLETE_CURRENT_USER_DEPARTMENT_MUST_EQUAL_TO_TASK_ASSIGNED_DEPARTMENT");
+			return (true, "FOR_REJECT_CURRENT_USER_DEPARTMENT_MUST_EQUAL_TO_TASK_ASSIGNED_DEPARTMENT");
 
 		return (false, null);
 	}

@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key =
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDk3NzY5NiwiZXhwIjoxNzIxMjM2ODk2LCJpYXQiOjE3MjA5Nzc2OTYsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.r8myYLcrPskDxylkBj_l9cbj4e8G3Js_8kMAOtBNQ1Y
 
 ### Create
 POST {{Api_Url}}/TodoTasks/Create 
@@ -9,7 +9,9 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "name": ""
+  "title": "tesk task1",
+  "description": "tesk task description1",
+  "assignedDepartmentId":"0f4f87cc-db80-4974-bae7-08dca0d9f40a"
 }
 
 ### Update
@@ -19,10 +21,10 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "",
-  "title": "",
-  "description": "",
-  "assignedDepartmentId": ""
+  "id": "719537da-66eb-43cd-d7d6-08dca40521df",
+  "title": "abcdef",
+  "description": "abcdef desc",
+  "assignedDepartmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
 }
 
 ### Delete
@@ -32,18 +34,19 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "",
-  "isDeleted":
+  "id": "719537da-66eb-43cd-d7d6-08dca40521df",
+  "isDeleted":true
 }
 
+//TODO: Hata veriyor
 ### Complete
-POST {{Api_Url}}/TodoTasks/Complete 
+PUT {{Api_Url}}/TodoTasks/Complete 
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": ""
+  "id": "74ff7e0a-2dd8-4bfa-d7d7-08dca40521df"
 }
 
 ### Reject
@@ -53,7 +56,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": ""
+  "id": "74ff7e0a-2dd8-4bfa-d7d7-08dca40521df"
 }
 
 ### All
@@ -69,7 +72,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": ""
+  "id": "719537da-66eb-43cd-d7d6-08dca40521df"
 }
 
 ### MyTasks

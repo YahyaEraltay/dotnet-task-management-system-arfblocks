@@ -4,10 +4,8 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 	{
         public TodoTask MapToEntity (TodoTask task)
         {
-            task.Status = TodoTaskStatus.Completed;
             task.StatusChangedAt = DateTime.Now;
-
-            return task;
+			return task;
         }
 		public ResponseModel MapToResponse(TodoTask task)
 		{

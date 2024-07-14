@@ -1,6 +1,5 @@
 namespace Application.RequestHandlers.TodoTasks.Commands.Reject
 {
-	[InternalHandler]
 	public class Handler : IRequestHandler
 	{
 		private readonly DataAccess dataAccessLayer;
@@ -17,6 +16,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Reject
 
 			var task = await dataAccessLayer.GetById(requestPayload.Id);
 
+            task.Status = TodoTaskStatus.Rejected;
 			await dataAccessLayer.Update(task);
 
 			var mappedResponseModel = mapper.MapToResponse(task);

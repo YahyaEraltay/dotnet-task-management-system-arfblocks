@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDg1MzExOSwiZXhwIjoxNzIxMTEyMzE5LCJpYXQiOjE3MjA4NTMxMTksImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.cMaioC84lvzbFZep2grznlDxjJOYQrFTJRZf8GEgJyI
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYWFlMTE3Yi1mZDQyLTQ4MTQtY2Q1My0wOGRjYTQyNjRlMzEiLCJnaXZlbl9uYW1lIjoieWFoeXlhQGdtYWlsLmNvbSIsInVuaXF1ZV9uYW1lIjoieWFoYXl5YSBFcmFsdGF5IiwibmJmIjoxNzIwOTc2Mzk5LCJleHAiOjE3MjEyMzU1OTksImlhdCI6MTcyMDk3NjM5OSwiYXVkIjoiVG9kb0FwcC5jb20udHIifQ.E2k5eNJffm-akUr2pYvfryAuS34QJkGyu0k9RioqRWs
 
 ### Login
 POST {{Api_Url}}/Users/Login
@@ -18,10 +18,10 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "email": "yahya_eraltay@gmail.com",
-  "firstName": "Yahya",
+  "email": "yahyya@gmail.com",
+  "firstName": "yahayya",
   "lastName": "Eraltay",
-  "departmentId": "5db38e2e-a07a-4252-2bb1-08dca00e9e01"
+  "departmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
 }
 
 ### Update 
@@ -31,11 +31,11 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "",
-  "email": "yahya_eraltay@gmail.com",
-  "firstName": "Yahya",
-  "lastName": "Eraltay",
-  "departmentId": "5db38e2e-a07a-4252-2bb1-08dca00e9e01"
+  "id": "16399264-cc9f-422a-f343-08dca403efbb",
+  "email": "mery_glenn@gmail.com",
+  "firstName": "Mery",
+  "lastName": "Glenn",
+  "departmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
 }
 
 ### Delete 
@@ -45,7 +45,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
- "id": "f3c55142-0a97-49b9-d91a-08dca019d404",
+ "id": "686c78c5-2cab-4204-8c3e-08dca404950f",
   "isDeleted": true 
 }
 
@@ -70,7 +70,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id":"231389a3-6185-4652-bae8-08dca0d9f40a"
+  "id":"dc8f0003-f2e4-495a-b05d-08dca021c461"
 }
 
 
