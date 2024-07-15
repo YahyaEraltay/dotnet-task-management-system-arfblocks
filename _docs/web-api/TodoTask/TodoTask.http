@@ -1,6 +1,6 @@
-@Api_Url = http://localhost:5077
+@Api_Url = http://localhost:5212
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDk3NzY5NiwiZXhwIjoxNzIxMjM2ODk2LCJpYXQiOjE3MjA5Nzc2OTYsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.r8myYLcrPskDxylkBj_l9cbj4e8G3Js_8kMAOtBNQ1Y
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMTAzMDExMiwiZXhwIjoxNzIxMjg5MzEyLCJpYXQiOjE3MjEwMzAxMTIsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.Ybk0Q1Ic9tlqKJ-5IslO1HWerEiaWJIZvPi3WNHC8ic
 
 ### Create
 POST {{Api_Url}}/TodoTasks/Create 
@@ -9,8 +9,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "title": "tesk task1",
-  "description": "tesk task description1",
+  "title": "abc def",
+  "description": "abc def description1",
   "assignedDepartmentId":"0f4f87cc-db80-4974-bae7-08dca0d9f40a"
 }
 
@@ -21,8 +21,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "719537da-66eb-43cd-d7d6-08dca40521df",
-  "title": "abcdef",
+  "id": "bf268251-8dbb-4f4b-e642-08dca4a3121c",
+  "title": "qwerty",
   "description": "abcdef desc",
   "assignedDepartmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
 }
@@ -34,13 +34,12 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "719537da-66eb-43cd-d7d6-08dca40521df",
+  "id": "bf268251-8dbb-4f4b-e642-08dca4a3121c",
   "isDeleted":true
 }
 
-//TODO: Hata veriyor
 ### Complete
-PUT {{Api_Url}}/TodoTasks/Complete 
+POST {{Api_Url}}/TodoTasks/Complete 
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}

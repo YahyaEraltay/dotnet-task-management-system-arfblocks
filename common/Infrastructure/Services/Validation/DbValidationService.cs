@@ -11,7 +11,9 @@ namespace Infrastructure.Services.Validation
 
         public async Task ValidateDepartmentExist(Guid departmentId)
         {
-            var departmentExist = await _dbContext.Departments.AnyAsync(x => x.Id == departmentId);
+            var departmentExist = await _dbContext.Departments
+                                                              .Where(x => !x.IsDeleted)
+                                                              .AnyAsync(x => x.Id == departmentId);
 
             if (!departmentExist)
                 throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.DepartmentNotExist));
@@ -19,7 +21,9 @@ namespace Infrastructure.Services.Validation
 
         public async Task ValidateUserExist(Guid userId)
         {
-            var userExist = await _dbContext.Users.AnyAsync(x => x.Id == userId);
+            var userExist = await _dbContext.Users
+                                                  .Where(x => !x.IsDeleted)
+                                                  .AnyAsync(x => x.Id == userId);
 
             if (!userExist)
                 throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.UserNotExist));
@@ -37,7 +41,9 @@ namespace Infrastructure.Services.Validation
 
         public async Task ValidateTodoTaskExist(Guid todoId)
         {
-            var todoTaskExist = await _dbContext.Tasks.AnyAsync(x => x.Id == todoId);
+            var todoTaskExist = await _dbContext.Tasks
+                                                      .Where(x => !x.IsDeleted)
+                                                      .AnyAsync(x => x.Id == todoId);
 
             if (!todoTaskExist)
                 throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TodoTaskNotExist));

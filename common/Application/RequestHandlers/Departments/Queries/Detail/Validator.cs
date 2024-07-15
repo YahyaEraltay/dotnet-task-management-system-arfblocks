@@ -24,10 +24,8 @@ namespace Application.RequestHandlers.Departments.Queries.Detail
 
 		public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
 		{
-			// Get Request Payload
 			var requestModel = (RequestModel)payload;
 
-			// DB Validations
 			await _dbValidator.ValidateDepartmentExist(requestModel.Id);
 		}
 	}

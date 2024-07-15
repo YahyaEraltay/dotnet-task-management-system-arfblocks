@@ -1,4 +1,4 @@
-@Api_Url = http://localhost:5077
+@Api_Url =  http://localhost:5212
 
 @Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMDk2MTU1MSwiZXhwIjoxNzIxMjIwNzUxLCJpYXQiOjE3MjA5NjE1NTEsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.mydNQUVBxXMomA6QpmdakwWmv8aFEBzROv8X0dOYOOg
 
@@ -9,7 +9,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "name": "1test"
+  "name": "qwer"
 }
 
 ### Update
@@ -19,8 +19,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "0bf8f4e2-360c-44a2-9936-08dca0db548f",
-  "name": "22sd"
+  "id": "a71c022a-c284-4465-5764-08dca43bf2e5",
+  "name": "def"
 }
 
 ### Delete
@@ -30,7 +30,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "f3c55142-0a97-49b9-d91a-08dca019d404",
+  "id": "2acf96e9-945f-4606-c329-08dca49db6d1",
   "isDeleted": true 
 }
 
@@ -47,5 +47,5 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id":"231389a3-6185-4652-bae8-08dca0d9f40a"
+  "id":"2acf96e9-945f-4606-c329-08dca49db6d1"
 }

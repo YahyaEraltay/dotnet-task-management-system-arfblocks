@@ -17,6 +17,7 @@ namespace Application.RequestHandlers.Users.Commands.Update
             return new ResponseModel()
             {
                 Id = user.Id,
+                Email = user.Email,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 DepartmentId = user.Department.Id,

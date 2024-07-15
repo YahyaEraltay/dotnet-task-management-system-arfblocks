@@ -56,25 +56,21 @@ builder.Services.AddAuthentication(options =>
         handler.InboundClaimTypeMap.Clear();
     });
 
-// 	// Get Configurations
 environmentService = new EnvironmentService(configurations.EnvironmentConfiguration);
 
-// 	services.AddControllers();
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddServer(new OpenApiServer() { Url = environmentService.ApiUrl, Description = environmentService.EnvironmentName });
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "TodoApp.Api", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiWithController", Version = "v1" });
 
     // Set the comments path for the Swagger JSON and UI.
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
 
-    // For avoid Scheme Collision for the same name classes
     c.CustomSchemaIds(x => x.FullName);
 
-    // Define Security Scheme
-    c.AddSecurityDefinition("Bearer", // Name #1
+    c.AddSecurityDefinition("Bearer", 
         new OpenApiSecurityScheme()
         {
             Description = "JWT Authorization header using the Bearer scheme.",
@@ -87,7 +83,7 @@ builder.Services.AddSwaggerGen(c =>
                     {
                         new OpenApiSecurityScheme{
                             Reference = new OpenApiReference{
-                                Id = "Bearer", // Name #1
+                                Id = "Bearer", 
 								Type = ReferenceType.SecurityScheme
                             }
                         },new List<string>()

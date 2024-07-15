@@ -1,6 +1,6 @@
-@Api_Url = http://localhost:5077
+@Api_Url = http://localhost:5212
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJhYWFlMTE3Yi1mZDQyLTQ4MTQtY2Q1My0wOGRjYTQyNjRlMzEiLCJnaXZlbl9uYW1lIjoieWFoeXlhQGdtYWlsLmNvbSIsInVuaXF1ZV9uYW1lIjoieWFoYXl5YSBFcmFsdGF5IiwibmJmIjoxNzIwOTc2Mzk5LCJleHAiOjE3MjEyMzU1OTksImlhdCI6MTcyMDk3NjM5OSwiYXVkIjoiVG9kb0FwcC5jb20udHIifQ.E2k5eNJffm-akUr2pYvfryAuS34QJkGyu0k9RioqRWs
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMTAyODI0MywiZXhwIjoxNzIxMjg3NDQzLCJpYXQiOjE3MjEwMjgyNDMsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.RuGa3VmOF0bOPWVjExWf6xS6cXf4Oq_6RU5tmVTPEfo
 
 ### Login
 POST {{Api_Url}}/Users/Login
@@ -18,10 +18,10 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "email": "yahyya@gmail.com",
-  "firstName": "yahayya",
-  "lastName": "Eraltay",
-  "departmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
+  "email": "john_doe@gmail.com",
+  "firstName": "John",
+  "lastName": "Doe",
+  "departmentId": "a71c022a-c284-4465-5764-08dca43bf2e5"
 }
 
 ### Update 
@@ -31,21 +31,21 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "16399264-cc9f-422a-f343-08dca403efbb",
-  "email": "mery_glenn@gmail.com",
-  "firstName": "Mery",
-  "lastName": "Glenn",
+  "id": "17399264-cc9f-422a-f343-08dca403efbb",
+  "email": "john_doe@gmail.com",
+  "firstName": "John",
+  "lastName": "Doe",
   "departmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
 }
 
 ### Delete 
-POST {{Api_Url}}/Users/Delete 
+DELETE {{Api_Url}}/Users/Delete 
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
- "id": "686c78c5-2cab-4204-8c3e-08dca404950f",
+ "id": "f18bf023-f884-4c3f-68b3-08dca49f5a8b",
   "isDeleted": true 
 }
 
@@ -70,7 +70,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id":"dc8f0003-f2e4-495a-b05d-08dca021c461"
+  "id":"f18bf023-f884-4c3f-68b3-08dca49f5a8b"
 }
 
 
