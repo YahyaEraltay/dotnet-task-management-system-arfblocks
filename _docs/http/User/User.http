@@ -1,4 +1,4 @@
-@Api_Url = http://localhost:5212
+@Api_Url = http://localhost:5077
 
 @Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMTAyODI0MywiZXhwIjoxNzIxMjg3NDQzLCJpYXQiOjE3MjEwMjgyNDMsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.RuGa3VmOF0bOPWVjExWf6xS6cXf4Oq_6RU5tmVTPEfo
 
@@ -18,10 +18,10 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "email": "john_doe@gmail.com",
-  "firstName": "John",
-  "lastName": "Doe",
-  "departmentId": "a71c022a-c284-4465-5764-08dca43bf2e5"
+  "email": "serkan_yurt@gmail.com",
+  "firstName": "Serkan",
+  "lastName": "Yurt",
+  "departmentId": "c08a8575-03e8-47c2-3763-08dcc7916cd2"
 }
 
 ### Update 
