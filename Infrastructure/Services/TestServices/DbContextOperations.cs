@@ -1,4 +1,4 @@
-namespace Station.Infrastructure.Services.TestServices;
+namespace Infrastructure.Services.TestServices;
 
 public class DbContextOperations<TEntity> where TEntity : CoreEntity
 {

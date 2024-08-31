@@ -1,4 +1,4 @@
-namespace Station.Infrastructure.Services.TestServices;
+namespace Infrastructure.Services.TestServices;
 
 public class TestDefinitions
 {
@@ -26,8 +26,8 @@ public class TestDefinitions
     {
         public static TodoTask DefaultTask(Guid departmentId) => new TodoTask()
         {
-            Title = "",
-            Description = "",
+            Title = "Sample Task",
+            Description = "Task Description",
             AssignedDepartmentId = departmentId,
         };
     }

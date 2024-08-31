@@ -24,4 +24,7 @@ global using Domain.Errors;
 global using Arfware.ArfBlocks.Core.Exceptions;
 global using Arfware.ArfBlocks.Core.RequestResults;
 global using Arfware.ArfBlocks.Core.Attributes;
+global using Arfware.ArfBlocks.Test.Abstractions;
+global using Infrastructure.Services.TestServices;
+global using FluentAssertions;
 
