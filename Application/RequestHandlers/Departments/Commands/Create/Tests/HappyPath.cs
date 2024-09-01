@@ -2,7 +2,7 @@ namespace Application.RequestHandlers.Departments.Commands.Create.Tests;
 
 public class HappyPath : IArfBlocksTest
 {
-    private DbContextOperations<User> _dbContextOperation;
+    private DbContextOperations<Department> _dbContextOperation;
 
     private ArfBlocksDependencyProvider _dependencyProvider;
 
@@ -10,16 +10,18 @@ public class HappyPath : IArfBlocksTest
     {
         _dependencyProvider = dependencyProvider;
         var _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
-        _dbContextOperation = new DbContextOperations<User>(_dbContext);
+        _dbContextOperation = new DbContextOperations<Department>(_dbContext);
     }
-    public Task SetActor()
+    public async Task SetActor()
     {
-        throw new NotImplementedException();
+        await Task.CompletedTask;
+
     }
 
-    public Task PrepareTest()
+    public async Task PrepareTest()
     {
-        throw new NotImplementedException();
+        await Task.CompletedTask;
+
     }
 
     public async Task RunTest()

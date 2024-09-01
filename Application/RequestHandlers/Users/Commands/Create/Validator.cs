@@ -30,7 +30,6 @@ namespace Application.RequestHandlers.Users.Commands.Create
         }
 
     }
-    //TODO:DepartmentId boş olduğunda hata mesajı vermiyor onu düzelt
     public class RequestModel_Validator : AbstractValidator<RequestModel>
     {
         public RequestModel_Validator()
