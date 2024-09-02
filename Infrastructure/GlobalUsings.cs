@@ -13,3 +13,4 @@ global using Domain.Entities;
 global using Domain.Base;
 global using System.Security.Claims;
 global using Domain.Errors;
+global using Station.Domain.Entities;

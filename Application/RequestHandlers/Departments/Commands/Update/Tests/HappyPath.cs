@@ -17,7 +17,6 @@ public class HappyPath : IArfBlocksTest
 
     public async Task PrepareTest()
     {
-        await Task.CompletedTask;
         department = TestDefinitions.Departments.DefaultDepartment(Guid.NewGuid()); //TODO: New guid vermek mantıksız burayı düzelt
         await _dbContextOperation.Create<Department>(department); //TODO:Station projesinde burda delete yok. Olması gerekiyor mu sor
     }

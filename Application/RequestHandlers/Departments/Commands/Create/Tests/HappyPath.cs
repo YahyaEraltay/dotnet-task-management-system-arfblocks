@@ -18,10 +18,12 @@ public class HappyPath : IArfBlocksTest
 
     }
 
+    Department department = null;
+
     public async Task PrepareTest()
     {
-        await Task.CompletedTask;
-
+       department = TestDefinitions.Departments.DefaultDepartment(Guid.NewGuid());
+        await _dbContextOperation.Create<Department>(department);
     }
 
     public async Task RunTest()
@@ -46,8 +48,6 @@ public class HappyPath : IArfBlocksTest
         var responsePayload = (Application.RequestHandlers.Departments.Commands.Create.ResponseModel)response.Payload;
         responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
         responsePayload.Name.Should().Be(requestPayload.Name);
-
-        System.Console.WriteLine("test çalıştı");
     }
 
 }
