@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkYzhmMDAwMy1mMmU0LTQ5NWEtYjA1ZC0wOGRjYTAyMWM0NjEiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyMTAyODI0MywiZXhwIjoxNzIxMjg3NDQzLCJpYXQiOjE3MjEwMjgyNDMsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.RuGa3VmOF0bOPWVjExWf6xS6cXf4Oq_6RU5tmVTPEfo
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkM2FmYWQxOC0yZTVjLTRjZmYtOTVkNi0wOGRjZGEyYzI5ZWIiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyNjkxNjI0NSwiZXhwIjoxNzI3MTc1NDQ1LCJpYXQiOjE3MjY5MTYyNDUsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.2SQzaVZJjbdSNp_Bo9JTElioiqkNhMTFRFM5ZjE4cAM
 
 ### Login
 POST {{Api_Url}}/Users/Login
@@ -21,7 +21,7 @@ Authorization: Bearer {{Jwt_Key}}
   "email": "serkan_yurt@gmail.com",
   "firstName": "Serkan",
   "lastName": "Yurt",
-  "departmentId": "c08a8575-03e8-47c2-3763-08dcc7916cd2"
+  "departmentId": "2ef2c94c-fc70-4c0b-145b-08dcda2beedc"
 }
 
 ### Update 

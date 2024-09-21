@@ -34,3 +34,15 @@ C:\Users\yahya.eraltay\workspace\personal\dotnet-task-management-system-arfblock
 C:\Users\yahya.eraltay\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\yahya.eraltay\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\yahya.eraltay\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\Domain\obj\Debug\net8.0\ref\Domain.dll

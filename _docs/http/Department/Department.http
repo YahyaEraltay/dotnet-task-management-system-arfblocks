@@ -1,6 +1,6 @@
 @Api_Url =  http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiI5MjE5MTY1Yi0yMmM0LTQzNWItNjBkOS0wOGRjYzc5MTkwYzUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyNTExNjA5OSwiZXhwIjoxNzI1Mzc1Mjk5LCJpYXQiOjE3MjUxMTYwOTksImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.lNNkarLoY5UCTdqNyV-jzaCRTYbjnAknT2EiWixlpmM
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkM2FmYWQxOC0yZTVjLTRjZmYtOTVkNi0wOGRjZGEyYzI5ZWIiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyNjkxNjI0NSwiZXhwIjoxNzI3MTc1NDQ1LCJpYXQiOjE3MjY5MTYyNDUsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.2SQzaVZJjbdSNp_Bo9JTElioiqkNhMTFRFM5ZjE4cAM
 
 ### Create
 POST {{Api_Url}}/Departments/Create 
@@ -9,7 +9,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "name": "qwer"
+  "name": "Software Development"
 }
 
 ### Update
