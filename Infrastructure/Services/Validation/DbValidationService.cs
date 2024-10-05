@@ -30,14 +30,14 @@ namespace Infrastructure.Services.Validation
         }
 
         public async Task ValidateUserExist(string email)
-		{
-			// Get
-			var userExist = await _dbContext.Users.AnyAsync(d => d.Email == email);
+        {
+            // Get
+            var userExist = await _dbContext.Users.AnyAsync(d => d.Email == email);
 
-			// Check
-			if (!userExist)
-				throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.UserNotExist));
-		}
+            // Check
+            if (!userExist)
+                throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.UserNotExist));
+        }
 
         public async Task ValidateTodoTaskExist(Guid todoId)
         {
@@ -46,6 +46,14 @@ namespace Infrastructure.Services.Validation
                                                       .AnyAsync(x => x.Id == todoId);
 
             if (!todoTaskExist)
+                throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TodoTaskNotExist));
+        }
+
+        public async Task ValidateLicenseNoAndSubLicenseNoExist(string licenseNo, string subLicenseNo)
+        {
+            var isStationExist = await _dbContext.Stations.AnyAsync(x => x.LicenseNo == licenseNo && x.SubLicenseNo == subLicenseNo);
+
+            if (!isStationExist)
                 throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TodoTaskNotExist));
         }
     }

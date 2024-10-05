@@ -1,6 +1,6 @@
 using Domain.Base;
 
-namespace Station.Domain.Entities;
+namespace Domain.Entities;
 
 public class ApplicationDefinition : CoreEntity
 {

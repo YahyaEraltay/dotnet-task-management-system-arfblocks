@@ -1,4 +1,4 @@
-namespace Application.RequestHandlers.Departments.Commands.Delete.Tests;
+namespace Application.RequestHandlers.Departments.Commands.Delete.Test;
 
 public class HappyPath : IArfBlocksTest
 {
@@ -17,7 +17,7 @@ public class HappyPath : IArfBlocksTest
 
     public async Task PrepareTest()
     {
-        department = TestDefinitions.Departments.DefaultDepartment(Guid.NewGuid());
+        department = TestDefinitions.Departments.DefaultDepartment();
         await _dbContextOperation.Create<Department>(department); //TODO:Station projesinde burda delete yok. Olması gerekiyor mu sor
     }
 

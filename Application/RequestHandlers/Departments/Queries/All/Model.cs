@@ -5,4 +5,8 @@ namespace Application.RequestHandlers.Departments.Queries.All
 		public Guid Id { get; set; }
 		public string Name { get; set; }
 	}
+
+	public class RequestModel : IRequestModel
+	{
+	}
 }

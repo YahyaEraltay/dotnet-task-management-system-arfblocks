@@ -1,4 +1,4 @@
-namespace Application.RequestHandlers.Departments.Commands.Create.Tests;
+namespace Application.RequestHandlers.Departments.Commands.Create.Test;
 
 public class HappyPath : IArfBlocksTest
 {
@@ -22,7 +22,7 @@ public class HappyPath : IArfBlocksTest
 
     public async Task PrepareTest()
     {
-       department = TestDefinitions.Departments.DefaultDepartment(Guid.NewGuid());
+        department = TestDefinitions.Departments.DefaultDepartment();
         await _dbContextOperation.Create<Department>(department);
     }
 

@@ -10,6 +10,9 @@ namespace Infrastructure.RelationalDB
         public DbSet<Department> Departments { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<TodoTask> Tasks { get; set; }
+        public DbSet<Station> Stations { get; set; }
+        public DbSet<TankGroup> TankGroups { get; set; }
+
 
 
         public ApplicationDbContext(CustomDbContextOptions customDbContextOptions) : base(customDbContextOptions.DbContextOptions)
@@ -28,8 +31,6 @@ namespace Infrastructure.RelationalDB
         {
             base.OnModelCreating(modelBuilder);
         }
-
-
         ///////////////////////////////////////////////////////////////////////////
 
         public override int SaveChanges()

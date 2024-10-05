@@ -1,4 +1,4 @@
-namespace Station.Infrastructure.Services;
+namespace Infrastructure.Services;
 
 public class DefinitionService
 {

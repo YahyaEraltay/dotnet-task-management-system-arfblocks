@@ -1,4 +1,4 @@
-namespace Application.RequestHandlers.Departments.Commands.Update.Tests;
+namespace Application.RequestHandlers.Departments.Commands.Update.Test;
 
 public class HappyPath : IArfBlocksTest
 {
@@ -17,7 +17,7 @@ public class HappyPath : IArfBlocksTest
 
     public async Task PrepareTest()
     {
-        department = TestDefinitions.Departments.DefaultDepartment(Guid.NewGuid()); //TODO: New guid vermek mantıksız burayı düzelt
+        department = TestDefinitions.Departments.DefaultDepartment(); //TODO: New guid vermek mantıksız burayı düzelt
         await _dbContextOperation.Create<Department>(department); //TODO:Station projesinde burda delete yok. Olması gerekiyor mu sor
     }
 
