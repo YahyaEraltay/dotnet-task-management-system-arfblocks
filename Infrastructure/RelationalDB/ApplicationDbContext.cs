@@ -6,12 +6,10 @@ namespace Infrastructure.RelationalDB
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<ApplicationDefinition> ApplicationDefinitions { get; set; }
+        public DbSet<Domain.Entities.ApplicationDefinition> ApplicationDefinitions { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<TodoTask> Tasks { get; set; }
-        public DbSet<Station> Stations { get; set; }
-        public DbSet<TankGroup> TankGroups { get; set; }
 
 
 

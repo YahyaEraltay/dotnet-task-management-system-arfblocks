@@ -493,3 +493,8 @@ C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithCo
 C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\obj\Debug\net8.0\ApiWithC.C96371DF.Up2Date
 C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\obj\Debug\net8.0\ApiWithController.genruntimeconfig.cache
 C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\obj\Debug\net8.0\ref\ApiWithController.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\bin\Debug\net8.0\Serilog.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithController\bin\Debug\net8.0\Serilog.Sinks.File.dll

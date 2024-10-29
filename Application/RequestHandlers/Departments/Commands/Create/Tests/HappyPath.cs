@@ -48,6 +48,10 @@ public class HappyPath : IArfBlocksTest
         var responsePayload = (Application.RequestHandlers.Departments.Commands.Create.ResponseModel)response.Payload;
         responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
         responsePayload.Name.Should().Be(requestPayload.Name);
+
+        var departmentOnDb = await _dbContextOperation.GetById<Department>(department.Id);
+        departmentOnDb.Id.Should().Be(department.Id);
+        departmentOnDb.Name.Should().Be(department.Name);
     }
 
 }

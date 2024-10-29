@@ -42,7 +42,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ApplicationDefinitions");
+                    b.ToTable("ApplicationDefinitions", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Department", b =>
@@ -74,7 +74,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Station", b =>
@@ -112,7 +112,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Stations");
+                    b.ToTable("Stations", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.TankGroup", b =>
@@ -139,9 +139,6 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RowNumber"));
 
-                    b.Property<Guid>("StationId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("TableUniqueId")
                         .HasColumnType("uniqueidentifier");
 
@@ -150,9 +147,7 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StationId");
-
-                    b.ToTable("TankGroups");
+                    b.ToTable("TankGroups", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.TodoTask", b =>
@@ -203,7 +198,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("CreatedById");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("Tasks", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -246,18 +241,7 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Domain.Entities.TankGroup", b =>
-                {
-                    b.HasOne("Domain.Entities.Station", "Station")
-                        .WithMany()
-                        .HasForeignKey("StationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Station");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.TodoTask", b =>

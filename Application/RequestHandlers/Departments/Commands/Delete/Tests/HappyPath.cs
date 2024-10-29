@@ -18,7 +18,7 @@ public class HappyPath : IArfBlocksTest
     public async Task PrepareTest()
     {
         department = TestDefinitions.Departments.DefaultDepartment();
-        await _dbContextOperation.Create<Department>(department); //TODO:Station projesinde burda delete yok. Olması gerekiyor mu sor
+        await _dbContextOperation.Create<Department>(department);
     }
 
     public async Task SetActor()

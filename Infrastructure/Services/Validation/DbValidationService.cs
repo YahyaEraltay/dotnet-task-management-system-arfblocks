@@ -49,12 +49,5 @@ namespace Infrastructure.Services.Validation
                 throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TodoTaskNotExist));
         }
 
-        public async Task ValidateLicenseNoAndSubLicenseNoExist(string licenseNo, string subLicenseNo)
-        {
-            var isStationExist = await _dbContext.Stations.AnyAsync(x => x.LicenseNo == licenseNo && x.SubLicenseNo == subLicenseNo);
-
-            if (!isStationExist)
-                throw new ArfBlocksValidationException(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TodoTaskNotExist));
-        }
     }
 }

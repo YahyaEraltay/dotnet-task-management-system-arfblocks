@@ -1,11 +1,8 @@
+namespace Infrastructure.RelationalDB;
 
-using Infrastructure.Services;
-
-namespace Infrastructure.RelationalDB.DefaultData;
-
-public partial class DefaultData
+public partial class ApplicationDefinition
 {
-    public static ApplicationDefinition ApplicationDefinition = new ApplicationDefinition()
+    public static Domain.Entities.ApplicationDefinition ApplicationDefinitions = new Domain.Entities.ApplicationDefinition()
     {
         Id = Guid.Parse("a19c901d-e8c2-4a1e-83aa-2162e05d568c"),
         DefinedId = DefinitionService.DefaultId,
@@ -15,8 +12,8 @@ public partial class DefaultData
 
     };
 
-    public static List<ApplicationDefinition> DefaultApplicationDefinitions = new List<ApplicationDefinition>()
+    public static List<Domain.Entities.ApplicationDefinition> DefaultApplicationDefinitions = new List<Domain.Entities.ApplicationDefinition>()
     {
-        ApplicationDefinition,
+        ApplicationDefinitions,
     };
 }

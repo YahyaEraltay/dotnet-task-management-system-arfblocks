@@ -492,3 +492,8 @@ C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMi
 C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\obj\Debug\net8.0\ApiWithM.57EB2F15.Up2Date
 C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\obj\Debug\net8.0\ApiWithMiddleware.genruntimeconfig.cache
 C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\obj\Debug\net8.0\ref\ApiWithMiddleware.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\bin\Debug\net8.0\Serilog.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\pc\workspace\personal\dotnet-task-management-system-arfblocks\ApiWithMiddleware\bin\Debug\net8.0\Serilog.Sinks.File.dll
