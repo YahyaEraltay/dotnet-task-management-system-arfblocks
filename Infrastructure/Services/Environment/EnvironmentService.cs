@@ -13,13 +13,11 @@ public class EnvironmentService
         {
             case "Production":
                 this.Environment = CustomEnvironments.Production;
-                this.ApiUrl = "http://station-api.tarpetx.tkteknoloji.com.tr";
-                this.UiUrl = "";
+                this.ApiUrl = "http://localhost:5257";
                 break;
             case "Staging":
                 this.Environment = CustomEnvironments.Staging;
-                this.ApiUrl = "http://station-api.tarpetx.tkteknoloji.com.tr";
-                this.UiUrl = "";
+                this.ApiUrl = "http://localhost:5257";
                 break;
             case "Development":
                 this.Environment = CustomEnvironments.Development;
@@ -27,8 +25,7 @@ public class EnvironmentService
                 break;
             case "Test":
                 this.Environment = CustomEnvironments.Test;
-                this.ApiUrl = "no-url";
-                this.UiUrl = "no-url";
+                this.ApiUrl = "http://localhost:5257";
                 break;
         }
 
