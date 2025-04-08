@@ -12,9 +12,9 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 			_dbValidationService = dependencyProvider.GetInstance<DbValidationService>();
 		}
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
-            var mapper = new Mapper();
+			var mapper = new Mapper();
 			var currentUserDepartmentId = _clientService.GetCurrentUserDepartmentId();
 
 			var pendingTasks = await _dataAccessLayer.GetPendingTasks(currentUserDepartmentId);

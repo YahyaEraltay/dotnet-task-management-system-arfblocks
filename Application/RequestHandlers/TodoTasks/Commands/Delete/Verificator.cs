@@ -11,20 +11,20 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Delete
             _clientService = dependencyProvider.GetInstance<CurrentClientService>();
         }
 
-        public async Task VerificateActor(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
-			var requestPayload = (RequestModel)payload;
-			var currentUserId = _clientService.GetCurrentUserId();
+            var requestPayload = (RequestModel)payload;
+            var currentUserId = _clientService.GetCurrentUserId();
 
-			var task = await _dbContext.Tasks
-											.FirstOrDefaultAsync(r => r.Id == requestPayload.Id);
+            var task = await _dbContext.Tasks
+                                            .FirstOrDefaultAsync(r => r.Id == requestPayload.Id);
 
-			var verificationResult = DbVerificationService.CheckForDelete(task, currentUserId);
-			if (verificationResult.HasError)
-				throw new ArfBlocksVerificationException(verificationResult.ErrorCode);
+            var verificationResult = DbVerificationService.CheckForDelete(task, currentUserId);
+            if (verificationResult.HasError)
+                throw new ArfBlocksVerificationException(verificationResult.ErrorCode);
         }
 
-        public async Task VerificateDomain(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }

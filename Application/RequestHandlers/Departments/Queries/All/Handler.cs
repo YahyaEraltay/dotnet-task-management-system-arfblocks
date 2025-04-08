@@ -10,7 +10,7 @@ namespace Application.RequestHandlers.Departments.Queries.All
             _dbValidationService = dependencyProvider.GetInstance<DbValidationService>();
         }
 
-        public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var mapper = new Mapper();
             var allDepartments = await _dataAccessLayer.All();

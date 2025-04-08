@@ -9,14 +9,14 @@ namespace Application.RequestHandlers.Users.Commands.Delete
             _dbValidator = dependencyProvider.GetInstance<DbValidationService>();
         }
 
-        public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var requestPayload = (RequestModel)payload;
 
             await _dbValidator.ValidateUserExist(requestPayload.Id);
         }
 
-        public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+        public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var requestModel = (RequestModel)payload;
 
@@ -36,7 +36,7 @@ namespace Application.RequestHandlers.Users.Commands.Delete
             RuleFor(x => x.Id)
                         .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
                         .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
-            
+
             RuleFor(x => x.IsDeleted)
             .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IsDeletedInvalid))
             .Must(value => value == true || value == false).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IsDeletedInvalid));

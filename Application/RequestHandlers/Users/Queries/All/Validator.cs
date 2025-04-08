@@ -9,13 +9,13 @@ namespace Application.RequestHandlers.Users.Queries.All
             _dbValidator = dependencyProvider.GetInstance<DbValidationService>();
         }
 
-        public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }
-        public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+        public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
-            
+
         }
     }
 }

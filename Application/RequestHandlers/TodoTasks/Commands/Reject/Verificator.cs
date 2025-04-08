@@ -11,7 +11,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Reject
 			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
 		}
 
-		public async Task VerificateActor(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var requestPayload = (RequestModel)payload;
 			var currentUserId = _clientService.GetCurrentUserId();
@@ -27,7 +27,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Reject
 				throw new ArfBlocksVerificationException(verificationResult.ErrorCode);
 		}
 
-		public async Task VerificateDomain(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			await Task.CompletedTask;
 		}

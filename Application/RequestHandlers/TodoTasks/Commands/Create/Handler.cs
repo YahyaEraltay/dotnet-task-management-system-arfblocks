@@ -11,7 +11,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
 		}
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var mapper = new Mapper();
 			var currentClientId = _clientService.GetCurrentUserId();

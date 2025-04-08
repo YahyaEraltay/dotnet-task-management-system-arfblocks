@@ -10,12 +10,12 @@ namespace Application.RequestHandlers.Departments.Commands.Create
             _dbValidator = dependencyProvider.GetInstance<DbValidationService>();
         }
 
-        public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }
 
-        public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+        public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var requestModel = (RequestModel)payload;
 
@@ -23,13 +23,13 @@ namespace Application.RequestHandlers.Departments.Commands.Create
             if (!validationResult.IsValid)
             {
                 var errors = validationResult.ToString("~");
-                throw new ArfBlocksValidationException(errors); 
+                throw new ArfBlocksValidationException(errors);
             }
         }
 
 
     }
-    
+
     public class RequestModel_Validator : AbstractValidator<RequestModel>
     {
         public RequestModel_Validator()

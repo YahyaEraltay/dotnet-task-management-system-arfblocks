@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // For Dotnet-Ef Commands
 var configurations = builder.Configuration.GetSection("ProjectNameConfigurations").Get<ProjectNameConfigurations>();
-var environmentService = new EnvironmentService(configurations.EnvironmentConfiguration);
+var environmentService = new EnvironmentService(configurations?.EnvironmentConfiguration);
 var jsonFile = environmentService.Environment == CustomEnvironments.Development ? "serilog.Development.json" : "serilog.json";
 IConfiguration Configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())

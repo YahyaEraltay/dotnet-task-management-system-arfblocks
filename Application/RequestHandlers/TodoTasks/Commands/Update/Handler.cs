@@ -11,19 +11,19 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Update
 			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
 		}
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var mapper = new Mapper();
-            var requestPayload = (RequestModel)payload;
+			var requestPayload = (RequestModel)payload;
 
-            var task = await dataAccessLayer.GetById(requestPayload.Id);
+			var task = await dataAccessLayer.GetById(requestPayload.Id);
 
-            task = mapper.MapToEntity(requestPayload, task);
+			task = mapper.MapToEntity(requestPayload, task);
 
-            await dataAccessLayer.Update(task);
+			await dataAccessLayer.Update(task);
 
-            var response = mapper.MapToResponse(task);
-            return ArfBlocksResults.Success(response);
+			var response = mapper.MapToResponse(task);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

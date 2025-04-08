@@ -8,7 +8,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 			_dbValidator = dependencyProvider.GetInstance<DbValidationService>();
 		}
 
-		public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+		public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var requestModel = (RequestModel)payload;
 
@@ -20,15 +20,15 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 			}
 		}
 
-		public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var requestModel = (RequestModel)payload;
 
 			await _dbValidator.ValidateDepartmentExist(requestModel.AssignedDepartmentId);
 		}
 	}
-	
-    public class RequestModel_Validator : AbstractValidator<RequestModel>
+
+	public class RequestModel_Validator : AbstractValidator<RequestModel>
 	{
 		public RequestModel_Validator()
 		{

@@ -8,7 +8,7 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Detail
 			_dbValidator = dependencyProvider.GetInstance<DbValidationService>();
 		}
 
-		public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+		public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var requestModel = (RequestModel)payload;
 
@@ -20,7 +20,7 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Detail
 			}
 		}
 
-		public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var requestModel = (RequestModel)payload;
 

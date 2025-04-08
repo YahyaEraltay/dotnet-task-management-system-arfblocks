@@ -9,14 +9,14 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 			dataAccessLayer = (DataAccess)dataAccess;
 		}
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
 			var task = await dataAccessLayer.GetById(requestPayload.Id);
 
-            task.Status = TodoTaskStatus.Completed;
+			task.Status = TodoTaskStatus.Completed;
 			await dataAccessLayer.Update(task);
 
 			var mappedResponseModel = mapper.MapToResponse(task);

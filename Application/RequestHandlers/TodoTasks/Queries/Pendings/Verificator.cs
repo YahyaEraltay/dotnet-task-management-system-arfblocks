@@ -11,12 +11,12 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
 		}
 
-		public async Task VerificateActor(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			await Task.CompletedTask;
 
-        }
-		public async Task VerificateDomain(IRequestModel payload, CancellationToken cancellationToken)
+		}
+		public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			await Task.CompletedTask;
 		}

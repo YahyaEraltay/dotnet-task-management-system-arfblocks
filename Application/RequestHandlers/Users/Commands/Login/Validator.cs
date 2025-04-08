@@ -8,7 +8,7 @@ namespace Application.RequestHandlers.Users.Commands.Login
 			_dbValidator = dependencyProvider.GetInstance<DbValidationService>();
 		}
 
-		public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+		public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			// Get Request Payload
 			var requestPayload = (RequestModel)payload;
@@ -22,7 +22,7 @@ namespace Application.RequestHandlers.Users.Commands.Login
 			}
 		}
 
-		public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			// Get Request Payload
 			var requestPayload = (RequestModel)payload;
@@ -32,7 +32,7 @@ namespace Application.RequestHandlers.Users.Commands.Login
 		}
 	}
 
-    public class RequestModel_Validator : AbstractValidator<RequestModel>
+	public class RequestModel_Validator : AbstractValidator<RequestModel>
 	{
 		public RequestModel_Validator()
 		{

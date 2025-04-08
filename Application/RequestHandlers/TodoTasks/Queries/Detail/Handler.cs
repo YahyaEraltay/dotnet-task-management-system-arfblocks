@@ -10,14 +10,14 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Detail
 			_dbValidationService = dependencyProvider.GetInstance<DbValidationService>();
 		}
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, CancellationToken cancellationToken)
+		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
-            var mapper = new Mapper();
+			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
 			var task = await _dataAccessLayer.TaskDetail(requestPayload.Id);
 
-            var mappedTask = mapper.MapToResponse(task);
+			var mappedTask = mapper.MapToResponse(task);
 			return ArfBlocksResults.Success(mappedTask);
 		}
 	}

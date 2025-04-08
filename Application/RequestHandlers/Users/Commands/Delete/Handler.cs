@@ -9,7 +9,7 @@ namespace Application.RequestHandlers.Users.Commands.Delete
             _dataAccessLayer = (DataAccess)dataAccess;
         }
 
-        public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var mapper = new Mapper();
             var requestPayload = (RequestModel)payload;

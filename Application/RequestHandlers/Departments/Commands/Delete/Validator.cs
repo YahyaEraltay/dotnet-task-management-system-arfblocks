@@ -9,14 +9,14 @@ namespace Application.RequestHandlers.Departments.Commands.Delete
             _dbValidator = dependencyProvider.GetInstance<DbValidationService>();
         }
 
-        public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var requestPayload = (RequestModel)payload;
 
             await _dbValidator.ValidateDepartmentExist(requestPayload.Id);
         }
 
-        public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+        public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var requestModel = (RequestModel)payload;
 

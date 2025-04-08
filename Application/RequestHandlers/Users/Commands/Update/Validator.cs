@@ -9,14 +9,14 @@ namespace Application.RequestHandlers.Users.Commands.Update
             _dbValidator = dependencyProvider.GetInstance<DbValidationService>();
         }
 
-        public async Task ValidateDomain(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task ValidateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var requestPayload = (RequestModel)payload;
 
             await _dbValidator.ValidateUserExist(requestPayload.Id);
         }
 
-        public void ValidateRequestModel(IRequestModel payload, CancellationToken cancellationToken)
+        public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var requestModel = (RequestModel)payload;
 
@@ -33,9 +33,9 @@ namespace Application.RequestHandlers.Users.Commands.Update
     {
         public RequestModel_Validator()
         {
-             RuleFor(x => x.FirstName)
-                    .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid))
-                    .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid));
+            RuleFor(x => x.FirstName)
+                   .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid))
+                   .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid));
 
             RuleFor(x => x.Id)
                         .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))

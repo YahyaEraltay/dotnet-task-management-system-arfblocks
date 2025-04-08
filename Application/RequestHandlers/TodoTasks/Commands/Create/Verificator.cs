@@ -9,12 +9,12 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
             _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
         }
 
-        public async Task VerificateActor(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }
 
-        public async Task VerificateDomain(IRequestModel payload, CancellationToken cancellationToken)
+        public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             await Task.CompletedTask;
         }
