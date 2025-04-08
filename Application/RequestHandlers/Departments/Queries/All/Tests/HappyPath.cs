@@ -1,4 +1,4 @@
-namespace Application.RequestHandlers.Departments.Commands.Delete.Test;
+namespace Application.RequestHandlers.Departments.Queries.All.Test;
 
 public class HappyPath : IArfBlocksTest
 {
@@ -12,18 +12,17 @@ public class HappyPath : IArfBlocksTest
         var _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
         _dbContextOperation = new DbContextOperations<Department>(_dbContext);
     }
+    public async Task SetActor()
+    {
+        await Task.CompletedTask;
+
+    }
 
     Department department = null;
-
     public async Task PrepareTest()
     {
         department = TestDefinitions.Departments.DefaultDepartment();
         await _dbContextOperation.Create<Department>(department);
-    }
-
-    public async Task SetActor()
-    {
-        await Task.CompletedTask;
     }
 
     public async Task RunTest()
@@ -33,25 +32,22 @@ public class HappyPath : IArfBlocksTest
 
     private async Task Test()
     {
-        var requestPayload = new Application.RequestHandlers.Departments.Commands.Delete.RequestModel()
+        var requestPayload = new Application.RequestHandlers.Departments.Queries.All.RequestModel()
         {
-            Id = department.Id,
-            IsDeleted = true,
         };
 
         var requestOperator = new ArfBlocksRequestOperator(_dependencyProvider);
-        var response = await requestOperator.OperateInternalRequest<Application.RequestHandlers.Departments.Commands.Delete.Handler>(requestPayload);
+        var response = await requestOperator.OperateInternalRequest<Application.RequestHandlers.Departments.Queries.All.Handler>(requestPayload);
         if (response.HasError)
             throw new Exception(response.Error.Message);
 
         response.HasError.Should().Be(false);
 
-        var responsePayload = (Application.RequestHandlers.Departments.Commands.Delete.ResponseModel)response.Payload;
-        responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
-        responsePayload.Id.Should().Be(department.Id);
-
-        var departmentOnDb = await _dbContextOperation.GetById<Department>(responsePayload.Id);
-        departmentOnDb.Id.Should().Be(requestPayload.Id);
-        departmentOnDb.IsDeleted.Should().Be(requestPayload.IsDeleted);
+        var responsePayload = (List<Application.RequestHandlers.Departments.Queries.All.ResponseModel>)response.Payload;
+        var matchedDepartment = responsePayload.FirstOrDefault(d => d.Id == department.Id);
+        matchedDepartment.Should().NotBeNull();
+        matchedDepartment.Id.Should().Be(department.Id);
+        matchedDepartment.Name.Should().Be(department.Name);
     }
+
 }

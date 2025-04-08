@@ -36,7 +36,7 @@ public class HappyPath : IArfBlocksTest
         var requestPayload = new Application.RequestHandlers.Departments.Commands.Update.RequestModel()
         {
             Id = department.Id,
-            Name = "Department Test",
+            Name = department.Name,
         };
 
         var requestOperator = new ArfBlocksRequestOperator(_dependencyProvider);
@@ -49,5 +49,10 @@ public class HappyPath : IArfBlocksTest
         var responsePayload = (Application.RequestHandlers.Departments.Commands.Update.ResponseModel)response.Payload;
         responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
         responsePayload.Id.Should().Be(department.Id);
+        responsePayload.Name.Should().Be(department.Name);
+
+        var departmentOnDb = await _dbContextOperation.GetById<Department>(responsePayload.Id);
+        departmentOnDb.Id.Should().Be(requestPayload.Id);
+        departmentOnDb.Name.Should().Be(requestPayload.Name);
     }
 }

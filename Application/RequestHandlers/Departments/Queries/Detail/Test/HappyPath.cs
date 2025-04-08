@@ -44,13 +44,12 @@ public class HappyPath : IArfBlocksTest
 
         response.HasError.Should().Be(false);
 
-        var responsePayload = (List<Application.RequestHandlers.Departments.Queries.Detail.ResponseModel>)response.Payload;
-        var matchedDepartment = responsePayload.FirstOrDefault(d => d.Id == d.Id);
-        matchedDepartment.Should().NotBeNull();
-        matchedDepartment.Id.Should().Be(department.Id);
-        matchedDepartment.Name.Should().Be(department.Name);
+        var responsePayload = (Application.RequestHandlers.Departments.Queries.Detail.ResponseModel)response.Payload;
+        responsePayload.Id.Should().Be(department.Id);
+        responsePayload.Name.Should().Be(department.Name);
 
-
+        var departmentOnDb = await _dbContextOperation.GetById<Department>(responsePayload.Id);
+        departmentOnDb.Id.Should().Be(requestPayload.Id);
     }
 
 }
