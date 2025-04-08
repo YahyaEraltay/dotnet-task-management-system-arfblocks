@@ -5,7 +5,6 @@ public class EnvironmentService
     public string EnvironmentName { get; }
     public CustomEnvironments Environment { get; }
     public string ApiUrl { get; }
-    public string UiUrl { get; }
 
     public EnvironmentService(EnvironmentConfiguration configuration)
     {
@@ -26,7 +25,6 @@ public class EnvironmentService
             case "Test":
                 this.Environment = CustomEnvironments.Test;
                 this.ApiUrl = "no-url";
-                this.UiUrl = "no-url";
                 break;
         }
 
