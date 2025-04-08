@@ -13,11 +13,12 @@ public class TestDefinitions
 
     public static class Users
     {
-        public static User DefaultUser(Guid id) => new User()
+        public static User DefaultUser(Guid departmentId) => new User()
         {
             Email = $"john_doe{new Random().Next(100, 999)}@example.com",
             FirstName = "John",
             LastName = "Doe",
+            DepartmentId = departmentId,
         };
     }
 
