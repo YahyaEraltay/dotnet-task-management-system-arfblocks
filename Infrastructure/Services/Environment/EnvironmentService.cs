@@ -31,9 +31,6 @@ public class EnvironmentService
         }
 
         this.EnvironmentName = configuration.EnvironmentName;
-
-        System.Console.WriteLine(ApiUrl);
-        System.Console.WriteLine(EnvironmentName);
     }
 }
 

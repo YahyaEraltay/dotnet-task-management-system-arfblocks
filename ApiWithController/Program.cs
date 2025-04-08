@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // For Dotnet-Ef Commands
-var configurations = builder.Configuration.GetSection("ProjectNameConfigurations").Get<ProjectNameConfigurations>();
+var configurations = builder.Configuration.GetSection("ProjectNameConfigurations").Get<ProjectConfigurations>();
 var environmentService = new EnvironmentService(configurations.EnvironmentConfiguration);
 var dbContext = new ApplicationDbContext(new CustomDbContextOptions(configurations.RelationalDbConfiguration, environmentService));
 builder.Services.AddSingleton<ApplicationDbContext>(dbContext);
@@ -70,7 +70,7 @@ builder.Services.AddSwaggerGen(c =>
 
     c.CustomSchemaIds(x => x.FullName);
 
-    c.AddSecurityDefinition("Bearer", 
+    c.AddSecurityDefinition("Bearer",
         new OpenApiSecurityScheme()
         {
             Description = "JWT Authorization header using the Bearer scheme.",
@@ -83,8 +83,8 @@ builder.Services.AddSwaggerGen(c =>
                     {
                         new OpenApiSecurityScheme{
                             Reference = new OpenApiReference{
-                                Id = "Bearer", 
-								Type = ReferenceType.SecurityScheme
+                                Id = "Bearer",
+                                Type = ReferenceType.SecurityScheme
                             }
                         },new List<string>()
                     }

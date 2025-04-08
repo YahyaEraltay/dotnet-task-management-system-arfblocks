@@ -4,7 +4,7 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 // For Dotnet-Ef Commands
-var configurations = builder.Configuration.GetSection("ProjectNameConfigurations").Get<ProjectNameConfigurations>();
+var configurations = builder.Configuration.GetSection("ProjectConfigurations").Get<ProjectConfigurations>();
 var environmentService = new EnvironmentService(configurations?.EnvironmentConfiguration);
 var jsonFile = environmentService.Environment == CustomEnvironments.Development ? "serilog.Development.json" : "serilog.json";
 IConfiguration Configuration = new ConfigurationBuilder()
@@ -40,10 +40,12 @@ await app.RunTests(app.Configuration, options =>
 {
     options.TestConfigurationsType = typeof(TestConfigurations);
 
-    // Run Only Selected Tests
     options.SelectedTestList = new List<Type>()
     {
     };
 
-
+    // Skip Running Ignored Tests 
+    // options.IgnoredTestList = new List<Type>()
+    // {
+    // };
 });

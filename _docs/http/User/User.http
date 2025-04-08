@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJkM2FmYWQxOC0yZTVjLTRjZmYtOTVkNi0wOGRjZGEyYzI5ZWIiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTcyNjkxNjI0NSwiZXhwIjoxNzI3MTc1NDQ1LCJpYXQiOjE3MjY5MTYyNDUsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.2SQzaVZJjbdSNp_Bo9JTElioiqkNhMTFRFM5ZjE4cAM
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDExNjE5MSwiZXhwIjoxNzQ0Mzc1MzkxLCJpYXQiOjE3NDQxMTYxOTEsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.U_XkNw34uwI9XGGW_4ZIw8jT8Kgd0QCi8ginaZUMTXA
 
 ### Login
 POST {{Api_Url}}/Users/Login
@@ -21,7 +21,7 @@ Authorization: Bearer {{Jwt_Key}}
   "email": "serkan_yurt@gmail.com",
   "firstName": "Serkan",
   "lastName": "Yurt",
-  "departmentId": "2ef2c94c-fc70-4c0b-145b-08dcda2beedc"
+  "departmentId": "c741ae32-4cd1-4818-79be-08dd769b101e"
 }
 
 ### Update 
@@ -31,11 +31,11 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "17399264-cc9f-422a-f343-08dca403efbb",
-  "email": "john_doe@gmail.com",
-  "firstName": "John",
-  "lastName": "Doe",
-  "departmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
+  "id": "fbbd5746-7b39-41f9-31ac-08dd769acb2e",
+  "email": "serkan_yurt@gmail.com",
+  "firstName": "Serkan",
+  "lastName": "Yurt",
+  "departmentId": "c741ae32-4cd1-4818-79be-08dd769b101e"
 }
 
 ### Delete 
@@ -50,14 +50,12 @@ Authorization: Bearer {{Jwt_Key}}
 }
 
 ### All 
-//TODO: Get ile de çalışıyor post ile de
 GET {{Api_Url}}/Users/All 
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 ### Me 
-//TODO: Get ile de çalışıyor post ile de
 GET {{Api_Url}}/Users/Me 
 Accept: application/json
 Content-Type: application/json
@@ -70,7 +68,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id":"f18bf023-f884-4c3f-68b3-08dca49f5a8b"
+  "id":"fbbd5746-7b39-41f9-31ac-08dd769acb2e"
 }
 
 

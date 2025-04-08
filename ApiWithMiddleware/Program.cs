@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // For Dotnet-Ef Commands
-var configurations = builder.Configuration.GetSection("ProjectNameConfigurations").Get<ProjectNameConfigurations>();
+var configurations = builder.Configuration.GetSection("ProjectNameConfigurations").Get<ProjectConfigurations>();
 var environmentService = new EnvironmentService(configurations.EnvironmentConfiguration);
 var dbContext = new ApplicationDbContext(new CustomDbContextOptions(configurations.RelationalDbConfiguration, environmentService));
 builder.Services.AddSingleton<ApplicationDbContext>(dbContext);

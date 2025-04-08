@@ -2,7 +2,7 @@ namespace Application.Configurations
 {
 	public class ApplicationDependencyProvider : ArfBlocksDependencyProvider
 	{
-		public ApplicationDependencyProvider(IHttpContextAccessor httpContextAccessor, ProjectNameConfigurations projectConfigurations)
+		public ApplicationDependencyProvider(IHttpContextAccessor httpContextAccessor, ProjectConfigurations projectConfigurations)
 		{
 			base.Add<RelationalDbConfiguration>(projectConfigurations.RelationalDbConfiguration);
 			base.Add<EnvironmentConfiguration>(projectConfigurations.EnvironmentConfiguration);
