@@ -13,7 +13,7 @@ namespace Application.RequestHandlers.Users.Commands.Delete
         {
             var requestPayload = (RequestModel)payload;
 
-            await _dbValidator.ValidateUserExist(requestPayload.Id);
+            await _dbValidator.ValidateUserExistById(requestPayload.Id);
         }
 
         public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)

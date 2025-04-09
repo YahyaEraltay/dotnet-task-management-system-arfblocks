@@ -35,8 +35,8 @@ namespace Application.RequestHandlers.Departments.Queries.Detail
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Id)
-				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid))
-				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid));
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
+				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
 		}
 	}
 }

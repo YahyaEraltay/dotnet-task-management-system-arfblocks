@@ -2,12 +2,11 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 {
 	public class Verificator : IRequestVerificator
 	{
-		private readonly ApplicationDbContext _dbContext;
 		private readonly CurrentUserService _currentUser;
-
+		private readonly DbVerificationService _dbVerificator;
 		public Verificator(ArfBlocksDependencyProvider dependencyProvider)
 		{
-			_dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
+			_dbVerificator = dependencyProvider.GetInstance<DbVerificationService>();
 			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 
@@ -16,15 +15,8 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 			var requestPayload = (RequestModel)payload;
 			var currentUserId = _currentUser.GetCurrentUserId();
 
-			var task = await _dbContext.Tasks
-											.FirstOrDefaultAsync(r => r.Id == requestPayload.Id);
-
-			var currentUser = await _dbContext.Users
-											.FirstOrDefaultAsync(u => u.Id == currentUserId);
-
-			var verificationResult = DbVerificationService.CheckForComplete(task, currentUser);
-			if (verificationResult.HasError)
-				throw new ArfBlocksVerificationException(verificationResult.ErrorCode);
+			await _dbVerificator.VerifyTaskStatusIsPending(requestPayload.Id);
+			await _dbVerificator.VerifyUserDepartmentEqualsTaskAssignedDepartment(requestPayload.Id, currentUserId);
 		}
 
 		public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)

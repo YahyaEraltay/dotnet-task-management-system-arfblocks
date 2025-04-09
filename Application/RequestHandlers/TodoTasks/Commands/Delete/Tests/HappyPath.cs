@@ -52,7 +52,7 @@ public class HappyPath : IArfBlocksTest
         //     throw new Exception(response.Error.Message);
 
         response.HasError.Should().Be(true);
-        response.Error.Message.Should().Be("FOR_DELETE_CURRENT_USER_MUST_BE_TASK_CREATOR");
+        response.Error.Message.Should().Be(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TodoTaskNotExist));
 
         // var responsePayload = (Application.RequestHandlers.TodoTasks.Commands.Delete.ResponseModel)response.Payload;
         // responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);

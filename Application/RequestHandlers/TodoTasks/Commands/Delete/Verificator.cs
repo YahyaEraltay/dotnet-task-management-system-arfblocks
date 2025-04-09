@@ -2,14 +2,12 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Delete
 {
     public class Verificator : IRequestVerificator
     {
-        private readonly ApplicationDbContext _dbContext;
         private readonly CurrentUserService _currentUser;
-
+        private readonly DbVerificationService _dbVerificator;
         public Verificator(ArfBlocksDependencyProvider dependencyProvider)
         {
-            _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
+            _dbVerificator = dependencyProvider.GetInstance<DbVerificationService>();
             _currentUser = dependencyProvider.GetInstance<CurrentUserService>();
-
         }
 
         public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
@@ -17,13 +15,8 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Delete
             var requestPayload = (RequestModel)payload;
             var currentUserId = _currentUser.GetCurrentUserId();
 
-
-            var task = await _dbContext.Tasks
-                                            .FirstOrDefaultAsync(r => r.Id == requestPayload.Id);
-
-            var verificationResult = DbVerificationService.CheckForDelete(task, currentUserId);
-            if (verificationResult.HasError)
-                throw new ArfBlocksVerificationException(verificationResult.ErrorCode);
+            await _dbVerificator.VerifyTaskStatusIsPending(requestPayload.Id);
+            await _dbVerificator.VerifyUserIsTaskOwner(requestPayload.Id, currentUserId);
         }
 
         public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)

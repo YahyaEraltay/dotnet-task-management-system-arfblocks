@@ -13,7 +13,6 @@ global using Arfware.ArfBlocks.Core.Abstractions;
 global using Domain.Entities;
 global using Infrastructure.RelationalDB;
 global using Infrastructure.Services;
-global using Infrastructure.Services.Validation;
 global using Microsoft.AspNetCore.Http;
 global using Cmms.Infrastructure.Services;
 global using FluentValidation;

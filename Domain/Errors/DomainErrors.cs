@@ -5,31 +5,42 @@ namespace Domain.Errors
         public class CommonErrors
         {
             public static string NameNotValid { get; set; } = "";
-            public static string DepartmentIdNotValid { get; set; } = "";
-            public static string UserIdNotValid { get; set; } = "";
-            public static string TodoTaskIdNotValid { get; set; } = "";
             public static string IdNotValid { get; set; } = "";
             public static string IsDeletedInvalid { get; set; } = "";
         }
 
         public class DepartmentErrors
         {
-            public static string DepartmentNotExist { get; set; } = "";
+            // Model Validations
+            public static string DepartmentIdNotValid { get; set; } = "";
             public static string AssignedDepartmentIdNotValid { get; set; } = "";
+
+            // Database Validations
+            public static string DepartmentNotExist { get; set; } = "";
+
         }
 
         public class UserErrors
         {
+            // Model Validations
+            public static string UserIdNotValid { get; set; } = "";
+            public static string EmailNotValid { get; set; } = "";
+
+            // Database Validations
             public static string UserNotExist { get; set; } = "";
-            public static string FirstNameNotValid { get; set; } = "";
-            public static string EmailNotValid { get; set;} = "";
         }
 
         public class TodoTaskErrors
         {
-            public static string TodoTaskNotExist { get; set; } = "";
+            // Model Validations
+            public static string TodoTaskIdNotValid { get; set; } = "";
             public static string TitleNotValid { get; set; } = "";
 
+            // Database Validations
+            public static string TodoTaskNotExist { get; set; } = "";
+            public static string TaskStatusMustBePending { get; set; } = "";
+            public static string UserDepartmentMustEqualToTaskAssignedDepartment { get; set; } = "";
+            public static string UserMustBeTaskCreator { get; set; } = "";
         }
     }
 }

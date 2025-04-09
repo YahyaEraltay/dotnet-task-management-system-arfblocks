@@ -28,7 +28,7 @@ namespace Application.RequestHandlers.Users.Commands.Login
 			var requestPayload = (RequestModel)payload;
 
 			// DB Validations
-			await _dbValidator.ValidateUserExist(requestPayload.Email);
+			await _dbValidator.ValidateUserExistByEmail(requestPayload.Email);
 		}
 	}
 

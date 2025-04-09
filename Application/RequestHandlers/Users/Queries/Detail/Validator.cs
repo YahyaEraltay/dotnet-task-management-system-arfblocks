@@ -28,7 +28,7 @@ namespace Application.RequestHandlers.Users.Queries.Detail
 			var requestModel = (RequestModel)payload;
 
 			// DB Validations
-			await _dbValidator.ValidateUserExist(requestModel.Id);
+			await _dbValidator.ValidateUserExistById(requestModel.Id);
 		}
 	}
 
@@ -37,8 +37,8 @@ namespace Application.RequestHandlers.Users.Queries.Detail
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Id)
-				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.TodoTaskIdNotValid))
-				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.TodoTaskIdNotValid));
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
+				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
 		}
 	}
 }

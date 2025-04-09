@@ -47,8 +47,8 @@ namespace Application.RequestHandlers.Users.Commands.Create
                     .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid));
 
             RuleFor(x => x.DepartmentId)
-                    .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid))
-                    .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.DepartmentIdNotValid));
+                    .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.DepartmentIdNotValid))
+                    .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.DepartmentIdNotValid));
 
         }
     }
