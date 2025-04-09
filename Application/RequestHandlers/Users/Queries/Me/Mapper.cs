@@ -6,11 +6,11 @@ namespace Application.RequestHandlers.Users.Queries.Me
 		{
 			return new ResponseModel()
 			{
-				UserId = user.Id,
+				Id = user.Id,
 				Email = user.Email,
 				DisplayName = $"{user.FirstName} {user.LastName}",
 				DepartmentId = user.DepartmentId,
-                DepartmentName = user.Department.Name
+				DepartmentName = user.Department.Name
 			};
 		}
 	}
