@@ -21,4 +21,8 @@ namespace Application.RequestHandlers.TodoTasks.Queries.All
 			public string Name { get; set; }
 		}
 	}
+
+	public class RequestModel : IRequestModel
+	{
+	}
 }

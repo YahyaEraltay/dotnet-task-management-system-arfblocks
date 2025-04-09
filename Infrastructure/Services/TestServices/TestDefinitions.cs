@@ -16,19 +16,22 @@ public class TestDefinitions
         public static User DefaultUser(Guid departmentId) => new User()
         {
             Email = $"john_doe{new Random().Next(100, 999)}@example.com",
-            FirstName = "John",
-            LastName = "Doe",
+            FirstName = $"John {new Random().Next(100, 999)}",
+            LastName = $"Doe {new Random().Next(100, 999)}",
             DepartmentId = departmentId,
         };
     }
 
     public static class ToDoTasks
     {
-        public static TodoTask DefaultTask(Guid id, Guid departmentId) => new TodoTask()
+        public static TodoTask DefaultTask(Guid createdById, Guid departmentId, TodoTaskStatus todoTaskStatus) => new TodoTask()
         {
-            Title = "Sample Task",
-            Description = "Task Description",
+            Title = $"Sample Task {new Random().Next(100, 999)}",
+            Description = $"Task Description {new Random().Next(100, 999)}",
             AssignedDepartmentId = departmentId,
+            CreatedById = createdById,
+            Status = todoTaskStatus,
+            StatusChangedAt = DateTime.Now,
         };
     }
 }
