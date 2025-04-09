@@ -24,5 +24,8 @@ namespace Application.RequestHandlers.TodoTasks.Queries.All
 
 	public class RequestModel : IRequestModel
 	{
+		public XSorting Sorting { get; set; }
+		public List<XFilterItem> Filters { get; set; }
+		public XPageRequest PageRequest { get; set; }
 	}
 }

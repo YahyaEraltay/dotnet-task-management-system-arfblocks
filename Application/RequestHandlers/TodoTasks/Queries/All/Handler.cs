@@ -3,20 +3,20 @@ namespace Application.RequestHandlers.TodoTasks.Queries.All
 	public class Handler : IRequestHandler
 	{
 		private readonly DataAccess _dataAccessLayer;
-		private readonly DbValidationService _dbValidationService;
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
 			_dataAccessLayer = (DataAccess)dataAccess;
-			_dbValidationService = dependencyProvider.GetInstance<DbValidationService>();
 		}
 
 		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var mapper = new Mapper();
-			var allTasks = await _dataAccessLayer.GetAllTasks();
+			var requestPayload = (RequestModel)payload;
 
-			var mappedTasks = mapper.MapToResponse(allTasks);
-			return ArfBlocksResults.Success(mappedTasks);
+			(var todoTasks, var pageResponse) = await _dataAccessLayer.GetAllTodoTasks(requestPayload.Sorting, requestPayload.Filters, requestPayload.PageRequest);
+
+			var response = mapper.MapToResponse(todoTasks);
+			return ArfBlocksResults.Success(response, pageResponse);
 		}
 	}
 }

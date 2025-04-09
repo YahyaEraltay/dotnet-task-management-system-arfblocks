@@ -15,12 +15,13 @@ namespace Application.RequestHandlers.TodoTasks.Queries.MyTasks
 		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var mapper = new Mapper();
+			var requestPayload = (RequestModel)payload;
 			var currentUserId = _clientService.GetCurrentUserId();
 
-			var myTasks = await _dataAccessLayer.GetPendingTasks(currentUserId);
+			(var pendingTodoTasks, var pageResponse) = await _dataAccessLayer.GetAllPendingTasksByUserId(requestPayload.Sorting, requestPayload.Filters, requestPayload.PageRequest, currentUserId);
 
-			var mappedTasks = mapper.MapToResponse(myTasks);
-			return ArfBlocksResults.Success(mappedTasks);
+			var response = mapper.MapToResponse(pendingTodoTasks);
+			return ArfBlocksResults.Success(response, pageResponse);
 		}
 	}
 }

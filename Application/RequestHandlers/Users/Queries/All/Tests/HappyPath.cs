@@ -38,6 +38,12 @@ public class HappyPath : IArfBlocksTest
     {
         var requestPayload = new Application.RequestHandlers.Users.Queries.All.RequestModel()
         {
+            PageRequest = new XPageRequest()
+            {
+                ListAll = true,
+                CurrentPage = 1,
+                PerPageCount = 1,
+            },
         };
 
         var requestOperator = new ArfBlocksRequestOperator(_dependencyProvider);

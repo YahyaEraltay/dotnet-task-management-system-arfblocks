@@ -26,6 +26,12 @@ global using Arfware.ArfBlocks.Core.Contexts;
 global using Arfware.ArfBlocks.Core.RequestResults;
 global using Arfware.ArfBlocks.Core.Attributes;
 global using Arfware.ArfBlocks.Test.Abstractions;
+global using ArfFipaso.Filter.Models;
+global using ArfFipaso.Pagination.Models;
+global using ArfFipaso.Sorting.Models;
+global using ArfFipaso.Filter.Extensions;
+global using ArfFipaso.Sorting.Extensions;
+global using ArfFipaso.Pagination.Extensions;
 global using Infrastructure.Services.TestServices;
 global using FluentAssertions;
 

@@ -13,10 +13,12 @@ namespace Application.RequestHandlers.Departments.Queries.All
         public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
         {
             var mapper = new Mapper();
-            var allDepartments = await _dataAccessLayer.All();
+            var requestPayload = (RequestModel)payload;
 
-            var mappedDepartments = mapper.MapToResponse(allDepartments);
-            return ArfBlocksResults.Success(mappedDepartments);
+            (var departments, var pageResponse) = await _dataAccessLayer.GetAllDepartments(requestPayload.Sorting, requestPayload.Filters, requestPayload.PageRequest);
+
+            var response = mapper.MapToResponse(departments);
+            return ArfBlocksResults.Success(response, pageResponse);
         }
     }
 }

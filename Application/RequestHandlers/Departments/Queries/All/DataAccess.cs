@@ -1,3 +1,6 @@
+
+
+
 namespace Application.RequestHandlers.Departments.Queries.All
 {
 	public class DataAccess : IDataAccess
@@ -9,12 +12,22 @@ namespace Application.RequestHandlers.Departments.Queries.All
 			_dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
 		}
 
-		public async Task<List<Department>> All()
+		public async Task<(List<Department>, XPageResponse)> GetAllDepartments(XSorting sorting, List<XFilterItem> filters, XPageRequest pageRequest)
 		{
-			return await _dbContext.Departments
-										.Where(d => !d.IsDeleted)
-										.OrderBy(i => i.Name)
-										.ToListAsync();
+			var query = _dbContext.Departments
+										.Sort(sorting)
+										.Filter(filters);
+
+			if (sorting == null)
+				query = query.OrderByDescending(c => c.CreatedAt);
+
+			var page = query.GetPage(pageRequest);
+
+			var list = await query
+				.Paginate(page)
+				.ToListAsync();
+
+			return (list, page);
 		}
 	}
 }
