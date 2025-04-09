@@ -3,20 +3,20 @@ namespace Application.RequestHandlers.Users.Queries.Me
 	public class Handler : IRequestHandler
 	{
 		private readonly DataAccess dataAccessLayer;
-		private readonly CurrentClientService _clientService;
+		private readonly CurrentUserService _currentUser;
 
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
 			dataAccessLayer = (DataAccess)dataAccess;
-			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
+			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 
 		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var mapper = new Mapper();
-			var currentClientId = _clientService.GetCurrentUserId();
+			var currentUserId = _currentUser.GetCurrentUserId();
 
-			var user = await dataAccessLayer.GetUserById(currentClientId);
+			var user = await dataAccessLayer.GetUserById(currentUserId);
 
 			var mappedUser = mapper.MapToResponseModel(user);
 			return ArfBlocksResults.Success(mappedUser);

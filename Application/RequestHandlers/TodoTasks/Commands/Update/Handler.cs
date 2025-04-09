@@ -3,12 +3,12 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Update
 	public class Handler : IRequestHandler
 	{
 		private readonly DataAccess dataAccessLayer;
-		private readonly CurrentClientService _clientService;
+		private readonly CurrentUserService _currentUser;
 
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
 			dataAccessLayer = (DataAccess)dataAccess;
-			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
+        _currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 
 		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)

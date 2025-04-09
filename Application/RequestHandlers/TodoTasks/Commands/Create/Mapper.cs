@@ -2,14 +2,14 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 {
 	public class Mapper
 	{
-		public TodoTask MapToNewEntity(RequestModel payload, Guid currentClientId)
+		public TodoTask MapToNewEntity(RequestModel payload, Guid currentUserId)
 		{
 			return new TodoTask()
 			{
 				Title = payload.Title,
 				Description = payload.Description,
 				AssignedDepartmentId = payload.AssignedDepartmentId,
-				CreatedById = currentClientId,
+				CreatedById = currentUserId,
 				Status = TodoTaskStatus.Pending,
 				StatusChangedAt = DateTime.UtcNow
 			};

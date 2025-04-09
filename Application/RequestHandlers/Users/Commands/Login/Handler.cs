@@ -4,13 +4,13 @@ namespace Application.RequestHandlers.Users.Commands.Login
 	public class Handler : IRequestHandler
 	{
 		private readonly DataAccess dataAccessLayer;
-		private readonly CurrentClientService _clientService;
+		private readonly CurrentUserService _currentUser;
 		private readonly IJwtService _jwtService;
 
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
 			dataAccessLayer = (DataAccess)dataAccess;
-			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
+        _currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 			_jwtService = dependencyProvider.GetInstance<IJwtService>();
 		}
 

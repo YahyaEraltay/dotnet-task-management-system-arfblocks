@@ -3,12 +3,12 @@ namespace Application.RequestHandlers.Users.Queries.All
 	public class Verificator : IRequestVerificator
 	{
 		private readonly ApplicationDbContext _dbContext;
-		private readonly CurrentClientService _clientService;
+		private readonly CurrentUserService _currentUser;
 
 		public Verificator(ArfBlocksDependencyProvider dependencyProvider)
 		{
 			_dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
-			_clientService = dependencyProvider.GetInstance<CurrentClientService>();
+        _currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 
 		public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
