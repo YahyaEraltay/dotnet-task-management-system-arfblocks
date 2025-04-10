@@ -50,7 +50,7 @@ public class CurrentUserService
 
                 var _currentUser = new CurrentUserModel()
                 {
-                    UserId = userId,
+                    Id = userId,
                     Name = name,
                     // DepartmentId = departmentId,
                 };
@@ -80,7 +80,7 @@ public class CurrentUserService
 
     public Guid GetCurrentUserId()
     {
-        return this._currentUser.UserId;
+        return this._currentUser.Id;
     }
 
     public Guid GetCurrentUserDepartmentId()

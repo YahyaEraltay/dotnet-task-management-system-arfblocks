@@ -24,7 +24,7 @@ public class HappyPath : IArfBlocksTest
         user = TestDefinitions.Users.DefaultUser(department.Id);
         await _dbContextOperation.Create<User>(user);
 
-        todoTask = TestDefinitions.ToDoTasks.DefaultTask(user.Id, user.Department.Id, TodoTaskStatus.Pending);
+        todoTask = TestDefinitions.ToDoTasks.DefaultTask(TestDefinitions.Actors.CurrentUser.Id, user.Department.Id, TodoTaskStatus.Pending);
         await _dbContextOperation.Create<TodoTask>(todoTask);
     }
 
@@ -48,18 +48,17 @@ public class HappyPath : IArfBlocksTest
 
         var requestOperator = new ArfBlocksRequestOperator(_dependencyProvider);
         var response = await requestOperator.OperateInternalRequest<Application.RequestHandlers.TodoTasks.Commands.Delete.Handler>(requestPayload);
-        // if (response.HasError)
-        //     throw new Exception(response.Error.Message);
+        if (response.HasError)
+            throw new Exception(response.Error.Message);
 
-        response.HasError.Should().Be(true);
-        response.Error.Message.Should().Be(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TodoTaskNotExist));
+        response.HasError.Should().Be(false);
 
-        // var responsePayload = (Application.RequestHandlers.TodoTasks.Commands.Delete.ResponseModel)response.Payload;
-        // responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
-        // responsePayload.Id.Should().Be(todoTask.Id);
+        var responsePayload = (Application.RequestHandlers.TodoTasks.Commands.Delete.ResponseModel)response.Payload;
+        responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
+        responsePayload.Id.Should().Be(todoTask.Id);
 
-        // var todoTaskOnDb = await _dbContextOperation.GetById<TodoTask>(responsePayload.Id);
-        // todoTaskOnDb.Id.Should().Be(requestPayload.Id);
-        // todoTaskOnDb.IsDeleted.Should().Be(requestPayload.IsDeleted);
+        var todoTaskOnDb = await _dbContextOperation.GetById<TodoTask>(responsePayload.Id);
+        todoTaskOnDb.Id.Should().Be(requestPayload.Id);
+        todoTaskOnDb.IsDeleted.Should().Be(requestPayload.IsDeleted);
     }
 }

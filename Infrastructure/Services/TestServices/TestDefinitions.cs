@@ -8,7 +8,7 @@ public class TestDefinitions
 
         public static CurrentUserModel CurrentUser = new CurrentUserModel()
         {
-            UserId = DefaultData.User.Id,
+            Id = DefaultData.User.Id,
             Name = DefaultData.User.FirstName,
         };
     }

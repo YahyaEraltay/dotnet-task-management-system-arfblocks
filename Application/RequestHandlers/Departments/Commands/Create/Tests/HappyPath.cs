@@ -12,10 +12,16 @@ public class HappyPath : IArfBlocksTest
         var _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
         _dbContextOperation = new DbContextOperations<Department>(_dbContext);
     }
+
+    public void SwitchUser(CurrentUserModel user)
+    {
+        _dependencyProvider.Add<CurrentUserModel>(user);
+    }
+
     public async Task SetActor()
     {
         await Task.CompletedTask;
-
+        SwitchUser(TestDefinitions.Actors.CurrentUser);
     }
 
     Department department = null;

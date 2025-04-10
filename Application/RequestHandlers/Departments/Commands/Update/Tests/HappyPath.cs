@@ -21,9 +21,15 @@ public class HappyPath : IArfBlocksTest
         await _dbContextOperation.Create<Department>(department);
     }
 
+    public void SwitchUser(CurrentUserModel user)
+    {
+        _dependencyProvider.Add<CurrentUserModel>(user);
+    }
+
     public async Task SetActor()
     {
         await Task.CompletedTask;
+        SwitchUser(TestDefinitions.Actors.CurrentUser);
     }
 
     public async Task RunTest()
