@@ -7,6 +7,8 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Delete
         public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
         {
             _dataAccessLayer = (DataAccess)dataAccess;
+
+
         }
 
         public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)

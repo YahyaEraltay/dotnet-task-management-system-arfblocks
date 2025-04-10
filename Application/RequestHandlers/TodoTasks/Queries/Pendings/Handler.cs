@@ -8,6 +8,8 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
 			_dataAccessLayer = (DataAccess)dataAccess;
+
+
 			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 			_dbValidationService = dependencyProvider.GetInstance<DbValidationService>();
 		}

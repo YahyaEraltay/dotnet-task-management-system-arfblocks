@@ -2,12 +2,14 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 {
 	public class Handler : IRequestHandler
 	{
-		private readonly DataAccess dataAccessLayer;
+		private readonly DataAccess _dataAccessLayer;
+
 		private readonly CurrentUserService _currentUser;
 
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
-			dataAccessLayer = (DataAccess)dataAccess;
+			_dataAccessLayer = (DataAccess)dataAccess;
+
 			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 
@@ -19,7 +21,8 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 
 			var task = mapper.MapToNewEntity(requestPayload, currentUserId);
 
-			await dataAccessLayer.Add(task);
+			await _dataAccessLayer
+.Add(task);
 
 			var mappedResponseModel = mapper.MapToNewResponseModel(task);
 			return ArfBlocksResults.Success(mappedResponseModel);

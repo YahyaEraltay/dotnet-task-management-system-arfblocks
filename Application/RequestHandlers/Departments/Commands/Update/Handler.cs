@@ -3,11 +3,13 @@ namespace Application.RequestHandlers.Departments.Commands.Update
 
     public class Handler : IRequestHandler
     {
-        private readonly DataAccess dataAccessLayer;
+        private readonly DataAccess _dataAccessLayer;
+
 
         public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
         {
-            dataAccessLayer = (DataAccess)dataAccess;
+            _dataAccessLayer = (DataAccess)dataAccess;
+
         }
 
         public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
@@ -15,11 +17,13 @@ namespace Application.RequestHandlers.Departments.Commands.Update
             var mapper = new Mapper();
             var requestPayload = (RequestModel)payload;
 
-            var department = await dataAccessLayer.GetById(requestPayload.Id);
+            var department = await _dataAccessLayer
+.GetById(requestPayload.Id);
 
             department = mapper.MapToEntity(requestPayload, department);
 
-            await dataAccessLayer.Update(department);
+            await _dataAccessLayer
+.Update(department);
 
             var response = mapper.MapToResponse(department);
             return ArfBlocksResults.Success(response);

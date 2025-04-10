@@ -7,6 +7,8 @@ namespace Application.RequestHandlers.TodoTasks.Queries.MyTasks
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
 			_dataAccessLayer = (DataAccess)dataAccess;
+
+
 			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 

@@ -3,11 +3,13 @@ namespace Application.RequestHandlers.Users.Commands.Create
     [AllowAnonymousHandler]
     public class Handler : IRequestHandler
     {
-        private readonly DataAccess dataAccessLayer;
+        private readonly DataAccess _dataAccessLayer;
+
 
         public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
         {
-            dataAccessLayer = (DataAccess)dataAccess;
+            _dataAccessLayer = (DataAccess)dataAccess;
+
         }
 
         public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
@@ -17,7 +19,8 @@ namespace Application.RequestHandlers.Users.Commands.Create
 
             var user = mapper.MapToNewEntity(requestPayload);
 
-            await dataAccessLayer.Add(user);
+            await _dataAccessLayer
+.Add(user);
 
             var response = mapper.MapToResponse(user);
             return ArfBlocksResults.Success(response);

@@ -2,12 +2,14 @@ namespace Application.RequestHandlers.Users.Queries.Me
 {
 	public class Handler : IRequestHandler
 	{
-		private readonly DataAccess dataAccessLayer;
+		private readonly DataAccess _dataAccessLayer;
+
 		private readonly CurrentUserService _currentUser;
 
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
-			dataAccessLayer = (DataAccess)dataAccess;
+			_dataAccessLayer = (DataAccess)dataAccess;
+
 			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 
@@ -16,7 +18,8 @@ namespace Application.RequestHandlers.Users.Queries.Me
 			var mapper = new Mapper();
 			var currentUserId = _currentUser.GetCurrentUserId();
 
-			var user = await dataAccessLayer.GetUserById(currentUserId);
+			var user = await _dataAccessLayer
+.GetUserById(currentUserId);
 
 			var response = mapper.MapToResponseModel(user);
 			return ArfBlocksResults.Success(response);

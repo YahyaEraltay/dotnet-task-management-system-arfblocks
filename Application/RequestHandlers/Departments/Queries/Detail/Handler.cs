@@ -7,6 +7,8 @@ namespace Application.RequestHandlers.Departments.Queries.Detail
 		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 		{
 			_dataAccessLayer = (DataAccess)dataAccess;
+
+
 			_dbValidationService = dependencyProvider.GetInstance<DbValidationService>();
 		}
 
