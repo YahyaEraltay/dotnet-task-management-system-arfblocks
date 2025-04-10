@@ -25,10 +25,15 @@ public class HappyPath_AdminUser : IArfBlocksTest
     }
 
 
+    public void SwitchUser(CurrentUserModel user)
+    {
+        _dependencyProvider.Add<CurrentUserModel>(user);
+    }
+
     public async Task SetActor()
     {
-        // NOP:
         await Task.CompletedTask;
+        SwitchUser(TestDefinitions.Actors.CurrentUser);
     }
 
     public async Task RunTest()

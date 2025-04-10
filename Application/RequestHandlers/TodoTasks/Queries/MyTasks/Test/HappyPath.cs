@@ -61,8 +61,6 @@ public class HappyPath : IArfBlocksTest
         var matchedTodoTask = responsePayload.FirstOrDefault(d => d.Id == todoTask.Id);
         matchedTodoTask.Should().BeNull();
 
-        // matchedTodoTask.Should().NotBeNull();
-        // matchedTodoTask.Id.Should().Be(todoTask.Id);
         // matchedTodoTask.Title.Should().Be(todoTask.Title);
         // matchedTodoTask.Description.Should().Be(todoTask.Description);
         // matchedTodoTask.Status.Should().Be(todoTask.Status);

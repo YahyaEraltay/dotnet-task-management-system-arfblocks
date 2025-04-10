@@ -9,7 +9,11 @@ public class TestDefinitions
         public static CurrentUserModel CurrentUser = new CurrentUserModel()
         {
             Id = DefaultData.User.Id,
-            Name = DefaultData.User.FirstName,
+            FirstName = DefaultData.User.FirstName,
+            LastName = DefaultData.User.LastName,
+            DepartmentId = DefaultData.User.DepartmentId,
+            DepartmentName = "Software Development",
+            Email = DefaultData.User.Email,
         };
     }
 

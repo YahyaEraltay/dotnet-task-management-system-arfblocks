@@ -51,7 +51,7 @@ public class CurrentUserService
                 var _currentUser = new CurrentUserModel()
                 {
                     Id = userId,
-                    Name = name,
+                    FirstName = name,
                     // DepartmentId = departmentId,
                 };
 
@@ -90,6 +90,6 @@ public class CurrentUserService
 
     public string GetCurrentUserDisplayName()
     {
-        return this._currentUser.Name;
+        return this._currentUser.FirstName;
     }
 }

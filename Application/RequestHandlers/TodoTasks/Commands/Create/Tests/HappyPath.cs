@@ -29,7 +29,7 @@ public class HappyPath : IArfBlocksTest
         user = TestDefinitions.Users.DefaultUser(department.Id);
         await _dbContextOperation.Create<User>(user);
 
-        todoTask = TestDefinitions.ToDoTasks.DefaultTask(user.Id, user.Department.Id, TodoTaskStatus.Pending);
+        todoTask = TestDefinitions.ToDoTasks.DefaultTask(TestDefinitions.Actors.CurrentUser.Id, user.Department.Id, TodoTaskStatus.Pending);
         await _dbContextOperation.Create<TodoTask>(todoTask);
     }
 

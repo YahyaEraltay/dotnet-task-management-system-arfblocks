@@ -12,11 +12,6 @@ public class HappyPath : IArfBlocksTest
         var _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
         _dbContextOperation = new DbContextOperations<User>(_dbContext);
     }
-    public async Task SetActor()
-    {
-        await Task.CompletedTask;
-
-    }
 
     Department department = null;
     User user = null;
@@ -28,6 +23,17 @@ public class HappyPath : IArfBlocksTest
 
         user = TestDefinitions.Users.DefaultUser(department.Id);
         await _dbContextOperation.Create<User>(user);
+    }
+
+    public void SwitchUser(CurrentUserModel user)
+    {
+        _dependencyProvider.Add<CurrentUserModel>(user);
+    }
+
+    public async Task SetActor()
+    {
+        await Task.CompletedTask;
+        SwitchUser(TestDefinitions.Actors.CurrentUser);
     }
 
     public async Task RunTest()
