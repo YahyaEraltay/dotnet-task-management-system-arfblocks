@@ -15,9 +15,10 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
 			var mapper = new Mapper();
-			var currentUserDepartmentId = _currentUser.GetCurrentUserDepartmentId();
+			var currentUserId = _currentUser.GetCurrentUserId();
 
-			var pendingTasks = await _dataAccessLayer.GetPendingTasks(currentUserDepartmentId);
+			var user = await _dataAccessLayer.GetUserById(currentUserId);
+			var pendingTasks = await _dataAccessLayer.GetPendingTasks(user.DepartmentId);
 
 			var mappedTasks = mapper.MapToResponse(pendingTasks);
 			return ArfBlocksResults.Success(mappedTasks);

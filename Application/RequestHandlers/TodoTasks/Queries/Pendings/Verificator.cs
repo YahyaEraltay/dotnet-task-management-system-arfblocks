@@ -8,7 +8,7 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 		public Verificator(ArfBlocksDependencyProvider dependencyProvider)
 		{
 			_dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
-        _currentUser = dependencyProvider.GetInstance<CurrentUserService>();
+			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
 		}
 
 		public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)

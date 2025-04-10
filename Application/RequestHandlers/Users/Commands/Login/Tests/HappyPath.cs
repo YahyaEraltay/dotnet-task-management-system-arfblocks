@@ -1,6 +1,6 @@
 namespace Application.RequestHandlers.Users.Commands.Login.Test;
 
-public class HappyPath_AdminUser : IArfBlocksTest
+public class HappyPath : IArfBlocksTest
 {
     private DbContextOperations<User> _dbContextOperation;
 

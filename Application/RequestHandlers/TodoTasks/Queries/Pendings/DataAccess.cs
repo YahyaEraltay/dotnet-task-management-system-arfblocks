@@ -9,6 +9,10 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 			_dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
 		}
 
+		public async Task<User> GetUserById(Guid userId)
+		{
+			return await _dbContext.Users.FirstOrDefaultAsync(x => x.Id == userId);
+		}
 		public async Task<List<TodoTask>> GetPendingTasks(Guid departmentId)
 		{
 			return await _dbContext.Tasks

@@ -18,8 +18,8 @@ namespace Application.RequestHandlers.Users.Queries.Me
 
 			var user = await dataAccessLayer.GetUserById(currentUserId);
 
-			var mappedUser = mapper.MapToResponseModel(user);
-			return ArfBlocksResults.Success(mappedUser);
+			var response = mapper.MapToResponseModel(user);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }
