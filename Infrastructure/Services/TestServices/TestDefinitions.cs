@@ -3,6 +3,16 @@ namespace Infrastructure.Services.TestServices;
 public class TestDefinitions
 {
 
+    public static class Actors
+    {
+
+        public static CurrentUserModel CurrentUser = new CurrentUserModel()
+        {
+            UserId = DefaultData.User.Id,
+            Name = DefaultData.User.FirstName,
+        };
+    }
+
     public static class Departments
     {
         public static Department DefaultDepartment() => new Department()

@@ -10,7 +10,7 @@ public class TestDataSeeder
 
     public async Task Seed()
     {
-        _dbContext.Users.AddRange(DefaultUserData.DefaultUsers);
+        _dbContext.Users.AddRange(DefaultData.DefaultUsers);
 
         await _dbContext.SaveChangesAsync();
     }

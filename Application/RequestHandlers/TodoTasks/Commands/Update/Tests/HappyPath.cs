@@ -6,6 +6,11 @@ public class HappyPath : IArfBlocksTest
 
     private ArfBlocksDependencyProvider _dependencyProvider;
 
+    public void SwitchUser(CurrentUserModel user)
+    {
+        _dependencyProvider.Add<CurrentUserModel>(user);
+    }
+
     public void SetDependencies(ArfBlocksDependencyProvider dependencyProvider)
     {
         _dependencyProvider = dependencyProvider;
@@ -31,6 +36,7 @@ public class HappyPath : IArfBlocksTest
     public async Task SetActor()
     {
         await Task.CompletedTask;
+        SwitchUser(TestDefinitions.Actors.CurrentUser);
     }
 
     public async Task RunTest()
@@ -50,23 +56,22 @@ public class HappyPath : IArfBlocksTest
 
         var requestOperator = new ArfBlocksRequestOperator(_dependencyProvider);
         var response = await requestOperator.OperateInternalRequest<Application.RequestHandlers.TodoTasks.Commands.Update.Handler>(requestPayload);
-        // if (response.HasError)
-        //     throw new Exception(response.Error.Message);
+        if (response.HasError)
+            throw new Exception(response.Error.Message);
 
-        response.HasError.Should().Be(true);
-        response.Error.Message.Should().Be("FOR_UPDATE_CURRENT_USER_MUST_BE_TASK_CREATOR");
+        response.HasError.Should().Be(false);
 
-        // var responsePayload = (Application.RequestHandlers.TodoTasks.Commands.Update.ResponseModel)response.Payload;
-        // responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
-        // responsePayload.Id.Should().Be(requestPayload.Id);
-        // responsePayload.Title.Should().Be(requestPayload.Title);
-        // responsePayload.Description.Should().Be(requestPayload.Description);
-        // responsePayload.AssignedDepartmentId.Should().Be(requestPayload.AssignedDepartmentId);
+        var responsePayload = (Application.RequestHandlers.TodoTasks.Commands.Update.ResponseModel)response.Payload;
+        responsePayload.Id.Should().NotBeEmpty().And.NotBe(Guid.Empty);
+        responsePayload.Id.Should().Be(requestPayload.Id);
+        responsePayload.Title.Should().Be(requestPayload.Title);
+        responsePayload.Description.Should().Be(requestPayload.Description);
+        responsePayload.AssignedDepartmentId.Should().Be(requestPayload.AssignedDepartmentId);
 
-        // var todoTaskOnDb = await _dbContextOperation.GetById<TodoTask>(responsePayload.Id);
-        // todoTaskOnDb.Id.Should().Be(requestPayload.Id);
-        // todoTaskOnDb.Title.Should().Be(requestPayload.Title);
-        // todoTaskOnDb.Description.Should().Be(requestPayload.Description);
-        // todoTaskOnDb.AssignedDepartmentId.Should().Be(requestPayload.AssignedDepartmentId);
+        var todoTaskOnDb = await _dbContextOperation.GetById<TodoTask>(responsePayload.Id);
+        todoTaskOnDb.Id.Should().Be(requestPayload.Id);
+        todoTaskOnDb.Title.Should().Be(requestPayload.Title);
+        todoTaskOnDb.Description.Should().Be(requestPayload.Description);
+        todoTaskOnDb.AssignedDepartmentId.Should().Be(requestPayload.AssignedDepartmentId);
     }
 }

@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using Arfware.ArfBlocks.Core;
 using Microsoft.AspNetCore.Http;
 
-namespace Cmms.Infrastructure.Services;
+namespace Infrastructure.Services;
 
 public class CurrentUserService
 {
@@ -46,11 +46,13 @@ public class CurrentUserService
                 // Get Claims
                 var name = token.Claims.FirstOrDefault(c => c.Type == "given_name").Value;
                 var userId = Guid.Parse(token.Claims.FirstOrDefault(c => c.Type == "nameid").Value);
+                // var departmentId = Guid.Parse(token.Claims.FirstOrDefault(c => c.Type == "department_id").Value);
 
                 var _currentUser = new CurrentUserModel()
                 {
-                    Id = userId,
+                    UserId = userId,
                     Name = name,
+                    // DepartmentId = departmentId,
                 };
 
                 return _currentUser;
@@ -78,7 +80,7 @@ public class CurrentUserService
 
     public Guid GetCurrentUserId()
     {
-        return this._currentUser.Id;
+        return this._currentUser.UserId;
     }
 
     public Guid GetCurrentUserDepartmentId()

@@ -14,6 +14,7 @@ namespace Application.Configurations
 
 			base.Add<ApplicationDbContext>();
 			base.Add<DbValidationService>();
+			base.Add<DbVerificationService>();
 			base.Add<EnvironmentService>();
 			base.Add<CustomDbContextOptions>();
 			base.Add<CurrentUserService>();
