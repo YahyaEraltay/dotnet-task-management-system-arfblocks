@@ -18,18 +18,18 @@ public class HappyPath : IArfBlocksTest
 
     }
 
-    Department department = null;
-    User user = null;
+    // Department department = null;
+    // User user = null;
     TodoTask todoTask = null;
     public async Task PrepareTest()
     {
-        department = TestDefinitions.Departments.DefaultDepartment();
-        await _dbContextOperation.Create<Department>(department);
+        // department = TestDefinitions.Departments.DefaultDepartment();
+        // await _dbContextOperation.Create<Department>(department);
 
-        user = TestDefinitions.Users.DefaultUser(department.Id);
-        await _dbContextOperation.Create<User>(user);
+        // user = TestDefinitions.Users.DefaultUser(user.DepartmentId);
+        // await _dbContextOperation.Create<User>(user);
 
-        todoTask = TestDefinitions.ToDoTasks.DefaultTask(user.Id, user.Department.Id, TodoTaskStatus.Pending);
+        todoTask = TestDefinitions.ToDoTasks.DefaultTask(TestDefinitions.Actors.CurrentUser.Id, TestDefinitions.Actors.CurrentUser.DepartmentId, TodoTaskStatus.Pending);
         await _dbContextOperation.Create<TodoTask>(todoTask);
     }
 

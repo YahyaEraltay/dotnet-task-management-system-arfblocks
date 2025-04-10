@@ -45,6 +45,7 @@ public class TestDefinitions
             AssignedDepartmentId = departmentId,
             CreatedById = createdById,
             Status = todoTaskStatus,
+            IsDeleted = false,
             StatusChangedAt = DateTime.Now,
         };
     }
