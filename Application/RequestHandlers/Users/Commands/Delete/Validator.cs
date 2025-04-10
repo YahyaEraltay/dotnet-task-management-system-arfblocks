@@ -36,10 +36,6 @@ namespace Application.RequestHandlers.Users.Commands.Delete
             RuleFor(x => x.Id)
                         .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
                         .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
-
-            RuleFor(x => x.IsDeleted)
-            .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IsDeletedInvalid))
-            .Must(value => value == true || value == false).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IsDeletedInvalid));
         }
     }
 }

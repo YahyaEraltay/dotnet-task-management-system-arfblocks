@@ -33,7 +33,12 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Title)
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TitleNotValid))
 				.NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TitleNotValid));
+
+			RuleFor(x => x.Description)
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.Description))
+				.NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.Description));
 
 			RuleFor(x => x.AssignedDepartmentId)
 				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.AssignedDepartmentIdNotValid))

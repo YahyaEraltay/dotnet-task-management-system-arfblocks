@@ -6,7 +6,6 @@ namespace Domain.Errors
         {
             public static string NameNotValid { get; set; } = "";
             public static string IdNotValid { get; set; } = "";
-            public static string IsDeletedInvalid { get; set; } = "";
         }
 
         public class DepartmentErrors
@@ -25,6 +24,8 @@ namespace Domain.Errors
             // Model Validations
             public static string UserIdNotValid { get; set; } = "";
             public static string EmailNotValid { get; set; } = "";
+            public static string FirstNameNotValid { get; set; } = "";
+            public static string LastNameNotValid { get; set; } = "";
 
             // Database Validations
             public static string UserNotExist { get; set; } = "";
@@ -34,6 +35,7 @@ namespace Domain.Errors
         {
             // Model Validations
             public static string TodoTaskIdNotValid { get; set; } = "";
+            public static string Description { get; set; } = "";
             public static string TitleNotValid { get; set; } = "";
 
             // Database Validations

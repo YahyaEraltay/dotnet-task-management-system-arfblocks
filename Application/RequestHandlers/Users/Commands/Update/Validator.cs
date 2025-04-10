@@ -33,13 +33,25 @@ namespace Application.RequestHandlers.Users.Commands.Update
     {
         public RequestModel_Validator()
         {
-            RuleFor(x => x.FirstName)
-                   .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid))
-                   .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.NameNotValid));
-
             RuleFor(x => x.Id)
                         .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
                         .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
+
+            RuleFor(x => x.FirstName)
+                        .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.FirstNameNotValid))
+                        .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.FirstNameNotValid));
+
+            RuleFor(x => x.LastName)
+                        .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.LastNameNotValid))
+                        .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.LastNameNotValid));
+
+            RuleFor(x => x.Email)
+                        .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.EmailNotValid))
+                        .NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.UserErrors.EmailNotValid));
+
+            RuleFor(x => x.DepartmentId)
+                        .NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.DepartmentIdNotValid))
+                        .NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.DepartmentIdNotValid));
         }
     }
 }

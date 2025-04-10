@@ -38,15 +38,20 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Update
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Id)
-				.NotNull().WithMessage("TASK_ID_NOT_VALID")
-				.NotEqual(Guid.Empty).WithMessage("TASK_ID_NOT_VALID");
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
+				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
 
 			RuleFor(x => x.Title)
-				.NotEmpty().WithMessage("TITLE_IS_EMPTY");
+					.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TitleNotValid))
+					.NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.TitleNotValid));
+
+			RuleFor(x => x.Description)
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.Description))
+				.NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.Description));
 
 			RuleFor(x => x.AssignedDepartmentId)
-				.NotNull().WithMessage("ASSIGNED_DEPARTMENT_ID_NOT_VALID")
-				.NotEqual(Guid.Empty).WithMessage("ASSIGNED_DEPARTMENT_ID_NOT_VALID");
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.AssignedDepartmentIdNotValid))
+				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.DepartmentErrors.AssignedDepartmentIdNotValid));
 		}
 	}
 }

@@ -33,8 +33,8 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Delete
 		public RequestModel_Validator()
 		{
 			RuleFor(x => x.Id)
-				.NotNull().WithMessage("TASK_ID_NOT_VALID")
-				.NotEqual(Guid.Empty).WithMessage("TASK_ID_NOT_VALID");
+				.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
+				.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
 
 		}
 	}
