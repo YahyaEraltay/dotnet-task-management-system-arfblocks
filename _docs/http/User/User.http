@@ -55,6 +55,15 @@ Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
+{
+  "filters": [],
+  "pageRequest": {
+    "currentPage": 1,
+    "perPageCount": 10,
+    "listAll": true
+  }
+}
+
 ### Me 
 GET {{Api_Url}}/Users/Me 
 Accept: application/json

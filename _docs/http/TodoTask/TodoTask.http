@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDE4OTg0MywiZXhwIjoxNzQ0NDQ5MDQzLCJpYXQiOjE3NDQxODk4NDMsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.PECpGmmWaRehuOzXm_a9ECiOXtxEI58u-W_B8vOX2es
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDI3Njc4MywiZXhwIjoxNzQ0NTM1OTgzLCJpYXQiOjE3NDQyNzY3ODMsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.NvCHDcoJp37ewpPatRg-JGEv_p19nqU833nKG8LIqws
 
 ### Create
 POST {{Api_Url}}/TodoTasks/Create 
@@ -64,6 +64,15 @@ Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
+{
+  "filters": [],
+  "pageRequest": {
+    "currentPage": 1,
+    "perPageCount": 10,
+    "listAll": true
+  }
+}
+
 ### Detail
 GET {{Api_Url}}/TodoTasks/Detail 
 Accept: application/json
@@ -75,10 +84,19 @@ Authorization: Bearer {{Jwt_Key}}
 }
 
 ### MyTasks
-GET {{Api_Url}}/TodoTasks/MyTasks 
+GET {{Api_Url}}/TodoTasks/MyTasks
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
+
+{
+  "filters": [],
+  "pageRequest": {
+    "currentPage": 1,
+    "perPageCount": 10,
+    "listAll": true
+  }
+}
 
 ### Pendings
 GET {{Api_Url}}/TodoTasks/Pendings 
