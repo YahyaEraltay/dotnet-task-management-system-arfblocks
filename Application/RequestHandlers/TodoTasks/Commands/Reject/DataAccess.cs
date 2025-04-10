@@ -9,7 +9,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Reject
             _dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
         }
 
-        public async Task<TodoTask> GetById(Guid id)
+        public async Task<TodoTask> GetTaskById(Guid id)
         {
             return await _dbContext.Tasks.FirstOrDefaultAsync(x => x.Id == id);
         }

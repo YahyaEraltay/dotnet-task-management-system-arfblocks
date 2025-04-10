@@ -16,13 +16,13 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Delete
             var mapper = new Mapper();
             var requestPayload = (RequestModel)payload;
 
-            var user = await _dataAccessLayer.GetById(requestPayload.Id);
+            var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
 
-            mapper.MapToEntity(user, requestPayload);
+            mapper.MapToEntity(task, requestPayload);
 
-            await _dataAccessLayer.Update(user);
+            await _dataAccessLayer.Update(task);
 
-            var response = mapper.MapToResponse(user);
+            var response = mapper.MapToResponse(task);
             return ArfBlocksResults.Success(response);
         }
     }

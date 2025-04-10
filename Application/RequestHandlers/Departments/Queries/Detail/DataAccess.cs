@@ -9,7 +9,7 @@ namespace Application.RequestHandlers.Departments.Queries.Detail
 			_dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
 		}
 
-		public async Task<Department> GetById(Guid Id)
+		public async Task<Department> GetDepartmentById(Guid Id)
 		{
 			return await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == Id);
 		}

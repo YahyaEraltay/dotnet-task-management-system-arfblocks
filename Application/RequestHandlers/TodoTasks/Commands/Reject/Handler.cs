@@ -16,12 +16,11 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Reject
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			var task = await _dataAccessLayer
-.GetById(requestPayload.Id);
+			var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
 
-			task.Status = TodoTaskStatus.Rejected;
-			await _dataAccessLayer
-.Update(task);
+			mapper.MapToEntity(task);
+
+			await _dataAccessLayer.Update(task);
 
 			var mappedResponseModel = mapper.MapToResponse(task);
 			return ArfBlocksResults.Success(mappedResponseModel);

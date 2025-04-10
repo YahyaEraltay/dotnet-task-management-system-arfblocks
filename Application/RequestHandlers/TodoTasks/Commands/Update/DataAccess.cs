@@ -9,15 +9,15 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Update
             _dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
         }
 
-        public async Task<TodoTask> GetById(Guid id)
+        public async Task<TodoTask> GetTaskById(Guid id)
         {
-            return await _dbContext.Tasks.FirstOrDefaultAsync(x => x.Id == id);  
+            return await _dbContext.Tasks.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task Update(TodoTask task)
+        public async Task UpdateTask(TodoTask task)
         {
             var updatedTask = await _dbContext.Tasks.FirstOrDefaultAsync(x => x.Id == task.Id);
-            
+
             _dbContext.Tasks.Update(updatedTask);
             await _dbContext.SaveChangesAsync();
         }

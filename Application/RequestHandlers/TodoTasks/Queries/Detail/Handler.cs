@@ -17,10 +17,10 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Detail
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			var task = await _dataAccessLayer.TaskDetail(requestPayload.Id);
+			var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
 
-			var mappedTask = mapper.MapToResponse(task);
-			return ArfBlocksResults.Success(mappedTask);
+			var response = mapper.MapToResponse(task);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

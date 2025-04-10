@@ -18,13 +18,11 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Update
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			var task = await _dataAccessLayer
-.GetById(requestPayload.Id);
+			var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
 
 			task = mapper.MapToEntity(requestPayload, task);
 
-			await _dataAccessLayer
-.Update(task);
+			await _dataAccessLayer.UpdateTask(task);
 
 			var response = mapper.MapToResponse(task);
 			return ArfBlocksResults.Success(response);

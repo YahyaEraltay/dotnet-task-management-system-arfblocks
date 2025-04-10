@@ -9,15 +9,15 @@ namespace Application.RequestHandlers.Departments.Commands.Update
             _dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
         }
 
-        public async Task<Department> GetById(Guid id)
+        public async Task<Department> GetDepartmentById(Guid id)
         {
-            return await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == id);  
+            return await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task Update(Department department)
+        public async Task UpdateDepartment(Department department)
         {
             var updatedDepartment = await _dbContext.Departments.FirstOrDefaultAsync(x => x.Id == department.Id);
-            
+
             _dbContext.Departments.Update(updatedDepartment);
             await _dbContext.SaveChangesAsync();
         }

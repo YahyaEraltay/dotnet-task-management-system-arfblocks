@@ -2,7 +2,7 @@ namespace Application.RequestHandlers.Users.Commands.Login
 {
 	public class Mapper
 	{
-		public ResponseModel MapToResponseModel(User user, string jwtToken)
+		public ResponseModel MapToResponse(User user, string jwtToken)
 		{
 			return new ResponseModel()
 			{

@@ -19,8 +19,7 @@ namespace Application.RequestHandlers.Users.Commands.Create
 
             var user = mapper.MapToNewEntity(requestPayload);
 
-            await _dataAccessLayer
-.Add(user);
+            await _dataAccessLayer.AddUser(user);
 
             var response = mapper.MapToResponse(user);
             return ArfBlocksResults.Success(response);

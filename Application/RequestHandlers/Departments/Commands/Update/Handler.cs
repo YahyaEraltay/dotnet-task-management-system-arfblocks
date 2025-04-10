@@ -17,13 +17,11 @@ namespace Application.RequestHandlers.Departments.Commands.Update
             var mapper = new Mapper();
             var requestPayload = (RequestModel)payload;
 
-            var department = await _dataAccessLayer
-.GetById(requestPayload.Id);
+            var department = await _dataAccessLayer.GetDepartmentById(requestPayload.Id);
 
             department = mapper.MapToEntity(requestPayload, department);
 
-            await _dataAccessLayer
-.Update(department);
+            await _dataAccessLayer.UpdateDepartment(department);
 
             var response = mapper.MapToResponse(department);
             return ArfBlocksResults.Success(response);

@@ -9,7 +9,7 @@ namespace Application.RequestHandlers.Users.Queries.Detail
 			_dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
 		}
 
-		public async Task<User> GetById(Guid Id)
+		public async Task<User> GetUserById(Guid Id)
 		{
 			return await _dbContext.Users
 										.Include(x => x.Department)

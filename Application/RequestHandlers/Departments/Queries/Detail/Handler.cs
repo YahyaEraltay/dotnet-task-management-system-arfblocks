@@ -17,10 +17,10 @@ namespace Application.RequestHandlers.Departments.Queries.Detail
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			var department = await _dataAccessLayer.GetById(requestPayload.Id);
+			var department = await _dataAccessLayer.GetDepartmentById(requestPayload.Id);
 
-			var mappedDepartment = mapper.MapToResponse(department);
-			return ArfBlocksResults.Success(mappedDepartment);
+			var response = mapper.MapToResponse(department);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

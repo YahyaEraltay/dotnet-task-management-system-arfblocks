@@ -9,7 +9,7 @@ namespace Application.RequestHandlers.Users.Commands.Create
             _dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
         }
 
-        public async Task Add(User user)
+        public async Task AddUser(User user)
         {
             _dbContext.Users.Add(user);
             await _dbContext.SaveChangesAsync();

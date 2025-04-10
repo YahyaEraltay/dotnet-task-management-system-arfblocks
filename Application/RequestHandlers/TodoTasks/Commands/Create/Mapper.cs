@@ -15,7 +15,7 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 			};
 		}
 
-		public ResponseModel MapToNewResponseModel(TodoTask task)
+		public ResponseModel MapToResponse(TodoTask task)
 		{
 			return new ResponseModel()
 			{

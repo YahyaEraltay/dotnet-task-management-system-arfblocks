@@ -16,15 +16,14 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			var task = await _dataAccessLayer
-.GetById(requestPayload.Id);
+			var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
 
-			task.Status = TodoTaskStatus.Completed;
-			await _dataAccessLayer
-.Update(task);
+			mapper.MapToEntity(task);
 
-			var mappedResponseModel = mapper.MapToResponse(task);
-			return ArfBlocksResults.Success(mappedResponseModel);
+			await _dataAccessLayer.UpdateTask(task);
+
+			var response = mapper.MapToResponse(task);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

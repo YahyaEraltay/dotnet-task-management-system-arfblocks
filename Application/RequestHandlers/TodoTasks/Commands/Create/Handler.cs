@@ -21,11 +21,10 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Create
 
 			var task = mapper.MapToNewEntity(requestPayload, currentUserId);
 
-			await _dataAccessLayer
-.Add(task);
+			await _dataAccessLayer.Add(task);
 
-			var mappedResponseModel = mapper.MapToNewResponseModel(task);
-			return ArfBlocksResults.Success(mappedResponseModel);
+			var response = mapper.MapToResponse(task);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

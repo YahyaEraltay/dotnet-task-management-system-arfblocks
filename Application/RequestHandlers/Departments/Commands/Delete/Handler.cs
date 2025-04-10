@@ -17,11 +17,11 @@ namespace Application.RequestHandlers.Departments.Commands.Delete
             var mapper = new Mapper();
             var requestPayload = (RequestModel)payload;
 
-            var department = await _dataAccessLayer.GetById(requestPayload.Id);
+            var department = await _dataAccessLayer.GetDepartmentById(requestPayload.Id);
 
             mapper.MapToEntity(department, requestPayload);
 
-            await _dataAccessLayer.Update(department);
+            await _dataAccessLayer.UpdateDepartment(department);
 
             var response = mapper.MapToResponse(department);
             return ArfBlocksResults.Success(response);

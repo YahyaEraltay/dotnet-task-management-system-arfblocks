@@ -9,7 +9,7 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Detail
 			_dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
 		}
 
-		public async Task<TodoTask> TaskDetail(Guid id)
+		public async Task<TodoTask> GetTaskById(Guid id)
 		{
 			return await _dbContext.Tasks
 										.Include(t => t.AssignedDepartment)

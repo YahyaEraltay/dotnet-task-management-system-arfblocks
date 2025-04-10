@@ -22,8 +22,8 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 			var user = await _dataAccessLayer.GetUserById(currentUserId);
 			var pendingTasks = await _dataAccessLayer.GetPendingTasks(user.DepartmentId);
 
-			var mappedTasks = mapper.MapToResponse(pendingTasks);
-			return ArfBlocksResults.Success(mappedTasks);
+			var response = mapper.MapToResponse(pendingTasks);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

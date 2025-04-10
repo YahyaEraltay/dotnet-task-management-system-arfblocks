@@ -21,13 +21,12 @@ namespace Application.RequestHandlers.Users.Commands.Login
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
 
-			var user = await _dataAccessLayer
-.GetUserByEmail(requestPayload.Email);
+			var user = await _dataAccessLayer.GetUserByEmail(requestPayload.Email);
 
 			var jwtToken = _jwtService.GenerateJwt(user);
 
-			var mappedResponseModel = mapper.MapToResponseModel(user, jwtToken);
-			return ArfBlocksResults.Success(mappedResponseModel);
+			var response = mapper.MapToResponse(user, jwtToken);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

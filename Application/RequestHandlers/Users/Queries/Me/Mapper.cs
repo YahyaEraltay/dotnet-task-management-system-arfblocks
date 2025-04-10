@@ -2,7 +2,7 @@ namespace Application.RequestHandlers.Users.Queries.Me
 {
 	public class Mapper
 	{
-		public ResponseModel MapToResponseModel(User user)
+		public ResponseModel MapToResponse(User user)
 		{
 			return new ResponseModel()
 			{
