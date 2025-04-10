@@ -30,4 +30,5 @@ global using ArfFipaso.Sorting.Extensions;
 global using ArfFipaso.Pagination.Extensions;
 global using Infrastructure.Services.TestServices;
 global using FluentAssertions;
+global using Serilog.Core;
 

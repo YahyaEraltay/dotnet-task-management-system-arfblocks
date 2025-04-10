@@ -1,14 +1,10 @@
-using System.Threading.Tasks;
-using Arfware.ArfBlocks.Core;
-using Microsoft.AspNetCore.Http;
-
 namespace Infrastructure.Services;
 
 public class CurrentUserService
 {
     private CurrentUserModel _currentUser;
     private readonly IHttpContextAccessor _httpContextAccessor;
-    // private readonly CustomLogger _logger;
+    private readonly CustomLogger _logger;
 
     public CurrentUserService(IHttpContextAccessor httpContextAccessor, ArfBlocksDependencyProvider dependencyProvider, EnvironmentService environmentService, CurrentUserModel identifiedClient)
     {
@@ -22,7 +18,7 @@ public class CurrentUserService
         {
             this._currentUser = ParseJwt().Result;
         }
-        // _logger = dependencyProvider.GetInstance<CustomLogger>();
+        _logger = dependencyProvider.GetInstance<CustomLogger>();
     }
 
 
@@ -58,15 +54,10 @@ public class CurrentUserService
         }
         catch (Exception exception)
         {
-            // await _logger.Error($"CurrentUserService JWT Parsing Error Message: {exception.Message}");
-            // await _logger.Error($"CurrentUserService JWT Parsing Error Message: {exception.InnerException?.Message}");
-            // await _logger.Error($"CurrentUserService JWT Parsing Error Stack Trace: {exception.StackTrace}");
-            // await _logger.Error($"CurrentUserService JWT Parsing Error Stack Trace: {exception.InnerException?.StackTrace}");
-
-            Console.WriteLine($"CurrentUserService JWT Parsing Error Message: {exception.Message}");
-            Console.WriteLine($"CurrentUserService JWT Parsing Error Message: {exception.InnerException?.Message}");
-            Console.WriteLine($"CurrentUserService JWT Parsing Error Stack Trace: {exception.StackTrace}");
-            Console.WriteLine($"CurrentUserService JWT Parsing Error Stack Trace: {exception.InnerException?.StackTrace}");
+            await _logger.Error($"CurrentUserService JWT Parsing Error Message: {exception.Message}");
+            await _logger.Error($"CurrentUserService JWT Parsing Error Message: {exception.InnerException?.Message}");
+            await _logger.Error($"CurrentUserService JWT Parsing Error Stack Trace: {exception.StackTrace}");
+            await _logger.Error($"CurrentUserService JWT Parsing Error Stack Trace: {exception.InnerException?.StackTrace}");
         }
 
         return null;

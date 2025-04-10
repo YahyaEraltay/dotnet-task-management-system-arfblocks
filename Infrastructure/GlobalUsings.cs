@@ -11,3 +11,6 @@ global using Domain.Entities;
 global using Domain.Base;
 global using System.Security.Claims;
 global using Domain.Errors;
+global using Cmms.Infrastructure.Services;
+global using Arfware.ArfBlocks.Core;
+global using Microsoft.AspNetCore.Http;

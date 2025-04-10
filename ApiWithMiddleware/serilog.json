@@ -1,0 +1,40 @@
+{
+  "Serilog": {
+    "Using": [ "Serilog.Sinks.Console", "Serilog.Sinks.File" ],
+    "MinimumLevel": {
+      "Default": "Debug",
+      "Override": {
+        "Microsoft": "Warning",
+        "Microsoft.Hosting.Lifetime": "Information"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "Console",
+        "Args": {
+          "outputTemplate": "[{Timestamp:yyyy.MM.dd HH:mm:ss}] [{Level,11}] <{SourceContext}> {Message:lj}{NewLine}{Exception}"
+        } 
+      },
+      {
+        "Name": "File",
+        "Args": {
+          "path": "logs/logs-.txt",
+          "rollingInterval": "Day",
+          "outputTemplate": "[{Timestamp:yyyy.MM.dd HH:mm:ss}] [{Level,11}] <{SourceContext}> {Message:lj}{NewLine}{Exception}",
+          "formatter": {
+            "type": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact"
+          }
+        }
+      }
+    ],
+    "Enrich": [
+      "FromLogContext",
+      "WithMachineName",
+      "WithThreadId"
+    ],
+    "Properties": {
+      "Application": "Serilog Demo"
+    }
+  }
+}
+
