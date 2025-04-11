@@ -1,4 +1,4 @@
-﻿namespace Cmms.Infrastructure.Services;
+﻿namespace Infrastructure.Services;
 
 public class DbValidationService
 {

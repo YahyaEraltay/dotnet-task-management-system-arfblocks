@@ -5,7 +5,7 @@ using Serilog;
 using Arfware.ArfBlocks.Core;
 using Serilog.Core;
 
-namespace Cmms.Infrastructure.Services;
+namespace Infrastructure.Services;
 
 public class CustomLogger
 {

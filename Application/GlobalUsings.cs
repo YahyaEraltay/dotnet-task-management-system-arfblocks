@@ -14,7 +14,6 @@ global using Domain.Entities;
 global using Infrastructure.RelationalDB;
 global using Infrastructure.Services;
 global using Microsoft.AspNetCore.Http;
-global using Cmms.Infrastructure.Services;
 global using FluentValidation;
 global using Domain.Errors;
 global using Arfware.ArfBlocks.Core.Exceptions;
