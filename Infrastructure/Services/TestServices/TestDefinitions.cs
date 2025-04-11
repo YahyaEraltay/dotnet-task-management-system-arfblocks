@@ -15,6 +15,20 @@ public class TestDefinitions
             DepartmentName = DefaultData.User.Department.Name,
             Email = DefaultData.User.Email,
         };
+
+        public static CurrentTodoTaskModel CurrentTodoTask = new CurrentTodoTaskModel()
+        {
+            Id = DefaultData.TodoTask.Id,
+            Title = DefaultData.TodoTask.Title,
+            Description = DefaultData.TodoTask.Description,
+            AssignedDepartmentId = DefaultData.TodoTask.AssignedDepartmentId,
+            AssignedDepartmentName = DefaultData.TodoTask.AssignedDepartment.Name,
+            CreatedById = DefaultData.TodoTask.CreatedById,
+            CreatedByFirstName = DefaultData.TodoTask.CreatedBy.FirstName,
+            CreatedByLastName = DefaultData.TodoTask.CreatedBy.LastName,
+            Status = DefaultData.TodoTask.Status,
+            StatusChangedAt = DefaultData.TodoTask.StatusChangedAt,
+        };
     }
 
     public static class Departments

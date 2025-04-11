@@ -39,7 +39,6 @@ namespace Infrastructure.RelationalDB
             User.Department = Department;
             TodoTask.CreatedBy = User;
             TodoTask.AssignedDepartment = Department;
-            // TodoTask.AssignedDepartment.Name = Department.Name;
         }
 
         public static List<User> DefaultUsers = new List<User>()

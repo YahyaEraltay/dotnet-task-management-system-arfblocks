@@ -5,10 +5,10 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Update
 		public TodoTask MapToEntity(RequestModel payload, TodoTask task)
 		{
 			task.Title = payload.Title;
-            task.Description = payload.Description;
-            task.AssignedDepartmentId = payload.AssignedDepartmentId;
+			task.Description = payload.Description;
+			task.AssignedDepartmentId = payload.AssignedDepartmentId;
 
-            return task;
+			return task;
 		}
 
 		public ResponseModel MapToResponse(TodoTask task)

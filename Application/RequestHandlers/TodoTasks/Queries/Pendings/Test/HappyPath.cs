@@ -59,8 +59,8 @@ public class HappyPath : IArfBlocksTest
         matchedTodoTask.Description.Should().Be(todoTask.Description);
         matchedTodoTask.Status.Should().Be(todoTask.Status);
         matchedTodoTask.AssignedDepartment.Id.Should().Be(todoTask.AssignedDepartmentId);
-        matchedTodoTask.AssignedDepartment.Name.Should().Be(todoTask.AssignedDepartment.Name);
+        matchedTodoTask.AssignedDepartment.Name.Should().Be(TestDefinitions.Actors.CurrentTodoTask.AssignedDepartmentName);
         matchedTodoTask.CreatedBy.Id.Should().Be(todoTask.CreatedById);
-        matchedTodoTask.CreatedBy.DisplayName.Should().Be($"{todoTask.CreatedBy.FirstName} {todoTask.CreatedBy.LastName}");
+        matchedTodoTask.CreatedBy.DisplayName.Should().Be($"{TestDefinitions.Actors.CurrentTodoTask.CreatedByFirstName} {TestDefinitions.Actors.CurrentTodoTask.CreatedByLastName}");
     }
 }
