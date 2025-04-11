@@ -18,10 +18,10 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "email": "serkan_yurt@gmail.com",
-  "firstName": "Serkan",
-  "lastName": "Yurt",
-  "departmentId": "c741ae32-4cd1-4818-79be-08dd769b101e"
+  "email": "yahya_eraltay@gmail.com",
+  "firstName": "Yahya",
+  "lastName": "Eraltay",
+  "departmentId": "06E03437-4EAB-49C8-E3DA-08DD78D3E24F"
 }
 
 ### Update 
@@ -31,11 +31,11 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "fbbd5746-7b39-41f9-31ac-08dd769acb2e",
-  "email": "serkan_yurt@gmail.com",
-  "firstName": "Serkan",
-  "lastName": "Yurt",
-  "departmentId": "c741ae32-4cd1-4818-79be-08dd769b101e"
+  "id": "B5ADDA78-A1EF-44CE-D874-08DD78D43DFD",
+  "email": "yahya_eraltay@gmail.com",
+  "firstName": "Yahya",
+  "lastName": "Eraltay",
+  "departmentId": "06E03437-4EAB-49C8-E3DA-08DD78D3E24F"
 }
 
 ### Delete 
@@ -45,8 +45,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
- "id": "f18bf023-f884-4c3f-68b3-08dca49f5a8b",
-  "isDeleted": true 
+ "id": "B5ADDA78-A1EF-44CE-D874-08DD78D43DFD",
+  "isDeleted": false 
 }
 
 ### All 
@@ -77,7 +77,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id":"fbbd5746-7b39-41f9-31ac-08dd769acb2e"
+  "id":"B5ADDA78-A1EF-44CE-D874-08DD78D43DFD"
 }
 
 

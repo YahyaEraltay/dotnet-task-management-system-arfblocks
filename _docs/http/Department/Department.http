@@ -9,7 +9,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "name": "Software Development"
+  "name": "Purchase"
 }
 
 ### Update
@@ -19,8 +19,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "a71c022a-c284-4465-5764-08dca43bf2e5",
-  "name": "def"
+  "id": "06e03437-4eab-49c8-e3da-08dd78d3e24f",
+  "name": "Purchase"
 }
 
 ### Delete
@@ -30,7 +30,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "2acf96e9-945f-4606-c329-08dca49db6d1",
+  "id": "06e03437-4eab-49c8-e3da-08dd78d3e24f",
   "isDeleted": true 
 }
 
@@ -56,5 +56,5 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id":"2acf96e9-945f-4606-c329-08dca49db6d1"
+  "id":"06e03437-4eab-49c8-e3da-08dd78d3e24f"
 }

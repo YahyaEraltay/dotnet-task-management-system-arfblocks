@@ -14,6 +14,7 @@ namespace Application.RequestHandlers.Users.Commands.Update
             var requestPayload = (RequestModel)payload;
 
             await _dbValidator.ValidateUserExistById(requestPayload.Id);
+            await _dbValidator.ValidateDepartmentExist(requestPayload.DepartmentId);
         }
 
         public void ValidateRequestModel(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)

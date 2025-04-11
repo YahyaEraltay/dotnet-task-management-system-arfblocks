@@ -19,7 +19,7 @@ namespace Application.RequestHandlers.Users.Commands.Update
 
             var user = await _dataAccessLayer.GetUserById(requestPayload.Id);
 
-            mapper.MapToEntity(requestPayload, user);
+            user = mapper.MapToEntity(requestPayload, user);
 
             await _dataAccessLayer.UpdateUser(user);
 

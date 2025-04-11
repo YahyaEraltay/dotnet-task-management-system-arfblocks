@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDI3Njc4MywiZXhwIjoxNzQ0NTM1OTgzLCJpYXQiOjE3NDQyNzY3ODMsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.NvCHDcoJp37ewpPatRg-JGEv_p19nqU833nKG8LIqws
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDM2MTk4NywiZXhwIjoxNzQ0NjIxMTg3LCJpYXQiOjE3NDQzNjE5ODcsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.reCt7syj-Nc3btEpwG9YF7E4NAUAV3zGdlJeQOeBMLA
 
 ### Create
 POST {{Api_Url}}/TodoTasks/Create 
@@ -9,9 +9,9 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "title": "abc def",
-  "description": "abc def description1",
-  "assignedDepartmentId":"c741ae32-4cd1-4818-79be-08dd769b101e"
+  "title": "bug",
+  "description": "bug fix",
+  "assignedDepartmentId":"C741AE32-4CD1-4818-79BE-08DD769B101E"
 }
 
 ### Update
@@ -21,10 +21,10 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "bf268251-8dbb-4f4b-e642-08dca4a3121c",
-  "title": "qwerty",
-  "description": "abcdef desc",
-  "assignedDepartmentId": "0f4f87cc-db80-4974-bae7-08dca0d9f40a"
+  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D",
+  "title": "bug",
+  "description": "bug fix",
+  "assignedDepartmentId": "C741AE32-4CD1-4818-79BE-08DD769B101E"
 }
 
 ### Delete
@@ -34,8 +34,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "bf268251-8dbb-4f4b-e642-08dca4a3121c",
-  "isDeleted":true
+  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D",
+  "isDeleted":false
 }
 
 ### Complete
@@ -45,7 +45,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "74ff7e0a-2dd8-4bfa-d7d7-08dca40521df"
+  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D"
 }
 
 ### Reject
@@ -55,7 +55,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "74ff7e0a-2dd8-4bfa-d7d7-08dca40521df"
+  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D"
 }
 
 ### All
@@ -80,7 +80,7 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "719537da-66eb-43cd-d7d6-08dca40521df"
+  "id": "bc4a3f75-3154-4049-e307-08dd774681c4"
 }
 
 ### MyTasks
