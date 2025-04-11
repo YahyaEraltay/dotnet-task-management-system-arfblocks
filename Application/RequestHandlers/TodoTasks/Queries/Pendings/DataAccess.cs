@@ -18,7 +18,7 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 			return await _dbContext.Tasks
 										.Include(d => d.AssignedDepartment)
 										.Include(d => d.CreatedBy)
-										.Where(d => !d.IsDeleted && d.Status == TodoTaskStatus.Pending && d.AssignedDepartmentId == departmentId)
+										// .Where(d => !d.IsDeleted && d.Status == TodoTaskStatus.Pending && d.AssignedDepartmentId == departmentId)
 										.OrderByDescending(i => i.CreatedAt)
 										.ToListAsync();
 		}

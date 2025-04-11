@@ -16,6 +16,8 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Reject
 			var currentUserId = _currentUser.GetCurrentUserId();
 
 			await _dbVerificator.VerifyTaskStatusIsPending(requestPayload.Id);
+			System.Console.WriteLine(requestPayload.Id);
+			System.Console.WriteLine(currentUserId);
 			await _dbVerificator.VerifyUserDepartmentEqualsTaskAssignedDepartment(requestPayload.Id, currentUserId);
 		}
 

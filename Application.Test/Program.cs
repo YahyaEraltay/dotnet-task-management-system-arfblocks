@@ -41,6 +41,7 @@ await app.RunTests(app.Configuration, options =>
 
     options.SelectedTestList = new List<Type>()
     {
+        // typeof(Application.RequestHandlers.TodoTasks.Queries.MyTasks.Test.HappyPath),
     };
 
     // Skip Running Ignored Tests 

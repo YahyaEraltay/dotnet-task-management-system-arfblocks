@@ -12,7 +12,7 @@ public class TestDefinitions
             FirstName = DefaultData.User.FirstName,
             LastName = DefaultData.User.LastName,
             DepartmentId = DefaultData.User.DepartmentId,
-            DepartmentName = "Software Development",
+            DepartmentName = DefaultData.User.Department.Name,
             Email = DefaultData.User.Email,
         };
     }

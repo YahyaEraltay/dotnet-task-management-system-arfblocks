@@ -16,8 +16,8 @@ namespace Application.RequestHandlers.TodoTasks.Queries.Pendings
 		{
 			var mapper = new Mapper();
 			var currentUserId = _currentUser.GetCurrentUserId();
-
 			var user = await _dataAccessLayer.GetUserById(currentUserId);
+
 			var pendingTasks = await _dataAccessLayer.GetPendingTasks(user.DepartmentId);
 
 			var response = mapper.MapToResponse(pendingTasks);
