@@ -35,7 +35,7 @@ namespace Domain.Errors
         {
             // Model Validations
             public static string TodoTaskIdNotValid { get; set; } = "";
-            public static string Description { get; set; } = "";
+            public static string DescriptionNotValid { get; set; } = "";
             public static string TitleNotValid { get; set; } = "";
 
             // Database Validations
