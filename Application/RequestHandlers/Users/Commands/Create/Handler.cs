@@ -1,6 +1,5 @@
 namespace Application.RequestHandlers.Users.Commands.Create
 {
-    [AllowAnonymousHandler]
     public class Handler : IRequestHandler
     {
         private readonly DataAccess _dataAccessLayer;
