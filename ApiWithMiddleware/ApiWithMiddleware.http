@@ -1,4 +1,4 @@
-@Api_Url = http://localhost:5077
+@Api_Url = http://localhost:5257
 
 GET {{Api_Url}}/weatherforecast/
 Accept: application/json
