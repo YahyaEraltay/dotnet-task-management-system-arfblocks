@@ -19,6 +19,17 @@ namespace Application.RequestHandlers.Users.Queries.Me
 			var currentUserId = _currentUser.GetCurrentUserId();
 
 			var user = await _dataAccessLayer.GetUserById(currentUserId);
+			System.Console.WriteLine("--------------------");
+			System.Console.WriteLine(user.Id);
+			System.Console.WriteLine(user.Email);
+			System.Console.WriteLine(user.FirstName);
+			System.Console.WriteLine(user.LastName);
+			System.Console.WriteLine(user.DepartmentId);
+			System.Console.WriteLine(user.Department.Name);
+
+
+
+
 
 			var response = mapper.MapToResponse(user);
 			return ArfBlocksResults.Success(response);

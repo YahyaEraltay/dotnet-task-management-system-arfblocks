@@ -4,6 +4,7 @@ using Infrastructure.RelationalDB;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250416125047_CreatedSeedDatas")]
+    partial class CreatedSeedDatas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,7 +128,7 @@ namespace Infrastructure.Migrations
                             IsDeleted = false,
                             RowNumber = 0,
                             Status = 0,
-                            StatusChangedAt = new DateTime(2025, 4, 16, 16, 3, 48, 655, DateTimeKind.Local).AddTicks(9865),
+                            StatusChangedAt = new DateTime(2025, 4, 16, 15, 50, 46, 495, DateTimeKind.Local).AddTicks(5057),
                             Title = "Test title"
                         });
                 });

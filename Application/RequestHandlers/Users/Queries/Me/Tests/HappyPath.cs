@@ -18,9 +18,11 @@ public class HappyPath : IArfBlocksTest
         _dbContextOperation = new DbContextOperations<User>(_dbContext);
     }
 
+    Department department = null;
     public async Task PrepareTest()
     {
-        await Task.CompletedTask;
+        department = TestDefinitions.Departments.DefaultDepartment();
+        await _dbContextOperation.Create<Department>(department);
     }
 
     public async Task SetActor()

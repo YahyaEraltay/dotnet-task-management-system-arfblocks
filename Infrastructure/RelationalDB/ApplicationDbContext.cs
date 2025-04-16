@@ -26,6 +26,7 @@ namespace Infrastructure.RelationalDB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            CustomModelBuilder.Build(modelBuilder);
             base.OnModelCreating(modelBuilder);
         }
         ///////////////////////////////////////////////////////////////////////////

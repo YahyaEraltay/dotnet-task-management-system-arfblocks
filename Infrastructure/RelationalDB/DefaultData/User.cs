@@ -34,16 +34,19 @@ namespace Infrastructure.RelationalDB
             CreatedAt = DefinitionService.CreatedAt,
         };
 
-        static DefaultData()
+        public static List<Department> DefaultDepartments = new List<Department>()
         {
-            User.Department = Department;
-            TodoTask.CreatedBy = User;
-            TodoTask.AssignedDepartment = Department;
-        }
+            Department,
+        };
 
         public static List<User> DefaultUsers = new List<User>()
         {
             User,
+        };
+
+        public static List<TodoTask> DefaultTodoTasks = new List<TodoTask>()
+        {
+            TodoTask,
         };
     }
 }
