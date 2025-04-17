@@ -19,4 +19,4 @@ WORKDIR /app
 COPY --from=build /out ./
 
 # Container başlatıldığında çalıştırılacak komut
-ENTRYPOINT ["dotnet", "ApiWithMiddleware.dll"]
+ENTRYPOINT ["dotnet", "Api.dll"]
