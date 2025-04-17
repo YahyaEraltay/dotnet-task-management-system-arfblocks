@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Proje dosyalarını kopyala
-COPY ../ /app/
+COPY . /app/
 
 # Bağımlılıkları restore et
 RUN dotnet restore

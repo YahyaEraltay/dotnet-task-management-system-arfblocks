@@ -18,9 +18,9 @@ namespace Domain.Entities
 
     public enum TodoTaskStatus
     {
-        Pending,
-        Completed,
-        Rejected,
+        Pending = 0,
+        Completed = 1,
+        Rejected = 2,
     }
 
 }

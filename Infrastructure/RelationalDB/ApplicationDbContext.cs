@@ -16,14 +16,6 @@ namespace Infrastructure.RelationalDB
         {
         }
 
-        public static DbContextOptions<ApplicationDbContext> BuildDbContextOptions(RelationalDbConfiguration configuration)
-        {
-            var dbContextOptionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            dbContextOptionsBuilder.UseSqlServer(configuration.ConnectionString);
-
-            return dbContextOptionsBuilder.Options;
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             CustomModelBuilder.Build(modelBuilder);

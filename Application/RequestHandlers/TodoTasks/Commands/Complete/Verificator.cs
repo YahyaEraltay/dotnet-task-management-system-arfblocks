@@ -15,13 +15,13 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete
 			var requestPayload = (RequestModel)payload;
 			var currentUserId = _currentUser.GetCurrentUserId();
 
-			await _dbVerificator.VerifyTaskStatusIsPending(requestPayload.Id);
 			await _dbVerificator.VerifyUserDepartmentEqualsTaskAssignedDepartment(requestPayload.Id, currentUserId);
 		}
 
 		public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
 		{
-			await Task.CompletedTask;
+			var requestPayload = (RequestModel)payload;
+			await _dbVerificator.VerifyTaskStatusIsPending(requestPayload.Id);
 		}
 	}
 }
