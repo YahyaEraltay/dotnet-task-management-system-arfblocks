@@ -1,11 +1,7 @@
-using System;
-using Domain.Entities;
+namespace Infrastructure.Services;
 
-namespace Infrastructure.Services
+public interface IJwtService
 {
-	public interface IJwtService
-	{
-		string GenerateJwt(User user);
-		int GetExpirationDayCount();
-	}
+	string GenerateJwt(User user);
+	int GetExpirationDayCount();
 }

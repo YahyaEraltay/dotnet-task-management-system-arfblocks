@@ -1,27 +1,26 @@
-namespace Application.RequestHandlers.TodoTasks.Commands.Update
+namespace Application.RequestHandlers.TodoTasks.Commands.Update;
+
+public class Mapper
 {
-	public class Mapper
+	public TodoTask MapToEntity(RequestModel payload, TodoTask task)
 	{
-		public TodoTask MapToEntity(RequestModel payload, TodoTask task)
-		{
-			task.Title = payload.Title;
-			task.Description = payload.Description;
-			task.AssignedDepartmentId = payload.AssignedDepartmentId;
+		task.Title = payload.Title;
+		task.Description = payload.Description;
+		task.AssignedDepartmentId = payload.AssignedDepartmentId;
 
-			return task;
-		}
+		return task;
+	}
 
-		public ResponseModel MapToResponse(TodoTask task)
+	public ResponseModel MapToResponse(TodoTask task)
+	{
+		return new ResponseModel()
 		{
-			return new ResponseModel()
-			{
-				Id = task.Id,
-				Title = task.Title,
-				Description = task.Description,
-				AssignedDepartmentId = task.AssignedDepartmentId,
-				CreatedById = task.CreatedById,
-				Status = task.Status,
-			};
-		}
+			Id = task.Id,
+			Title = task.Title,
+			Description = task.Description,
+			AssignedDepartmentId = task.AssignedDepartmentId,
+			CreatedById = task.CreatedById,
+			Status = task.Status,
+		};
 	}
 }

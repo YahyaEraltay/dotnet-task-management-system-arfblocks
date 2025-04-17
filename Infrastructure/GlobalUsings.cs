@@ -13,3 +13,5 @@ global using System.Security.Claims;
 global using Domain.Errors;
 global using Arfware.ArfBlocks.Core;
 global using Microsoft.AspNetCore.Http;
+global using System.Diagnostics;
+global using Serilog.Core;

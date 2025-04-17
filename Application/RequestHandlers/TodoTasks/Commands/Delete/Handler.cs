@@ -1,29 +1,28 @@
-namespace Application.RequestHandlers.TodoTasks.Commands.Delete
+namespace Application.RequestHandlers.TodoTasks.Commands.Delete;
+
+public class Handler : IRequestHandler
 {
-    public class Handler : IRequestHandler
+    private readonly DataAccess _dataAccessLayer;
+
+    public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
     {
-        private readonly DataAccess _dataAccessLayer;
-
-        public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
-        {
-            _dataAccessLayer = (DataAccess)dataAccess;
+        _dataAccessLayer = (DataAccess)dataAccess;
 
 
-        }
+    }
 
-        public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-        {
-            var mapper = new Mapper();
-            var requestPayload = (RequestModel)payload;
+    public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+    {
+        var mapper = new Mapper();
+        var requestPayload = (RequestModel)payload;
 
-            var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
+        var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
 
-            mapper.MapToEntity(task, requestPayload);
+        mapper.MapToEntity(task, requestPayload);
 
-            await _dataAccessLayer.Update(task);
+        await _dataAccessLayer.Update(task);
 
-            var response = mapper.MapToResponse(task);
-            return ArfBlocksResults.Success(response);
-        }
+        var response = mapper.MapToResponse(task);
+        return ArfBlocksResults.Success(response);
     }
 }

@@ -1,7 +1,6 @@
-namespace Domain.Base
+namespace Domain.Base;
+
+public class CoreEntity
 {
-    public class CoreEntity
-    {
-        public Guid Id { get; set; }
-    }
+    public Guid Id { get; set; }
 }

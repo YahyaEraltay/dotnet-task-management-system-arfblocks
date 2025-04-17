@@ -1,4 +1,5 @@
 namespace Application.RequestHandlers.TodoTasks.Queries.Statistics;
+
 public class Validator : IRequestValidator
 {
 	private readonly DbValidationService _dbValidator;

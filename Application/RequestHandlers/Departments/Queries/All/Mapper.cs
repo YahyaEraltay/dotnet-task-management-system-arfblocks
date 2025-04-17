@@ -1,14 +1,13 @@
-namespace Application.RequestHandlers.Departments.Queries.All
+namespace Application.RequestHandlers.Departments.Queries.All;
+
+public class Mapper
 {
-    public class Mapper
+    public List<ResponseModel> MapToResponse(List<Department> departments)
     {
-        public List<ResponseModel> MapToResponse(List<Department> departments)
+        return departments?.Select(department => new ResponseModel
         {
-            return departments?.Select(department => new ResponseModel
-            {
-                Id = department.Id,
-                Name = department.Name
-            }).ToList();
-        }
+            Id = department.Id,
+            Name = department.Name
+        }).ToList();
     }
 }

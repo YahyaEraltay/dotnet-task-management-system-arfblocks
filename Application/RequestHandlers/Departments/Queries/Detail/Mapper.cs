@@ -1,14 +1,13 @@
-namespace Application.RequestHandlers.Departments.Queries.Detail
+namespace Application.RequestHandlers.Departments.Queries.Detail;
+
+public class Mapper
 {
-    public class Mapper
+    public ResponseModel MapToResponse(Department department)
     {
-        public ResponseModel MapToResponse(Department department)
+        return new ResponseModel
         {
-            return new ResponseModel
-            {
-                Id = department.Id,
-                Name = department.Name
-            };
-        }
+            Id = department.Id,
+            Name = department.Name
+        };
     }
 }

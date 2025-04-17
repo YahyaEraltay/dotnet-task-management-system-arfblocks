@@ -1,18 +1,17 @@
-namespace Application.RequestHandlers.Users.Queries.Detail
+namespace Application.RequestHandlers.Users.Queries.Detail;
+
+public class Mapper
 {
-    public class Mapper
+    public ResponseModel MapToResponse(User user)
     {
-        public ResponseModel MapToResponse(User user)
+        return new ResponseModel
         {
-            return new ResponseModel
-            {
-                Id = user.Id,
-                Email = user.Email,
-                FirstName = user.FirstName,
-                LastName = user.LastName,   
-                DepartmentId = user.Department.Id,
-                DepartmentName = user.Department.Name,
-            };
-        }
+            Id = user.Id,
+            Email = user.Email,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            DepartmentId = user.Department.Id,
+            DepartmentName = user.Department.Name,
+        };
     }
 }

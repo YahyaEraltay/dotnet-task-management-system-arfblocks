@@ -1,9 +1,6 @@
-using Domain.Base;
+namespace Domain.Entities;
 
-namespace Domain.Entities
+public class Department : BaseEntity
 {
-    public class Department : BaseEntity
-    {
-        public string Name { get; set; }
-    }
+    public string Name { get; set; }
 }

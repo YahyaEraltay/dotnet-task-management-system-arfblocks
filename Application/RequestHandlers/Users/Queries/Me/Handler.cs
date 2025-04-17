@@ -1,27 +1,26 @@
-namespace Application.RequestHandlers.Users.Queries.Me
+namespace Application.RequestHandlers.Users.Queries.Me;
+
+public class Handler : IRequestHandler
 {
-	public class Handler : IRequestHandler
+	private readonly DataAccess _dataAccessLayer;
+
+	private readonly CurrentUserService _currentUser;
+
+	public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 	{
-		private readonly DataAccess _dataAccessLayer;
+		_dataAccessLayer = (DataAccess)dataAccess;
 
-		private readonly CurrentUserService _currentUser;
+		_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
+	}
 
-		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
-		{
-			_dataAccessLayer = (DataAccess)dataAccess;
+	public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+	{
+		var mapper = new Mapper();
+		var currentUserId = _currentUser.GetCurrentUserId();
 
-			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
-		}
+		var user = await _dataAccessLayer.GetUserById(currentUserId);
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-		{
-			var mapper = new Mapper();
-			var currentUserId = _currentUser.GetCurrentUserId();
-
-			var user = await _dataAccessLayer.GetUserById(currentUserId);
-
-			var response = mapper.MapToResponse(user);
-			return ArfBlocksResults.Success(response);
-		}
+		var response = mapper.MapToResponse(user);
+		return ArfBlocksResults.Success(response);
 	}
 }

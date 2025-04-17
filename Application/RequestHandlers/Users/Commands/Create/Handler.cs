@@ -1,27 +1,26 @@
-namespace Application.RequestHandlers.Users.Commands.Create
+namespace Application.RequestHandlers.Users.Commands.Create;
+
+public class Handler : IRequestHandler
 {
-    public class Handler : IRequestHandler
+    private readonly DataAccess _dataAccessLayer;
+
+
+    public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
     {
-        private readonly DataAccess _dataAccessLayer;
+        _dataAccessLayer = (DataAccess)dataAccess;
 
+    }
 
-        public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
-        {
-            _dataAccessLayer = (DataAccess)dataAccess;
+    public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+    {
+        var mapper = new Mapper();
+        var requestPayload = (RequestModel)payload;
 
-        }
+        var user = mapper.MapToNewEntity(requestPayload);
 
-        public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-        {
-            var mapper = new Mapper();
-            var requestPayload = (RequestModel)payload;
+        await _dataAccessLayer.AddUser(user);
 
-            var user = mapper.MapToNewEntity(requestPayload);
-
-            await _dataAccessLayer.AddUser(user);
-
-            var response = mapper.MapToResponse(user);
-            return ArfBlocksResults.Success(response);
-        }
+        var response = mapper.MapToResponse(user);
+        return ArfBlocksResults.Success(response);
     }
 }

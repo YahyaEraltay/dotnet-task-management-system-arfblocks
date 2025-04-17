@@ -1,18 +1,17 @@
-namespace Application.RequestHandlers.Departments.Commands.Create
+namespace Application.RequestHandlers.Departments.Commands.Create;
+
+public class DataAccess : IDataAccess
 {
-    public class DataAccess : IDataAccess
+    private readonly ApplicationDbContext _dbContext;
+
+    public DataAccess(ArfBlocksDependencyProvider depencyProvider)
     {
-        private readonly ApplicationDbContext _dbContext;
+        _dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
+    }
 
-        public DataAccess(ArfBlocksDependencyProvider depencyProvider)
-        {
-            _dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
-        }
-
-        public async Task Add(Department department)
-        {
-            _dbContext.Departments.Add(department);
-            await _dbContext.SaveChangesAsync();
-        }
+    public async Task Add(Department department)
+    {
+        _dbContext.Departments.Add(department);
+        await _dbContext.SaveChangesAsync();
     }
 }

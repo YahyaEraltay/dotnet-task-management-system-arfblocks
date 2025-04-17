@@ -1,30 +1,28 @@
-namespace Application.RequestHandlers.Departments.Commands.Update
+namespace Application.RequestHandlers.Departments.Commands.Update;
+
+public class Handler : IRequestHandler
 {
+    private readonly DataAccess _dataAccessLayer;
 
-    public class Handler : IRequestHandler
+
+    public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
     {
-        private readonly DataAccess _dataAccessLayer;
+        _dataAccessLayer = (DataAccess)dataAccess;
 
+    }
 
-        public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
-        {
-            _dataAccessLayer = (DataAccess)dataAccess;
+    public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+    {
+        var mapper = new Mapper();
+        var requestPayload = (RequestModel)payload;
 
-        }
+        var department = await _dataAccessLayer.GetDepartmentById(requestPayload.Id);
 
-        public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-        {
-            var mapper = new Mapper();
-            var requestPayload = (RequestModel)payload;
+        department = mapper.MapToEntity(requestPayload, department);
 
-            var department = await _dataAccessLayer.GetDepartmentById(requestPayload.Id);
+        await _dataAccessLayer.UpdateDepartment(department);
 
-            department = mapper.MapToEntity(requestPayload, department);
-
-            await _dataAccessLayer.UpdateDepartment(department);
-
-            var response = mapper.MapToResponse(department);
-            return ArfBlocksResults.Success(response);
-        }
+        var response = mapper.MapToResponse(department);
+        return ArfBlocksResults.Success(response);
     }
 }

@@ -1,26 +1,25 @@
-namespace Application.RequestHandlers.TodoTasks.Queries.MyTasks
+namespace Application.RequestHandlers.TodoTasks.Queries.MyTasks;
+
+public class Mapper
 {
-    public class Mapper
+    public List<ResponseModel> MapToResponse(List<TodoTask> tasks)
     {
-        public List<ResponseModel> MapToResponse(List<TodoTask> tasks)
+        return tasks?.Select(task => new ResponseModel
         {
-            return tasks?.Select(task => new ResponseModel
+            Id = task.Id,
+            Title = task.Title,
+            Description = task.Description,
+            Status = task.Status,
+            AssignedDepartment = new ResponseModel.AssignedDepartmentResponseModel()
             {
-                Id = task.Id,
-                Title = task.Title,
-                Description = task.Description,
-                Status = task.Status,
-                AssignedDepartment = new ResponseModel.AssignedDepartmentResponseModel()
-                {
-                    Id = task.AssignedDepartment.Id,
-                    Name = task.AssignedDepartment.Name,
-                },
-                CreatedBy = new ResponseModel.UserResponseModel()
-                {
-                    Id = task.CreatedBy.Id,
-                    DisplayName = $"{task.CreatedBy.FirstName} {task.CreatedBy.LastName}"
-                }
-            }).ToList();
-        }
+                Id = task.AssignedDepartment.Id,
+                Name = task.AssignedDepartment.Name,
+            },
+            CreatedBy = new ResponseModel.UserResponseModel()
+            {
+                Id = task.CreatedBy.Id,
+                DisplayName = $"{task.CreatedBy.FirstName} {task.CreatedBy.LastName}"
+            }
+        }).ToList();
     }
 }

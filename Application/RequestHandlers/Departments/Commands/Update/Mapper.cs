@@ -1,21 +1,20 @@
-namespace Application.RequestHandlers.Departments.Commands.Update
+namespace Application.RequestHandlers.Departments.Commands.Update;
+
+public class Mapper
 {
-    public class Mapper
+    public Department MapToEntity(RequestModel payload, Department department)
     {
-        public Department MapToEntity(RequestModel payload, Department department)
-        {
-            department.Name = payload.Name;
+        department.Name = payload.Name;
 
-            return department;
-        }
+        return department;
+    }
 
-        public ResponseModel MapToResponse(Department department)
+    public ResponseModel MapToResponse(Department department)
+    {
+        return new ResponseModel()
         {
-            return new ResponseModel()
-            {
-                Id = department.Id,
-                Name = department.Name
-            };
-        }
+            Id = department.Id,
+            Name = department.Name
+        };
     }
 }

@@ -1,32 +1,31 @@
-namespace Application.RequestHandlers.Users.Commands.Login
+namespace Application.RequestHandlers.Users.Commands.Login;
+
+[AllowAnonymousHandler]
+public class Handler : IRequestHandler
 {
-	[AllowAnonymousHandler]
-	public class Handler : IRequestHandler
+	private readonly DataAccess _dataAccessLayer;
+
+	private readonly CurrentUserService _currentUser;
+	private readonly IJwtService _jwtService;
+
+	public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 	{
-		private readonly DataAccess _dataAccessLayer;
+		_dataAccessLayer = (DataAccess)dataAccess;
 
-		private readonly CurrentUserService _currentUser;
-		private readonly IJwtService _jwtService;
+		_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
+		_jwtService = dependencyProvider.GetInstance<IJwtService>();
+	}
 
-		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
-		{
-			_dataAccessLayer = (DataAccess)dataAccess;
+	public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+	{
+		var mapper = new Mapper();
+		var requestPayload = (RequestModel)payload;
 
-			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
-			_jwtService = dependencyProvider.GetInstance<IJwtService>();
-		}
+		var user = await _dataAccessLayer.GetUserByEmail(requestPayload.Email);
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-		{
-			var mapper = new Mapper();
-			var requestPayload = (RequestModel)payload;
+		var jwtToken = _jwtService.GenerateJwt(user);
 
-			var user = await _dataAccessLayer.GetUserByEmail(requestPayload.Email);
-
-			var jwtToken = _jwtService.GenerateJwt(user);
-
-			var response = mapper.MapToResponse(user, jwtToken);
-			return ArfBlocksResults.Success(response);
-		}
+		var response = mapper.MapToResponse(user, jwtToken);
+		return ArfBlocksResults.Success(response);
 	}
 }

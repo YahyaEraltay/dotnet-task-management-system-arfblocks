@@ -1,30 +1,29 @@
-namespace Application.RequestHandlers.TodoTasks.Commands.Create
+namespace Application.RequestHandlers.TodoTasks.Commands.Create;
+
+public class Handler : IRequestHandler
 {
-	public class Handler : IRequestHandler
+	private readonly DataAccess _dataAccessLayer;
+
+	private readonly CurrentUserService _currentUser;
+
+	public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
 	{
-		private readonly DataAccess _dataAccessLayer;
+		_dataAccessLayer = (DataAccess)dataAccess;
 
-		private readonly CurrentUserService _currentUser;
+		_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
+	}
 
-		public Handler(ArfBlocksDependencyProvider dependencyProvider, object dataAccess)
-		{
-			_dataAccessLayer = (DataAccess)dataAccess;
+	public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+	{
+		var mapper = new Mapper();
+		var currentUserId = _currentUser.GetCurrentUserId();
+		var requestPayload = (RequestModel)payload;
 
-			_currentUser = dependencyProvider.GetInstance<CurrentUserService>();
-		}
+		var task = mapper.MapToNewEntity(requestPayload, currentUserId);
 
-		public async Task<ArfBlocksRequestResult> Handle(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-		{
-			var mapper = new Mapper();
-			var currentUserId = _currentUser.GetCurrentUserId();
-			var requestPayload = (RequestModel)payload;
+		await _dataAccessLayer.Add(task);
 
-			var task = mapper.MapToNewEntity(requestPayload, currentUserId);
-
-			await _dataAccessLayer.Add(task);
-
-			var response = mapper.MapToResponse(task);
-			return ArfBlocksResults.Success(response);
-		}
+		var response = mapper.MapToResponse(task);
+		return ArfBlocksResults.Success(response);
 	}
 }

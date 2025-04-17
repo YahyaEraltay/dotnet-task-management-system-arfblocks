@@ -1,17 +1,16 @@
-namespace Application.RequestHandlers.Users.Commands.Delete
+namespace Application.RequestHandlers.Users.Commands.Delete;
+
+public class Mapper
 {
-    public class Mapper
+    public void MapToEntity(User user, RequestModel payload)
     {
-        public void MapToEntity(User user, RequestModel payload)
+        user.IsDeleted = payload.IsDeleted;
+    }
+    public ResponseModel MapToResponse(User user)
+    {
+        return new ResponseModel()
         {
-            user.IsDeleted = payload.IsDeleted;
-        } 
-        public ResponseModel MapToResponse(User user)
-        {
-            return new ResponseModel()
-            {
-                Id = user.Id
-            };
-        }       
+            Id = user.Id
+        };
     }
 }

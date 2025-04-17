@@ -1,23 +1,20 @@
-
-namespace Application.RequestHandlers.Departments.Commands.Create
+namespace Application.RequestHandlers.Departments.Commands.Create;
+public class Mapper
 {
-    public class Mapper
+    public Department MapToNewEntity(RequestModel payload)
     {
-        public Department MapToNewEntity(RequestModel payload)
+        return new Department
         {
-            return new Department
-            {
-                Name = payload.Name
-            };
-        }
+            Name = payload.Name
+        };
+    }
 
-        public ResponseModel MapToResponse(Department department)
+    public ResponseModel MapToResponse(Department department)
+    {
+        return new ResponseModel
         {
-            return new ResponseModel
-            {
-                Id = department.Id,
-                Name = department.Name
-            };
-        }
+            Id = department.Id,
+            Name = department.Name
+        };
     }
 }

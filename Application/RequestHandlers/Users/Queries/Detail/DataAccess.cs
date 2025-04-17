@@ -1,19 +1,18 @@
-namespace Application.RequestHandlers.Users.Queries.Detail
+namespace Application.RequestHandlers.Users.Queries.Detail;
+
+public class DataAccess : IDataAccess
 {
-	public class DataAccess : IDataAccess
+	private readonly ApplicationDbContext _dbContext;
+
+	public DataAccess(ArfBlocksDependencyProvider depencyProvider)
 	{
-		private readonly ApplicationDbContext _dbContext;
+		_dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
+	}
 
-		public DataAccess(ArfBlocksDependencyProvider depencyProvider)
-		{
-			_dbContext = depencyProvider.GetInstance<ApplicationDbContext>();
-		}
-
-		public async Task<User> GetUserById(Guid Id)
-		{
-			return await _dbContext.Users
-										.Include(x => x.Department)
-										.FirstOrDefaultAsync(x => x.Id == Id);
-		}
+	public async Task<User> GetUserById(Guid Id)
+	{
+		return await _dbContext.Users
+									.Include(x => x.Department)
+									.FirstOrDefaultAsync(x => x.Id == Id);
 	}
 }

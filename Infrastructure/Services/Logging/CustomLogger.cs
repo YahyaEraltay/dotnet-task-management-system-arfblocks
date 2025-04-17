@@ -1,11 +1,4 @@
-﻿using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using Microsoft.Extensions.Configuration;
-using Serilog;
-using Arfware.ArfBlocks.Core;
-using Serilog.Core;
-
-namespace Infrastructure.Services;
+﻿namespace Infrastructure.Services;
 
 public class CustomLogger
 {

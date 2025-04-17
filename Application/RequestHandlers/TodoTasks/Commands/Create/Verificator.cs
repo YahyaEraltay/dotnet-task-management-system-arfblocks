@@ -1,22 +1,21 @@
-namespace Application.RequestHandlers.TodoTasks.Commands.Create
+namespace Application.RequestHandlers.TodoTasks.Commands.Create;
+
+public class Verificator : IRequestVerificator
 {
-    public class Verificator : IRequestVerificator
+    private readonly ApplicationDbContext _dbContext;
+
+    public Verificator(ArfBlocksDependencyProvider dependencyProvider)
     {
-        private readonly ApplicationDbContext _dbContext;
+        _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
+    }
 
-        public Verificator(ArfBlocksDependencyProvider dependencyProvider)
-        {
-            _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
-        }
+    public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+    {
+        await Task.CompletedTask;
+    }
 
-        public async Task VerificateActor(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-        {
-            await Task.CompletedTask;
-        }
-
-        public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
-        {
-            await Task.CompletedTask;
-        }
+    public async Task VerificateDomain(IRequestModel payload, EndpointContext context, CancellationToken cancellationToken)
+    {
+        await Task.CompletedTask;
     }
 }
