@@ -4,6 +4,7 @@ public class TodoTask : BaseEntity
 {
     public string Title { get; set; }
     public string Description { get; set; }
+    public string ActionComment { get; set; }
     public TodoTaskStatus Status { get; set; }
     public DateTime StatusChangedAt { get; set; }
 
