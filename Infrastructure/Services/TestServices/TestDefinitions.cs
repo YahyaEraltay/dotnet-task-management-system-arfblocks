@@ -59,6 +59,7 @@ public class TestDefinitions
             AssignedDepartmentId = departmentId,
             CreatedById = createdById,
             Status = todoTaskStatus,
+            ActionComment = $"Action Comment {new Random().Next(100, 999)}",
             IsDeleted = false,
             StatusChangedAt = DateTime.Now,
         };

@@ -18,7 +18,7 @@ public class Handler : IRequestHandler
 
 		var task = await _dataAccessLayer.GetTaskById(requestPayload.Id);
 
-		mapper.MapToEntity(task);
+		mapper.MapToEntity(requestPayload, task);
 
 		await _dataAccessLayer.Update(task);
 

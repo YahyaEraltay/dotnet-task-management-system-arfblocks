@@ -35,5 +35,9 @@ public class RequestModel_Validator : AbstractValidator<RequestModel>
 		RuleFor(x => x.Id)
 			.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid))
 			.NotEqual(Guid.Empty).WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.CommonErrors.IdNotValid));
+
+		RuleFor(x => x.ActionComment)
+			.NotNull().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.ActionCommentNotValid))
+			.NotEmpty().WithMessage(ErrorCodeGenerator.GetErrorCode(() => DomainErrors.TodoTaskErrors.ActionCommentNotValid));
 	}
 }

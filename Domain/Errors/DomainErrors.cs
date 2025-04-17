@@ -37,6 +37,7 @@ public class DomainErrors
         public static string TodoTaskIdNotValid { get; set; } = "";
         public static string DescriptionNotValid { get; set; } = "";
         public static string TitleNotValid { get; set; } = "";
+        public static string ActionCommentNotValid { get; set; } = "";
 
         // Database Validations
         public static string TodoTaskNotExist { get; set; } = "";

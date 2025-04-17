@@ -2,8 +2,9 @@ namespace Application.RequestHandlers.TodoTasks.Commands.Complete;
 
 public class Mapper
 {
-	public TodoTask MapToEntity(TodoTask task)
+	public TodoTask MapToEntity(RequestModel payload, TodoTask task)
 	{
+		task.ActionComment = payload.ActionComment;
 		task.StatusChangedAt = DateTime.Now;
 		task.Status = TodoTaskStatus.Completed;
 		return task;

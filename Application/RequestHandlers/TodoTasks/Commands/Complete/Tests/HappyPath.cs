@@ -44,6 +44,7 @@ public class HappyPath : IArfBlocksTest
         var requestPayload = new Application.RequestHandlers.TodoTasks.Commands.Complete.RequestModel()
         {
             Id = todoTask.Id,
+            ActionComment = todoTask.ActionComment,
         };
 
         var requestOperator = new ArfBlocksRequestOperator(_dependencyProvider);

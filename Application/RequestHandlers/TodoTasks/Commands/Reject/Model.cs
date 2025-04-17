@@ -9,4 +9,5 @@ public class ResponseModel : IResponseModel
 public class RequestModel : IRequestModel
 {
 	public Guid Id { get; set; }
+	public string ActionComment { get; set; }
 }

@@ -45,7 +45,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D"
+  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D",
+  "actionComment": "testt"
 }
 
 ### Reject
@@ -55,7 +56,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D"
+  "id": "4E66D82A-148B-4DFE-2B3F-08DD78D5A24D",
+  "actionComment": "testt"
 }
 
 ### All
