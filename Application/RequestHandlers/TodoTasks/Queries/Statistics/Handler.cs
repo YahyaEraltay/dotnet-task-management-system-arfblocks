@@ -1,4 +1,4 @@
-namespace Application.RequestHandlers.TodoTasks.Queries.MyTasks
+namespace Application.RequestHandlers.TodoTasks.Queries.Statistics
 {
 	public class Handler : IRequestHandler
 	{
@@ -14,12 +14,14 @@ namespace Application.RequestHandlers.TodoTasks.Queries.MyTasks
 		{
 			var mapper = new Mapper();
 			var requestPayload = (RequestModel)payload;
-			var currentUserId = _currentUser.GetCurrentUserId();
 
-			(var pendingTodoTasks, var pageResponse) = await _dataAccessLayer.GetAllPendingTasksByUserId(requestPayload.Sorting, requestPayload.Filters, requestPayload.PageRequest, currentUserId);
+			var currentUser = _currentUser.GetCurrentUser();
 
-			var response = mapper.MapToResponse(pendingTodoTasks);
-			return ArfBlocksResults.Success(response, pageResponse);
+			var myCreationsCount = await _dataAccessLayer.GetMyCreationsCountById(currentUser.Id);
+			var waitingForMyApprovalsCount = await _dataAccessLayer.GetWaitingForMyApprovalsCountById(currentUser.DepartmentId);
+
+			var response = mapper.MapToResponse(waitingForMyApprovalsCount, myCreationsCount);
+			return ArfBlocksResults.Success(response);
 		}
 	}
 }

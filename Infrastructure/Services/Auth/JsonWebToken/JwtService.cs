@@ -20,6 +20,7 @@ namespace Infrastructure.Services
 				Subject = new ClaimsIdentity(new Claim[]
 				{
 					new Claim("nameid", user.Id.ToString()),
+					new Claim("departmentid", user.DepartmentId.ToString()),
 					new Claim("given_name", user.Email.ToString()),
 					new Claim("unique_name", $"{user.FirstName} {user.LastName}"),
 				}),

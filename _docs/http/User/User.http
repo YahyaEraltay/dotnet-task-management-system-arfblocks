@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDI3Njc4MywiZXhwIjoxNzQ0NTM1OTgzLCJpYXQiOjE3NDQyNzY3ODMsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.NvCHDcoJp37ewpPatRg-JGEv_p19nqU833nKG8LIqws
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJkZXBhcnRtZW50aWQiOiJjNzQxYWUzMi00Y2QxLTQ4MTgtNzliZS0wOGRkNzY5YjEwMWUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDg4NjA4NywiZXhwIjoxNzQ1MTQ1Mjg3LCJpYXQiOjE3NDQ4ODYwODcsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.jwZlAjYo42TzdxTcWrLxrJ3lL_QUc11DF1_Zqf079Ss
 
 ### Login
 POST {{Api_Url}}/Users/Login
@@ -8,7 +8,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"admin@taskmanagementsystem.com"
+  "email":"serkan_yurt@gmail.com"
 }
 
 ### Create 

@@ -42,11 +42,13 @@ public class CurrentUserService
                 // Get Claims
                 var name = token.Claims.FirstOrDefault(c => c.Type == "given_name").Value;
                 var userId = Guid.Parse(token.Claims.FirstOrDefault(c => c.Type == "nameid").Value);
+                var departmentId = Guid.Parse(token.Claims.FirstOrDefault(c => c.Type == "departmentid").Value);
 
                 var _currentUser = new CurrentUserModel()
                 {
                     Id = userId,
                     FirstName = name,
+                    DepartmentId = departmentId
                 };
 
                 return _currentUser;

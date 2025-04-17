@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyYmJkNWUxZS1mZTNkLTQ1YzctOWU3Zi1iYTBmMmU3OThlMWUiLCJnaXZlbl9uYW1lIjoiYWRtaW5AdGFza21hbmFnZW1lbnRzeXN0ZW0uY29tIiwidW5pcXVlX25hbWUiOiJBZG1pbiBVc2VyIiwibmJmIjoxNzQ0ODc3OTAyLCJleHAiOjE3NDUxMzcxMDIsImlhdCI6MTc0NDg3NzkwMiwiYXVkIjoiVG9kb0FwcC5jb20udHIifQ.5mS6u-S6QMmSA1AS86nY-J45W7uAC_AxPv1M4sxbUtk
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJkZXBhcnRtZW50aWQiOiJjNzQxYWUzMi00Y2QxLTQ4MTgtNzliZS0wOGRkNzY5YjEwMWUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDg4NjA4NywiZXhwIjoxNzQ1MTQ1Mjg3LCJpYXQiOjE3NDQ4ODYwODcsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.jwZlAjYo42TzdxTcWrLxrJ3lL_QUc11DF1_Zqf079Ss
 
 ### Create
 POST {{Api_Url}}/TodoTasks/Create 
@@ -9,8 +9,8 @@ Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
 
 {
-  "title": "bug",
-  "description": "bug fix",
+  "title": "deneme title",
+  "description": "deneme desc",
   "assignedDepartmentId":"C741AE32-4CD1-4818-79BE-08DD769B101E"
 }
 
@@ -100,6 +100,12 @@ Authorization: Bearer {{Jwt_Key}}
 
 ### Pendings
 GET {{Api_Url}}/TodoTasks/Pendings 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+### Statistics
+GET {{Api_Url}}/TodoTasks/Statistics 
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
