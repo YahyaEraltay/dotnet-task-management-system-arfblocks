@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJkZXBhcnRtZW50aWQiOiJjNzQxYWUzMi00Y2QxLTQ4MTgtNzliZS0wOGRkNzY5YjEwMWUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDg4NjA4NywiZXhwIjoxNzQ1MTQ1Mjg3LCJpYXQiOjE3NDQ4ODYwODcsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.jwZlAjYo42TzdxTcWrLxrJ3lL_QUc11DF1_Zqf079Ss
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNWFkZGE3OC1hMWVmLTQ0Y2UtZDg3NC0wOGRkNzhkNDNkZmQiLCJkZXBhcnRtZW50aWQiOiIwNmUwMzQzNy00ZWFiLTQ5YzgtZTNkYS0wOGRkNzhkM2UyNGYiLCJnaXZlbl9uYW1lIjoieWFoeWFfZXJhbHRheUBnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6IllhaHlhIEVyYWx0YXkiLCJuYmYiOjE3NDQ5NjM0NjUsImV4cCI6MTc0NTIyMjY2NSwiaWF0IjoxNzQ0OTYzNDY1LCJhdWQiOiJUb2RvQXBwLmNvbS50ciJ9.rEFroE2uAXzG1HHhdA9DnNj8U3qDRth-3El44iYXxgg
 
 ### Create
 POST {{Api_Url}}/TodoTasks/Create 
@@ -111,3 +111,13 @@ GET {{Api_Url}}/TodoTasks/Statistics
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer {{Jwt_Key}}
+
+### UIDC
+GET {{Api_Url}}/TodoTasks/UIDC 
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+  "id": "2BBD5E1E-FE3D-45C7-9E7F-BA0F2E798E1E"
+}

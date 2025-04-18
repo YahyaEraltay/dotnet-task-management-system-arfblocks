@@ -1,0 +1,14 @@
+@Api_Url =  http://localhost:5077
+
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJiNWFkZGE3OC1hMWVmLTQ0Y2UtZDg3NC0wOGRkNzhkNDNkZmQiLCJkZXBhcnRtZW50aWQiOiIwNmUwMzQzNy00ZWFiLTQ5YzgtZTNkYS0wOGRkNzhkM2UyNGYiLCJnaXZlbl9uYW1lIjoieWFoeWFfZXJhbHRheUBnbWFpbC5jb20iLCJ1bmlxdWVfbmFtZSI6IllhaHlhIEVyYWx0YXkiLCJuYmYiOjE3NDQ5NjMzNDQsImV4cCI6MTc0NTIyMjU0NCwiaWF0IjoxNzQ0OTYzMzQ0LCJhdWQiOiJUb2RvQXBwLmNvbS50ciJ9.kV3zV7H5wGBtv9hRTiALQxnCfBB80XpB5381eFzc2Ro
+### Queries
+
+### UISC
+POST {{Api_Url}}/Apps/UISC
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{Jwt_Key}}
+
+{
+}
+

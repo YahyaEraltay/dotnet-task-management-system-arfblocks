@@ -1,6 +1,6 @@
 @Api_Url = http://localhost:5077
 
-@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiJmYmJkNTc0Ni03YjM5LTQxZjktMzFhYy0wOGRkNzY5YWNiMmUiLCJkZXBhcnRtZW50aWQiOiJjNzQxYWUzMi00Y2QxLTQ4MTgtNzliZS0wOGRkNzY5YjEwMWUiLCJnaXZlbl9uYW1lIjoic2Vya2FuX3l1cnRAZ21haWwuY29tIiwidW5pcXVlX25hbWUiOiJTZXJrYW4gWXVydCIsIm5iZiI6MTc0NDg4NjA4NywiZXhwIjoxNzQ1MTQ1Mjg3LCJpYXQiOjE3NDQ4ODYwODcsImF1ZCI6IlRvZG9BcHAuY29tLnRyIn0.jwZlAjYo42TzdxTcWrLxrJ3lL_QUc11DF1_Zqf079Ss
+@Jwt_Key = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyYmJkNWUxZS1mZTNkLTQ1YzctOWU3Zi1iYTBmMmU3OThlMWUiLCJkZXBhcnRtZW50aWQiOiI3NDlhZGQzNC1kZTY3LWM3NDQtOGQyNi0wYTNlMTg0OTliMzYiLCJnaXZlbl9uYW1lIjoiYWRtaW5AdGFza21hbmFnZW1lbnRzeXN0ZW0uY29tIiwidW5pcXVlX25hbWUiOiJBZG1pbiBVc2VyIiwibmJmIjoxNzQ0OTAxNjE0LCJleHAiOjE3NDUxNjA4MTQsImlhdCI6MTc0NDkwMTYxNCwiYXVkIjoiVG9kb0FwcC5jb20udHIifQ.9QFeJAhH-zfrpmDIQz7THgGTmkOr7mq5dVNLq6oIy8w
 
 ### Login
 POST {{Api_Url}}/Users/Login
@@ -8,7 +8,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"serkan_yurt@gmail.com"
+  "email":"yahya_eraltay@gmail.com"
 }
 
 ### Create 
