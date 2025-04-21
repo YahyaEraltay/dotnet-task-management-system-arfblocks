@@ -6,4 +6,5 @@ global using Arfware.ArfBlocks.Test.Middlewares;
 global using Infrastructure.Services;
 global using Application.Configuration;
 global using Serilog;
-
+global using System;
+global using System.Collections.Generic;
