@@ -26,7 +26,7 @@ var environmentService = new EnvironmentService(configurations.EnvironmentConfig
 var dbContext = new ApplicationDbContext(new CustomDbContextOptions(configurations.RelationalDbConfiguration, environmentService));
 builder.Services.AddSingleton<ApplicationDbContext>(dbContext);
 
-var jsonFile = environmentService.Environment == CustomEnvironments.Development ? "serilog.Development.json" : "serilog.json";
+var jsonFile = environmentService.Environment == CustomEnvironments.Development ? "serilog.development.json" : "serilog.json";
 IConfiguration Configuration = new ConfigurationBuilder()
 	.SetBasePath(Directory.GetCurrentDirectory())
 	.AddJsonFile(jsonFile, optional: false, reloadOnChange: true)
