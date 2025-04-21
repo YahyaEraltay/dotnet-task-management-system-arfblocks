@@ -17,18 +17,11 @@ public class HappyPath : IArfBlocksTest
         var _dbContext = dependencyProvider.GetInstance<ApplicationDbContext>();
         _dbContextOperation = new DbContextOperations<User>(_dbContext);
     }
-    Department department = null;
-    User user = null;
+
     TodoTask todoTask = null;
     public async Task PrepareTest()
     {
-        department = TestDefinitions.Departments.DefaultDepartment();
-        await _dbContextOperation.Create<Department>(department);
-
-        user = TestDefinitions.Users.DefaultUser(department.Id);
-        await _dbContextOperation.Create<User>(user);
-
-        todoTask = TestDefinitions.ToDoTasks.DefaultTask(user.Id, user.DepartmentId, TodoTaskStatus.Pending);
+        todoTask = TestDefinitions.ToDoTasks.DefaultTask(TestDefinitions.Actors.CurrentUser.Id, TestDefinitions.Actors.CurrentUser.DepartmentId, TodoTaskStatus.Pending);
         await _dbContextOperation.Create<TodoTask>(todoTask);
     }
 
